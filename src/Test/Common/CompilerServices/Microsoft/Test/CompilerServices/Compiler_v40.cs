@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
-using System.Runtime.Loader;
+using System.Runtime.InteropServices;
 using System.Text;
 using Microsoft.Build.Evaluation;
 using Microsoft.Build.Execution;
@@ -39,17 +39,24 @@ namespace Microsoft.Test.CompilerServices
         /// compilation can be located. Sti will only look in the running directory, so we add the sdk 
         /// folder to the search path as well.
         /// </summary>
-        public static Assembly OnAssemblyResolve(AssemblyLoadContext assemblyLoadContext, AssemblyName assemblyName)
+        public static ResolveEventHandler OnAssemblyResolve = (sender, args) =>
         {
             try
             {
-                return assemblyLoadContext.LoadFromAssemblyPath(msBuildPath + assemblyName.Name + ".dll");
+                var assemblyName = new AssemblyName(args.Name).Name;
+                var assemblyPath = Path.Combine(msBuildPath, assemblyName + ".dll");
+                if (File.Exists(assemblyPath))
+                {
+                    return Assembly.LoadFrom(assemblyPath);
+                }
             }
             catch
             {
-                return null;
+                // Ignore and return null to continue normal resolution
             }
-        }
+
+            return null;
+        };
 
         /// <summary>
         /// Call InitializeBuildLocator before Microsoft.Build loads any assemblies.
@@ -91,7 +98,7 @@ namespace Microsoft.Test.CompilerServices
             return CompileProject(projectFileName, null);
         }
 
-        // <summary>
+        /// <summary>
         /// Compiles a project with a logger
         /// Build errors/warnings will be present in the logger on return
         /// </summary>
@@ -122,7 +129,7 @@ namespace Microsoft.Test.CompilerServices
         {
             bool result = false;
 
-            AssemblyLoadContext.Default.Resolving += OnAssemblyResolve;
+            AppDomain.CurrentDomain.AssemblyResolve += OnAssemblyResolve;
 
             try
             {
@@ -130,8 +137,9 @@ namespace Microsoft.Test.CompilerServices
             }
             finally
             {
-                AssemblyLoadContext.Default.Resolving -= OnAssemblyResolve;
+                AppDomain.CurrentDomain.AssemblyResolve -= OnAssemblyResolve;
             }
+
             return result;
         }
 
@@ -166,7 +174,7 @@ namespace Microsoft.Test.CompilerServices
             string selectedTargetFrameworkVersion = null;
             if (String.IsNullOrEmpty(targetFrameworkVersion))
             {
-                selectedTargetFrameworkVersion = "netcoreapp3.0";
+                selectedTargetFrameworkVersion = "net48";
             }
             else
             {
@@ -192,7 +200,7 @@ namespace Microsoft.Test.CompilerServices
             }
 
             // Set PlatformTarget, to be the same as that of TestRuntime
-            string platformTarget = CompilationHelper.InferPlatformTarget();
+            string platformTarget = "AnyCPU"; // Fallback for .NET Framework
             globalProperties.Add("PlatformTarget", platformTarget);
             commandLineOptions += " /p:PlatformTarget=" + platformTarget;
             GlobalLog.LogDebug("PlatformTarget: " + platformTarget);

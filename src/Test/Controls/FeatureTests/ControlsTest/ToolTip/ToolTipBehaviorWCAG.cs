@@ -60,7 +60,7 @@ namespace Avalon.Test.ComponentModel.UnitTests
             for (int i=1, N=args.Length; i<N; ++i)
             {
                 string arg = args[i].ToLower();
-                if (arg.StartsWith('/') || arg.StartsWith('-'))
+                if (arg.StartsWith("/") || arg.StartsWith("-"))
                 {
                     switch (arg.Substring(1))
                     {

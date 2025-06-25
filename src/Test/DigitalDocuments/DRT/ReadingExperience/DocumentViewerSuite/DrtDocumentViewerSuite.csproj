@@ -55,4 +55,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Common\Drt\TestServices\TestServices.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ReachFramework" />
+    <Reference Include="System.Printing" />
+  </ItemGroup>
 </Project>

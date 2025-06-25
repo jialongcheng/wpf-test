@@ -55,6 +55,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="ReachFramework" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="DrtFiles\Fonts\arial.ttf" />
     <Resource Include="DrtFiles\Fonts\arialbd.ttf" />

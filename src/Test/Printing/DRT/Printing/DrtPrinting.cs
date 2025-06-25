@@ -220,12 +220,18 @@ namespace DRT
         private string GetPDFObjectHash(string pdfFilePath)
         {
             var indexedContent = GetPDFObjects(pdfFilePath);
-            string result = string.Join("\r\n", 
-                indexedContent
-                    .OrderBy(c => c.index)
-                    .Select(c => c.content)
-                    .SkipLast(1) // Skipping the last block with metadata
-                );
+            // Manually skip the last block (metadata) for .NET Framework compatibility
+            var orderedContents = indexedContent
+                .OrderBy(c => c.index)
+                .Select(c => c.content)
+                .ToList();
+
+            if (orderedContents.Count > 0)
+            {
+                orderedContents.RemoveAt(orderedContents.Count - 1);
+            }
+
+            string result = string.Join("\r\n", orderedContents);
 
             using (SHA256 sha256Hash = SHA256.Create())
             {

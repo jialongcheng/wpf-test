@@ -20,7 +20,6 @@ using Microsoft.Test.Diagnostics;
 using Microsoft.Test.Logging;
 using Microsoft.Test.CrossProcess;
 using Microsoft.Win32;
-using System.Runtime.Loader;
 
 namespace Microsoft.Test.Loaders
 {
@@ -820,7 +819,7 @@ namespace Microsoft.Test.Loaders
                         try
                         {
                             AssemblyName assemblyName = AssemblyName.GetAssemblyName(asmName);
-                            Assembly asm = AssemblyLoadContext.Default.LoadFromAssemblyName(assemblyName);
+                            Assembly asm = Assembly.Load(assemblyName);
                             ResourceManager resMan = new ResourceManager(baseName, asm);
                             string value = resMan.GetString(id);
 

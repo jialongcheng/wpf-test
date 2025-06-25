@@ -21,7 +21,6 @@ using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
 using Microsoft.Test.Threading;
 
-
 namespace Avalon.Test.Framework.Dispatchers
 {
     /******************************************************************************

@@ -37,6 +37,7 @@
   <!-- Packages that come from https://github.com/dotnet/corefx via core-setup coherency parent dependency -->
   <PropertyGroup>
     <MicrosoftWin32RegistryPackageVersion>5.0.0-rc.1.20370.4</MicrosoftWin32RegistryPackageVersion>
+    <MicrosoftInternalIOPackagingVersion>10.0.0.1</MicrosoftInternalIOPackagingVersion>
     <SystemCodeDomPackageVersion>5.0.0-rc.1.20370.4</SystemCodeDomPackageVersion>
     <SystemConfigurationConfigurationManagerPackageVersion>5.0.0-rc.1.20370.4</SystemConfigurationConfigurationManagerPackageVersion>
     <SystemDiagnosticsEventLogPackageVersion>5.0.0-rc.1.20370.4</SystemDiagnosticsEventLogPackageVersion>
@@ -96,6 +97,7 @@
     <SystemDrawingCommonPackage>System.Drawing.Common</SystemDrawingCommonPackage>
     <SystemDirectoryServicesPackage>System.DirectoryServices</SystemDirectoryServicesPackage>
     <SystemIOPackagingPackage>System.IO.Packaging</SystemIOPackagingPackage>
+    <MicrosoftInternalIOPackaging>Microsoft.Internal.IO.Packaging</MicrosoftInternalIOPackaging>
     <SystemReflectionMetadataLoadContextPackage>System.Reflection.MetadataLoadContext</SystemReflectionMetadataLoadContextPackage>
     <SystemDataSqlClientPackage>System.Data.SqlClient</SystemDataSqlClientPackage>
     <ServiceProcessServiceControllerPackage>System.ServiceProcess.ServiceController</ServiceProcessServiceControllerPackage>

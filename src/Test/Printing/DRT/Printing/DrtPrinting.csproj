@@ -27,4 +27,7 @@
     <!-- <PackageReference Include="Microsoft.NETCore.Platforms" Version="$(MicrosoftNETCorePlatformsVersion)" /> -->
     <PackageReference Include="System.Management" Version="$(SystemManagementVersion)" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Printing" />
+  </ItemGroup>
 </Project>

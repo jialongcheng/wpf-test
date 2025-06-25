@@ -27,7 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Include="Themes\ThemeInfo.cs"/>
+      <Compile Include="Themes\ThemeInfo.cs" />
       <Page Include="Themes\BreadcrumbBar.generic.xaml" />
       <Page Include="Themes\ChartControl.generic.xaml" />
       <Page Include="Themes\ChartControls.generic.xaml" />
@@ -40,6 +40,10 @@
       <Page Include="Themes\NumericUpDown.Luna.NormalColor.xaml" />
       <Page Include="Themes\SuggestBox.generic.xaml" />
       <Page Include="Themes\generic.xaml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="PresentationFramework.Aero" />
     </ItemGroup>
 
 </Project>

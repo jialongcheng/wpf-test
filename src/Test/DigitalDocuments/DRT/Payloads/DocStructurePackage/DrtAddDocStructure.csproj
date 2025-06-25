@@ -15,4 +15,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ReachFramework" />
+  </ItemGroup>
 </Project>

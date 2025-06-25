@@ -24,11 +24,11 @@ namespace Microsoft.Test.Controls
             InitializeComponent();
 
             // AsyncContentLoaded
-            _asyncContentCombo.ItemsSource = Enum.GetValues<AsyncContentLoadedState>();
+            _asyncContentCombo.ItemsSource = Enum.GetValues(typeof(AsyncContentLoadedState));
 
             // Notification
-            _notificationKindCombo.ItemsSource = Enum.GetValues<AutomationNotificationKind>();
-            _notificationProcessingCombo.ItemsSource = Enum.GetValues<AutomationNotificationProcessing>();
+            _notificationKindCombo.ItemsSource = Enum.GetValues(typeof(AutomationNotificationKind));
+            _notificationProcessingCombo.ItemsSource = Enum.GetValues(typeof(AutomationNotificationProcessing));
 
             // ActiveTextPositionChanged
             List<DependencyObject> targets = new List<DependencyObject> { _textBox, _richTextBox, _fdsv };

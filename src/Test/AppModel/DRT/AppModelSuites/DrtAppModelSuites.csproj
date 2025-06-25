@@ -37,7 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Common\Drt\TestServices\TestServices.csproj" />
+    <ProjectReference Include="..\..\..\Common\DRT\TestServices\TestServices.csproj" />
   </ItemGroup>
 
 </Project>

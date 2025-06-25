@@ -7,7 +7,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
-using System.Runtime.Loader;
 
 namespace Microsoft.Test
 {
@@ -39,7 +38,7 @@ namespace Microsoft.Test
                     driverParameters["Assembly"] = Path.ChangeExtension(driverParameters["Assembly"], ".dll");
                 }
                 AssemblyName assemblyName = AssemblyName.GetAssemblyName(driverParameters["Assembly"]);
-                Assembly = AssemblyLoadContext.Default.LoadFromAssemblyName(assemblyName);
+                Assembly = Assembly.Load(assemblyName);
             }
 
             //HACK: Folks like Appmodel don't include .dll which breaks on Assembly.Load!
@@ -48,7 +47,7 @@ namespace Microsoft.Test
             {
                 Trace.WriteLine("Opening " + driverParameters["Assembly"] + ".dll");
                 AssemblyName assemblyName = AssemblyName.GetAssemblyName(driverParameters["Assembly"] + ".dll");
-                Assembly = AssemblyLoadContext.Default.LoadFromAssemblyName(assemblyName);
+                Assembly = Assembly.Load(assemblyName);
             }
             // If the driver parameter for Assembly was a fully qualified reference, no
             // file would have matched that value. So we call Assembly.Load directly with
@@ -59,7 +58,7 @@ namespace Microsoft.Test
             //       not found exception, that's good enough.
             else
             {
-                Assembly = AssemblyLoadContext.Default.LoadFromAssemblyName(new AssemblyName(driverParameters["Assembly"]));
+                Assembly = Assembly.Load(new AssemblyName(driverParameters["Assembly"]));
             }
 
             Class = Assembly.GetType(driverParameters["Class"], true, true);

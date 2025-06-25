@@ -12,6 +12,12 @@
 	  <Compile Include="MyButton2.cs" />
     <Compile Include="MyButton3.cs" />
     <Compile Include="AssemblyInfo.cs" />
-  </ItemGroup> 
+  </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="WindowsBase">
+      <HintPath>$(FrameworkPathOverride)\WindowsBase.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
 </Project>

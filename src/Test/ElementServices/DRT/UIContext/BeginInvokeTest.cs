@@ -56,7 +56,7 @@ public class BeginInvokeTest : DrtTestSuite
         Test1Param((Action<string>)((x)=>{ReflectionCallback();}));
         
         // Post an item to stop the Dispatcher at the end...
-        _dispatcher.BeginInvoke(StopDispatcher);
+        _dispatcher.BeginInvoke((Action)StopDispatcher);
 
         // Run Dispatcher
         RunDispatcher(usePrivateMessagePump);

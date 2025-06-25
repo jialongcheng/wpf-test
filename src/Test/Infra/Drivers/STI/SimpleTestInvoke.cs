@@ -12,7 +12,6 @@ using System.Security;
 using System.Security.Permissions;
 using Microsoft.Test.Logging;
 using System.Globalization;
-using System.Runtime.Loader;
 using System.IO;
 
 namespace Microsoft.Test
@@ -49,15 +48,22 @@ namespace Microsoft.Test
             // DLLs that are not a part of STI.deps.json.  This allows us to always load
             // requested assemblies from the current directory.  This is the layout that
             // QualityVault uses when it collates tests into a single directory.
-            AssemblyLoadContext.Default.Resolving += (context, asm) => {
+            AppDomain.CurrentDomain.AssemblyResolve += (sender, args2) =>
+            {
                 try
                 {
-                    return context.LoadFromAssemblyPath(Path.GetFullPath(asm.Name + ".dll"));
+                    var assemblyName = new AssemblyName(args2.Name).Name;
+                    var assemblyPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, assemblyName + ".dll");
+                    if (File.Exists(assemblyPath))
+                    {
+                        return Assembly.LoadFrom(assemblyPath);
+                    }
                 }
                 catch
                 {
-                    return null;
+                    // Ignore and return null to continue normal resolution
                 }
+                return null;
             };
 
             try

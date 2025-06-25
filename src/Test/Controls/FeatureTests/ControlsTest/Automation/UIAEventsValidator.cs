@@ -49,7 +49,7 @@ namespace Microsoft.Test.Controls
             {
                 // build the expected event args
                 string name = item.Current.Name;
-                AsyncContentLoadedState state = Enum.Parse<AsyncContentLoadedState>(name);
+                AsyncContentLoadedState state = (AsyncContentLoadedState)Enum.Parse(typeof(AsyncContentLoadedState), name);
                 double percent = 0;
                 switch (state)
                 {
@@ -120,10 +120,10 @@ namespace Microsoft.Test.Controls
                 {
                     // build the expected event args
                     string name = nkItem.Current.Name;
-                    AutomationNotificationKind notificationKind = Enum.Parse<AutomationNotificationKind>(name);
+                    AutomationNotificationKind notificationKind = (AutomationNotificationKind)Enum.Parse(typeof(AutomationNotificationKind), name);
 
                     name = npItem.Current.Name;
-                    AutomationNotificationProcessing notificationProcessing = Enum.Parse<AutomationNotificationProcessing>(name);
+                    AutomationNotificationProcessing notificationProcessing = (AutomationNotificationProcessing)Enum.Parse(typeof(AutomationNotificationProcessing), name);
 
                     TextPatternRange displayStringRange = dsText.DocumentRange;
                     string displayString = displayStringRange.GetText(-1);

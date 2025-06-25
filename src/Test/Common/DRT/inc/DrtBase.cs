@@ -9,25 +9,22 @@
 //
 
 using System;
+using System.Collections;
 using System.ComponentModel;
-using System.Reflection;
-using System.IO;
-using System.Threading;
 using System.Diagnostics;
 using System.Globalization;
-using System.Collections;
-using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Markup;
-using System.Windows.Automation;
-using System.Windows.Threading;
+using System.IO;
+using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Runtime.Loader;
-using System.Windows.Interop;
 using System.Text;
-
+using System.Threading;
+using System.Windows;
+using System.Windows.Automation;
+using System.Windows.Input;
+using System.Windows.Interop;
+using System.Windows.Markup;
+using System.Windows.Media;
+using System.Windows.Threading;
 using Microsoft.Win32;
 
 /************************************************************************
@@ -225,10 +222,12 @@ namespace DRT
             // We need to hook into assembly resolution so that we can dynamically load
             // DLLs that are not a part of deps.json.  This allows us to always load
             // requested assemblies from the current directory.
-            AssemblyLoadContext.Default.Resolving += (context, asm) => {
+            AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
+            {
                 try
                 {
-                    return context.LoadFromAssemblyPath(Path.GetFullPath(asm.Name + ".dll"));
+                    var assemblyPath = Path.GetFullPath(new AssemblyName(args.Name).Name + ".dll");
+                    return Assembly.LoadFrom(assemblyPath);
                 }
                 catch
                 {

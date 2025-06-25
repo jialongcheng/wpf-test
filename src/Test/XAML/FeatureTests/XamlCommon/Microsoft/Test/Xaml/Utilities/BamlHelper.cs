@@ -9,7 +9,6 @@ using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Resources;
-using System.Runtime.Loader;
 using System.Text;
 using Microsoft.Test.Logging;
 
@@ -112,7 +111,7 @@ namespace Microsoft.Test.Xaml.Utilities
                 throw new ArgumentException("assemblyPath");
             }
 
-            Assembly assembly = AssemblyLoadContext.Default.LoadFromAssemblyPath(assemblyPath);
+            Assembly assembly = Assembly.LoadFrom(assemblyPath);
 
             foreach (string resourceName in assembly.GetManifestResourceNames())
             {

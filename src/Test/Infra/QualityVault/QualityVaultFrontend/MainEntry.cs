@@ -46,7 +46,7 @@ namespace Microsoft.Test
             {   
                 // Registering an encoding provider so QV can can use encodings other than the default encoding.
                 // Some XTC files require the use of other encodings
-                Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+                //Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
                 // If no arguments were specified or the first argument does
                 // not match the name of any known command, print general usage.

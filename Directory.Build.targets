@@ -7,4 +7,44 @@
   <Import Sdk="Microsoft.DotNet.Arcade.Wpf.Sdk"
           Project="Sdk.targets"
           Condition="!Exists('$(WpfArcadeSdkProps)') Or !Exists('$(WpfArcadeSdkTargets)')"/>
+
+  <PropertyGroup Condition="'$(TargetFrameworkIdentifier)' == '.NETFramework' and '$(SignAssembly)' != 'false' and '$(PublicSign)' == 'true'">
+    <!-- Don't public sign .NETFramework assemblies -->
+    <DelaySign>true</DelaySign>
+    <PublicSign>false</PublicSign>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
+    <PackageReference Include="$(MicrosoftInternalIOPackaging)" Version="$(MicrosoftInternalIOPackagingVersion)"/>
+    <PackageReference Include="$(SystemMemoryPackage)" Version="$(SystemMemoryPackageVersion)" />
+  </ItemGroup>
+
+  <Target Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'" Name="FixNetFxReferences" BeforeTargets="ResolveAssemblyReferences">
+    <!-- <ItemGroup>
+      <Reference Remove="WindowsBase" />
+      <Reference Remove="$(FrameworkPathOverride)\WindowsBase.dll" />
+    </ItemGroup> -->
+    <ItemGroup>
+      <Reference Include="Accessibility" />
+      <Reference Include="Microsoft.CSharp" />
+      <Reference Include="ReachFramework" />
+      <Reference Include="PresentationFramework.Aero" />
+      <Reference Include="PresentationFramework.Aero2" />
+      <Reference Include="PresentationUI" />
+      <Reference Include="System.IO.Compression" />
+      <Reference Include="System.Printing" />
+      <Reference Include="System.Security" />
+      <Reference Include="System.Windows.Forms" />
+      <Reference Include="System.Windows.Input.Manipulations" />
+      <Reference Include="System.Windows.Presentation" />
+      <Reference Include="WindowsBase"/>
+    </ItemGroup>
+  </Target>
+
+  <Target Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'" Name="AliasNetFxReferences" AfterTargets="ResolveAssemblyReferences" BeforeTargets="CoreCompile">
+    <ItemGroup>
+      <ReferencePath Include="@(ReferencePath->WithMetadataValue('FileName', 'System'))" Aliases="System" />
+    </ItemGroup>
+  </Target>
+
 </Project>
