@@ -5,10 +5,12 @@
     <EmbedUntrackedSources>false</EmbedUntrackedSources>
     <TargetFramework>net481</TargetFramework>
     <Platforms>AnyCPU;x64</Platforms>
-    <RuntimeIdentifiers>win-x64;win-x86</RuntimeIdentifiers>
+    <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <MSBuildWarningsAsMessages>$(MSBuildWarningsAsMessages);NETSDK1107</MSBuildWarningsAsMessages>
-    <UseWPF>true</UseWPF>
+     <!-- Prevent default WPF references -->
+    <UseWPF>false</UseWPF>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
   

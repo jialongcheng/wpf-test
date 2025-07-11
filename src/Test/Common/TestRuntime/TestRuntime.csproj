@@ -4,6 +4,7 @@
     <OutputType>Library</OutputType>
     <OutputSubFolder>Common</OutputSubFolder>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
     <DefineConstants>$(DefineConstants);TRACE;TARGET_NET3_5;STANDALONE_BUILD;TESTBUILD_CLR40</DefineConstants>
     <EnableDefaultItems>false</EnableDefaultItems>
     <AssemblyOriginatorKeyFile>$(TestTrustedKey)</AssemblyOriginatorKeyFile>

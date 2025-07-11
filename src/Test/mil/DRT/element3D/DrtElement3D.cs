@@ -156,6 +156,15 @@ namespace Microsoft.Samples
         [STAThread]
         public static int Main(string [] args)
         {
+            // Add a loadLIbrary
+            // Create a native pinvoke call to load a wpfgfx_cor3.dll in the executable directory.
+            string exeDir = AppDomain.CurrentDomain.BaseDirectory;
+            string dllPath = System.IO.Path.Combine(exeDir, "wpfgfx_cor3.dll");
+            if (File.Exists(dllPath))
+            {
+                LoadLibrary(dllPath);
+            }
+
             Application application = new Application();
 
             DrtElement3D basic = new DrtElement3D();
@@ -192,7 +201,10 @@ namespace Microsoft.Samples
 
         private int _count;
         private int _failedCount = 0;
-        private string _failedCaseNames = "";        
+        private string _failedCaseNames = "";
+
+        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        private static extern IntPtr LoadLibrary(string lpFileName);
     }
 }
 

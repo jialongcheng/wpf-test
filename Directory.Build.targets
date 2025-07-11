@@ -12,6 +12,7 @@
     <!-- Don't public sign .NETFramework assemblies -->
     <DelaySign>true</DelaySign>
     <PublicSign>false</PublicSign>
+    <WpfBinDirectory>C:\VS-wpf\artifacts\bin\</WpfBinDirectory>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
@@ -27,17 +28,120 @@
     <ItemGroup>
       <Reference Include="Accessibility" />
       <Reference Include="Microsoft.CSharp" />
-      <Reference Include="ReachFramework" />
-      <Reference Include="PresentationFramework.Aero" />
-      <Reference Include="PresentationFramework.Aero2" />
-      <Reference Include="PresentationUI" />
+      <Reference Include="System" />
+      <Reference Include="System.Core" />
+      <Reference Include="System.Data" />
+      <Reference Include="System.Drawing" />
+
       <Reference Include="System.IO.Compression" />
-      <Reference Include="System.Printing" />
       <Reference Include="System.Security" />
       <Reference Include="System.Windows.Forms" />
-      <Reference Include="System.Windows.Input.Manipulations" />
-      <Reference Include="System.Windows.Presentation" />
-      <Reference Include="WindowsBase"/>
+      <Reference Include="System.Xml" />
+
+      <Reference Include="PresentationCore">
+        <HintPath>$(WpfBinDirectory)PresentationCore\$(Platform)\$(Configuration)\net481\PresentationCore.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="PresentationFramework">
+        <HintPath>$(WpfBinDirectory)PresentationFramework\$(Platform)\$(Configuration)\net481\PresentationFramework.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="PresentationFramework-SystemCore">
+        <HintPath>$(WpfBinDirectory)PresentationFramework-SystemCore\$(Platform)\$(Configuration)\net481\PresentationFramework-SystemCore.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="PresentationFramework-SystemData">
+        <HintPath>$(WpfBinDirectory)PresentationFramework-SystemData\$(Platform)\$(Configuration)\net481\PresentationFramework-SystemData.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="PresentationFramework-SystemDrawing">
+        <HintPath>$(WpfBinDirectory)PresentationFramework-SystemDrawing\$(Platform)\$(Configuration)\net481\PresentationFramework-SystemDrawing.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="PresentationFramework-SystemXml">
+        <HintPath>$(WpfBinDirectory)PresentationFramework-SystemXml\$(Platform)\$(Configuration)\net481\PresentationFramework-SystemXml.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="PresentationFramework-SystemXmlLinq">
+        <HintPath>$(WpfBinDirectory)PresentationFramework-SystemXmlLinq\$(Platform)\$(Configuration)\net481\PresentationFramework-SystemXmlLinq.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="PresentationFramework.Aero">
+        <HintPath>$(WpfBinDirectory)PresentationFramework.Aero\$(Platform)\$(Configuration)\net481\PresentationFramework.Aero.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="PresentationFramework.Aero2">
+        <HintPath>$(WpfBinDirectory)PresentationFramework.Aero2\$(Platform)\$(Configuration)\net481\PresentationFramework.Aero2.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="PresentationFramework.AeroLite">
+        <HintPath>$(WpfBinDirectory)PresentationFramework.AeroLite\$(Platform)\$(Configuration)\net481\PresentationFramework.AeroLite.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="PresentationFramework.Classic">
+        <HintPath>$(WpfBinDirectory)PresentationFramework.Classic\$(Platform)\$(Configuration)\net481\PresentationFramework.Classic.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="PresentationFramework.Luna">
+        <HintPath>$(WpfBinDirectory)PresentationFramework.Luna\$(Platform)\$(Configuration)\net481\PresentationFramework.Luna.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="PresentationFramework.Royale">
+        <HintPath>$(WpfBinDirectory)PresentationFramework.Royale\$(Platform)\$(Configuration)\net481\PresentationFramework.Royale.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="PresentationUI">
+        <HintPath>$(WpfBinDirectory)PresentationUI\$(Platform)\$(Configuration)\net481\PresentationUI.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="ReachFramework">
+        <HintPath>$(WpfBinDirectory)ReachFramework\$(Platform)\$(Configuration)\net481\ReachFramework.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="System.Printing">
+        <HintPath>$(WpfBinDirectory)System.Printing\$(Platform)\$(Configuration)\net481\System.Printing.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="System.Windows.Controls.Ribbon">
+        <HintPath>$(WpfBinDirectory)System.Windows.Controls.Ribbon\$(Platform)\$(Configuration)\net481\System.Windows.Controls.Ribbon.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="System.Windows.Input.Manipulations">
+        <HintPath>$(WpfBinDirectory)System.Windows.Input.Manipulations\$(Platform)\$(Configuration)\net481\System.Windows.Input.Manipulations.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="System.Windows.Presentation">
+        <HintPath>$(WpfBinDirectory)System.Windows.Presentation\$(Platform)\$(Configuration)\net481\System.Windows.Presentation.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="System.Xaml">
+        <HintPath>$(WpfBinDirectory)System.Xaml\$(Platform)\$(Configuration)\net481\System.Xaml.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="UIAutomationClient">
+        <HintPath>$(WpfBinDirectory)UIAutomationClient\$(Platform)\$(Configuration)\net481\UIAutomationClient.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="UIAutomationClientSideProviders">
+        <HintPath>$(WpfBinDirectory)UIAutomationClientSideProviders\$(Platform)\$(Configuration)\net481\UIAutomationClientSideProviders.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="UIAutomationProvider">
+        <HintPath>$(WpfBinDirectory)UIAutomationProvider\$(Platform)\$(Configuration)\net481\UIAutomationProvider.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="UIAutomationTypes">
+        <HintPath>$(WpfBinDirectory)UIAutomationTypes\$(Platform)\$(Configuration)\net481\UIAutomationTypes.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="WindowsBase">
+        <HintPath>$(WpfBinDirectory)WindowsBase\$(Platform)\$(Configuration)\net481\WindowsBase.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
+      <Reference Include="WindowsFormsIntegration">
+        <HintPath>$(WpfBinDirectory)WindowsFormsIntegration\$(Platform)\$(Configuration)\net481\WindowsFormsIntegration.dll</HintPath>
+        <Private>true</Private>
+      </Reference>
     </ItemGroup>
   </Target>
 
@@ -46,5 +150,7 @@
       <ReferencePath Include="@(ReferencePath->WithMetadataValue('FileName', 'System'))" Aliases="System" />
     </ItemGroup>
   </Target>
+
+  <Import Project="AppLocalWPF.targets" Condition="Exists('AppLocalWPF.targets')" />
 
 </Project>
