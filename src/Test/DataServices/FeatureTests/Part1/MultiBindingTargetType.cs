@@ -3,12 +3,13 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
+using System.Globalization;
+using System.Security;
+using System.Windows.Data;
+using System.Windows.Threading;
 using Microsoft.Test.Discovery;
 using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
-using System.Windows.Threading;
-using System.Windows.Data;
-using System.Globalization;
 
 namespace Microsoft.Test.DataServices
 {
@@ -54,21 +55,26 @@ namespace Microsoft.Test.DataServices
         }
     }
 
+    [SecurityCritical]
     public class WrapperConverter : IValueConverter
     {
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return new Wrapper(value);
         }
 
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return Binding.DoNothing;
         }
     }
 
+    [SecurityCritical]
     public class UnwrapperConverter : IMultiValueConverter
     {
+        [SecurityCritical]
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {            
             // Check if the value recieved is of type wrapper or not
@@ -80,6 +86,7 @@ namespace Microsoft.Test.DataServices
             return ((Wrapper)values[0]).Wrapped;
         }
 
+        [SecurityCritical]
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             throw new NotSupportedException();

@@ -19,16 +19,18 @@ using System.Reflection;
 
 namespace Microsoft.Test.DataServices
 {
-	// Boolean to Visible converter.
-	// True = Hidden
-	// False = Visible
-	public class BooleanToVisibleConverter : IValueConverter
+    // Boolean to Visible converter.
+    // True = Hidden
+    // False = Visible
+    [SecurityCritical]
+    public class BooleanToVisibleConverter : IValueConverter
 	{
 		public BooleanToVisibleConverter()
 		{
 		}
 
-		public object Convert(object o, Type type, object parameter, CultureInfo culture)
+        [SecurityCritical]
+        public object Convert(object o, Type type, object parameter, CultureInfo culture)
 		{
 			if ((bool)o)
 			{
@@ -40,7 +42,9 @@ namespace Microsoft.Test.DataServices
 			}
 		}
 
-		public object ConvertBack(object o, Type type, object parameter, CultureInfo culture)
+
+        [SecurityCritical]
+        public object ConvertBack(object o, Type type, object parameter, CultureInfo culture)
 		{
 			return null;
 		}

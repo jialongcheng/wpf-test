@@ -5,11 +5,14 @@
 namespace Microsoft.Test.DataServices
 {
     using System.Globalization;
+    using System.Security;
     using System.Windows.Controls;
     using System.Windows.Data;
 
+    [SecurityCritical]
     public class CustomValidationRule : ValidationRule
     {
+        [SecurityCritical]
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             if (value == null || ((BindingGroup)value).Items == null || ((BindingGroup)value).Items.Count <= 0)

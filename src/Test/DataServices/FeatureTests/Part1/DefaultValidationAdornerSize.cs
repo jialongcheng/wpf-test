@@ -3,20 +3,21 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
+using System.Collections;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
+using System.Globalization;
+using System.Security;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Threading;
 using Microsoft.Test.Discovery;
 using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
-using System.ComponentModel;
-using System.Globalization;
-using System.Collections;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.Windows.Documents;
 
 namespace Microsoft.Test.DataServices
 {
@@ -130,9 +131,11 @@ namespace Microsoft.Test.DataServices
 
 
     #region Helper Classes
-       
+
+    [SecurityCritical]
     public class MyValidationRule : ValidationRule
     {
+        [SecurityCritical]
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             string name = value as string;

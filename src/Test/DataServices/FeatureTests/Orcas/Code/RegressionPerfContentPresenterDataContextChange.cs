@@ -3,6 +3,7 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
+using System.Security;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
@@ -97,6 +98,7 @@ namespace Microsoft.Test.DataServices
 
     #region MyConverter
     // This converter is used to check for instantaneous value change in the content due to datacontext switches
+    [SecurityCritical]
     public class DataContextChangeConverter : IValueConverter
     {
         #region Private Members
@@ -111,6 +113,7 @@ namespace Microsoft.Test.DataServices
             set { _failed = value; }
         }
 
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (value != null && !value.Equals("Text") )
@@ -122,6 +125,7 @@ namespace Microsoft.Test.DataServices
             return true;
         }
 
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             // Not required;

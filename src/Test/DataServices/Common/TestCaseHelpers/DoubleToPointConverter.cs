@@ -19,8 +19,10 @@ using System.Reflection;
 
 namespace Microsoft.Test.DataServices
 {
+    [SecurityCritical]
     public class DoubleToPointConverter : IValueConverter
     {
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             double doubleValue = (double)value;
@@ -28,6 +30,8 @@ namespace Microsoft.Test.DataServices
             return resultPoint;
         }
 
+
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             return null;

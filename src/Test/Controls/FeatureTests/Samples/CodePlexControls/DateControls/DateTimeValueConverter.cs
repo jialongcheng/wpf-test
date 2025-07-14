@@ -6,6 +6,7 @@
 
 using System;
 using System.Globalization;
+using System.Security;
 using System.Windows.Data;
 
 
@@ -14,6 +15,8 @@ namespace WpfControlToolkit
     /// <summary>
     /// Convert between DateTime and string, it's the default Converter for DatePicker.DateValueConverter
     /// </summary>
+
+    [SecurityCritical]
     public sealed class DateTimeValueConverter : IValueConverter
     {
         /// <summary>
@@ -24,6 +27,8 @@ namespace WpfControlToolkit
         /// <param name="parameter">null</param>
         /// <param name="culture"></param>
         /// <returns>formatted or empty string</returns>
+
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (culture == null)
@@ -55,6 +60,8 @@ namespace WpfControlToolkit
         /// <param name="parameter">null</param>
         /// <param name="culture"></param>
         /// <returns>DateTime or null</returns>
+
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (culture == null)

@@ -11,13 +11,13 @@ namespace Test.Uis.TextEditing
     #region Namespaces.
 
     using System;
-    using System.ComponentModel;
     using System.Collections;
+    using System.ComponentModel;
     using System.Drawing;
     using System.Globalization;
     using System.IO;
+    using System.Security;
     using System.Text;
-
     using System.Windows;
     using System.Windows.Automation;
     using System.Windows.Controls;
@@ -28,11 +28,6 @@ namespace Test.Uis.TextEditing
     using System.Windows.Markup;
     using System.Windows.Media;
     using System.Windows.Media.Animation;
-    
-    using DrawingColor = System.Drawing.Color;
-    using MediaColor = System.Windows.Media.Color;
-    using MediaColors = System.Windows.Media.Colors;
-
     using Microsoft.Test;
     using Microsoft.Test.Discovery;
     using Microsoft.Test.Imaging;
@@ -42,6 +37,10 @@ namespace Test.Uis.TextEditing
     using Test.Uis.TestTypes;
     using Test.Uis.Utils;
     using Test.Uis.Wrappers;    
+    
+    using DrawingColor = System.Drawing.Color;
+    using MediaColor = System.Windows.Media.Color;
+    using MediaColors = System.Windows.Media.Colors;
 
     #endregion Namespaces.
 
@@ -375,9 +374,11 @@ namespace Test.Uis.TextEditing
         }
 
         /// <summary>Integer-to-Length transformer helper.</summary>
+        [SecurityCritical]
         public class IntegerToLengthTransformer : IValueConverter
         {
             /// <summary>Transforms the specified object.</summary>
+            [SecurityCritical]
             public object Convert(object o, Type type, object parameter, CultureInfo culture)
             {
                 if (o == null)
@@ -396,6 +397,7 @@ namespace Test.Uis.TextEditing
             }
 
             /// <summary>Performs the inverse transform from the specified object.</summary>
+            [SecurityCritical]
             public object ConvertBack(object o, Type type, object parameter, CultureInfo culture)
             {
                 throw new NotImplementedException("ConvertBack not implemented.");

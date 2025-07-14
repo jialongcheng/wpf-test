@@ -4,6 +4,7 @@
 
 using System;
 using System.Reflection;
+using System.Security;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -152,14 +153,17 @@ namespace Microsoft.Test.DataServices
         #endregion
     }
 
+    [SecurityCritical]
     public class GarbageCollectingConverter : IMultiValueConverter
     {
+        [SecurityCritical]
         public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             RegressionMultiBindingNullRef.ForceGC();  // cause a GC to collect the target element during a property change
             return "GarbageCollected";
         }
 
+        [SecurityCritical]
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)
         {
             return null;

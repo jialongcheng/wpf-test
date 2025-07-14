@@ -3,6 +3,7 @@
 // See the LICENSE file in the project root for more information.
 
 using System.IO;
+using System.Security;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Markup;
@@ -83,6 +84,7 @@ namespace Microsoft.Test.DataServices
     }
 
     // Skeleton StyleSelector whose SelectTemplate method just returns the stored Style.
+    [SecurityCritical]
     public class FixedStyleSelector : StyleSelector
     {
         #region Private Data
@@ -99,6 +101,7 @@ namespace Microsoft.Test.DataServices
             set { _style = value; }
         }
 
+        [SecurityCritical]
         public override Style SelectStyle(object item, DependencyObject container)
         {
             return Style;

@@ -20,6 +20,7 @@ using Microsoft.Test;
 using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
 using Microsoft.Test.Discovery;
+using System.Security;
 
 namespace Microsoft.Test.DataServices.IListIndexers
 {
@@ -202,8 +203,10 @@ namespace Microsoft.Test.DataServices.IListIndexers
         }
     }
 
+    [SecurityCritical]
     public class ItemToStringConverter : IValueConverter
     {
+        [SecurityCritical]
         public object Convert(object o, Type type, object parameter, CultureInfo culture)
         {
             if (type != typeof(String) || o is string)
@@ -224,6 +227,7 @@ namespace Microsoft.Test.DataServices.IListIndexers
             return o;
         }
 
+        [SecurityCritical]
         public object ConvertBack(object o, Type type, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();

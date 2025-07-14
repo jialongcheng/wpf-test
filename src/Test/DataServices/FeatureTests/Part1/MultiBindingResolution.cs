@@ -2,14 +2,15 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using System;
+using System.Globalization;
+using System.Security;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Threading;
 using Microsoft.Test.Discovery;
 using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
-using System.Windows.Data;
-using System;
-using System.Globalization;
 
 namespace Microsoft.Test.DataServices
 {
@@ -67,16 +68,19 @@ namespace Microsoft.Test.DataServices
         #endregion
         
     }
-    
+
     #region Helper Classes
-    
+
+    [SecurityCritical]
     public class MultiConverter : IMultiValueConverter
     {
+        [SecurityCritical]
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             return (string)values[0];
         }
 
+        [SecurityCritical]
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             return null;

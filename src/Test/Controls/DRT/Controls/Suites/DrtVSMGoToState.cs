@@ -7,9 +7,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
+using System.Security;
+using System.Threading;
 using System.Windows;
 using System.Windows.Automation;
 using System.Windows.Controls;
@@ -18,10 +21,8 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Markup;
 using System.Windows.Media;
-using System.Windows.Threading;
-using System.Threading;
-using System.Diagnostics;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace DRT
 {
@@ -326,9 +327,11 @@ namespace DRT
 
         bool _isPageLoaded;
     }
-    
+
+    [SecurityCritical]
     public class VSMValidationRule : ValidationRule
     {
+        [SecurityCritical]
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             ValidationResult result = ValidationResult.ValidResult;

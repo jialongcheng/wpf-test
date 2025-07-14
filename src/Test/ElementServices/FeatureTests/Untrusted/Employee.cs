@@ -14,11 +14,12 @@
 ********************************************************************/
 using System;
 using System.Collections;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
+using System.Security;
 using System.Windows;
 using System.Windows.Data;
-using System.Collections.ObjectModel;
 using System.Windows.Media;
 
 namespace Avalon.Test.CoreUI
@@ -117,11 +118,14 @@ namespace Avalon.Test.CoreUI
     /// <summary>
     /// Data converter for employee data types.
     /// </summary>
+    [SecurityCritical]
     public class EmployeeToBrushConverter : IValueConverter
     {
         /// <summary>
         /// Converts an Employee to a Brush.
         /// </summary>
+
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (!typeof(Employee).Equals(value))
@@ -140,6 +144,8 @@ namespace Avalon.Test.CoreUI
         /// <summary>
         /// Converts a type to an Employee.
         /// </summary>
+
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return DependencyProperty.UnsetValue;

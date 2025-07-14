@@ -1,16 +1,17 @@
 using System;
 using System.Reflection;
+using System.Security;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
-using System.Windows.Threading;
 using System.Windows.Interop;
+using System.Windows.Threading;
+using Avalon.Test.ComponentModel.Actions;
 using Microsoft.Test;
 using Microsoft.Test.Discovery;
 using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
-using Avalon.Test.ComponentModel.Actions;
 
 namespace Avalon.Test.ComponentModel.UnitTests
 {
@@ -121,10 +122,12 @@ namespace Avalon.Test.ComponentModel.UnitTests
             contextMenu.IsOpen = true;
         }
 
+        [SecurityCritical]
         public class ToolTipConverter : IValueConverter
         {
             bool _wasOpen = false;
 
+            [SecurityCritical]
             public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
             {
                 bool isOpen = (bool)value;
@@ -136,6 +139,7 @@ namespace Avalon.Test.ComponentModel.UnitTests
                 return value;
             }
 
+            [SecurityCritical]
             public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
             {
                 throw new NotSupportedException();

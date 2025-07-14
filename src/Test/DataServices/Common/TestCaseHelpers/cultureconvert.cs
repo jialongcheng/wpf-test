@@ -4,26 +4,30 @@
 
 using System;
 using System.Globalization;
+using System.Security;
 using System.Windows.Data;
 
 namespace Microsoft.Test.DataServices
 {
-  public class CultureConverter : IValueConverter
- {
-     #region IValueConverter Members
+    [SecurityCritical]
+    public class CultureConverter : IValueConverter
+    {
+        #region IValueConverter Members
 
-     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-     {
+        [SecurityCritical]
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
 
-         return (string)value + ": " + culture.DisplayName;
-     }
+            return (string)value + ": " + culture.DisplayName;
+        }
 
-     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-     {
-         throw new Exception("The method or operation is not implemented.");
-     }
+        [SecurityCritical]
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new Exception("The method or operation is not implemented.");
+        }
 
-     #endregion
- }
+        #endregion
+    }
 
 }

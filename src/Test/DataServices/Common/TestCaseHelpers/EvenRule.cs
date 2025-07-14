@@ -19,7 +19,8 @@ using System.Reflection;
 
 namespace Microsoft.Test.DataServices
 {
-	public class EvenRule : ValidationRule
+    [SecurityCritical]
+    public class EvenRule : ValidationRule
 	{
 		public EvenRule()
 		{
@@ -37,7 +38,8 @@ namespace Microsoft.Test.DataServices
 			}
 		}
 
-		public override ValidationResult Validate(object value, CultureInfo cultureInfo)
+        [SecurityCritical]
+        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
 		{
 			int intvalue;
 

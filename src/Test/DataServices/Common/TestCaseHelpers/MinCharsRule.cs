@@ -4,12 +4,14 @@
 
 using System;
 using System.Globalization;
-using System.Windows.Data;
+using System.Security;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace Microsoft.Test.DataServices
 {
-	public class MinCharsRule : ValidationRule
+    [SecurityCritical]
+    public class MinCharsRule : ValidationRule
 	{
 		private int _min;
 		private string _errorContent = string.Empty;
@@ -42,7 +44,8 @@ namespace Microsoft.Test.DataServices
 			}
 		}
 
-		public override ValidationResult Validate(object value, CultureInfo cultureInfo)
+        [SecurityCritical]
+        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
 		{
 			string stringValue = value as string;
 			if (stringValue == null)

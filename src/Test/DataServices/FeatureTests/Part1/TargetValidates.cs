@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using System.Security;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Documents;
@@ -91,8 +92,10 @@ namespace Microsoft.Test.DataServices
         }
     }
 
+    [SecurityCritical]
     public class ValueIsNotNull : ValidationRule
     {
+        [SecurityCritical]
         public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
         {
             string str = value as string;

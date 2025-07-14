@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
+using System.Security;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
@@ -200,6 +201,7 @@ namespace Microsoft.Test.DataServices
         }
     }
 
+    [SecurityCritical]
     public class SalaryValidationRule : ValidationRule
     {
         static SalaryValidationRule()
@@ -216,6 +218,7 @@ namespace Microsoft.Test.DataServices
         {
         }
 
+        [SecurityCritical]
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             ValidationResult result = ValidationResult.ValidResult;

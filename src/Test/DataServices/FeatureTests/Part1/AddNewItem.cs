@@ -3,6 +3,13 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
+using System.Collections;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
+using System.Data;
+using System.Globalization;
+using System.Security;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -10,12 +17,6 @@ using System.Windows.Threading;
 using Microsoft.Test.Discovery;
 using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
-using System.ComponentModel;
-using System.Globalization;
-using System.Collections;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.Data;
 
 namespace Microsoft.Test.DataServices
 {
@@ -823,12 +824,14 @@ namespace Microsoft.Test.DataServices
             if (numIterated != expectedCount) return false;
 
             return true;
-        }        
+        }
 
         #endregion
 
+        [SecurityCritical]
         private class NameContainsOGrouper : IValueConverter
         {
+            [SecurityCritical]
             public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
             {
                 PropertyDescriptorCollection pdc = s_dsvp.ConvertToCanonical(value);
@@ -849,6 +852,7 @@ namespace Microsoft.Test.DataServices
             #region IValueConverter Members
 
 
+            [SecurityCritical]
             public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
             {
                 throw new NotImplementedException();

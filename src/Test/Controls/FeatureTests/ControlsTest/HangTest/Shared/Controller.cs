@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Security;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -43,7 +44,7 @@ namespace HangTest
             _progressTimer.Tick += OnProgress;
             _progressTimer.Interval = TimeSpan.FromSeconds(2);
 
-            _log = new StreamWriter("HangTest.log", append:false);
+            _log = new StreamWriter("HangTest.log", append: false);
         }
 
         public List<string> Errors
@@ -181,7 +182,7 @@ namespace HangTest
                 // no progress since last tick
                 if (++_progressCount >= ProgressLimit)
                 {
-                    AddError("Test appears to be {0} after {1} steps", 
+                    AddError("Test appears to be {0} after {1} steps",
                         (_stepCount == _model.LastStepCount) ? "hung" : "stuck",
                         _stepCount);
                     StopTest();
@@ -199,10 +200,14 @@ namespace HangTest
         // return the item that's closer to the end-goal of the current test
         RealizedItem GetBetterItem(RealizedItem item1, RealizedItem item2)
         {
-            if (_testDirection == TestDirection.None) return null;
-            if (!RunParameters.VerifyProgress) return null;
-            if (item1 == null) return item2;
-            if (item2 == null) return item1;
+            if (_testDirection == TestDirection.None)
+                return null;
+            if (!RunParameters.VerifyProgress)
+                return null;
+            if (item1 == null)
+                return item2;
+            if (item2 == null)
+                return item1;
 
             string[] a1 = item1.Path.Split('.');
             string[] a2 = item2.Path.Split('.');
@@ -320,9 +325,15 @@ namespace HangTest
                         // more variance in the resulting behavior, so more chance for bugs
                         switch (RunParameters.ActionRNG.Next(0, 10))
                         {
-                            case 0: randomAction = ScrollRequestAction.Top; break;
-                            case 1: randomAction = ScrollRequestAction.Bottom; break;
-                            default: randomAction = ScrollRequestAction.Jump; break;
+                            case 0:
+                                randomAction = ScrollRequestAction.Top;
+                                break;
+                            case 1:
+                                randomAction = ScrollRequestAction.Bottom;
+                                break;
+                            default:
+                                randomAction = ScrollRequestAction.Jump;
+                                break;
                         }
                     }
                     else
@@ -701,8 +712,12 @@ namespace HangTest
                       : (path1[prefixLength].Index > path2[prefixLength].Index);
             if (swap)
             {
-                RealizedItem tempItem = item1; item1 = item2; item2 = tempItem;
-                RealizedItem[] tempPath = path1; path1 = path2; path2 = tempPath;
+                RealizedItem tempItem = item1;
+                item1 = item2;
+                item2 = tempItem;
+                RealizedItem[] tempPath = path1;
+                path1 = path2;
+                path2 = tempPath;
             }
 
             // traverse the data tree between item1 and item2, accumulating item count
@@ -832,8 +847,10 @@ namespace HangTest
         Tuple<RealizedItem, RealizedItem> FindCommonItem(RealizedItem parent1, RealizedItem parent2)
         {
             Tuple<RealizedItem, RealizedItem> result = null;
-            var e1 = parent1.Children.GetEnumerator(); bool more1 = e1.MoveNext();
-            var e2 = parent2.Children.GetEnumerator(); bool more2 = e2.MoveNext();
+            var e1 = parent1.Children.GetEnumerator();
+            bool more1 = e1.MoveNext();
+            var e2 = parent2.Children.GetEnumerator();
+            bool more2 = e2.MoveNext();
 
             while (more1 && more2 && result == null)
             {
@@ -972,7 +989,7 @@ namespace HangTest
             {
                 // do this at low priority, to allow the tasks from the current
                 // test to complete
-                _pendingRestart = Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, 
+                _pendingRestart = Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle,
                     new Action(StartAnotherTest));
             }
         }
@@ -991,15 +1008,33 @@ namespace HangTest
 
             switch (request.Action)
             {
-                case ScrollRequestAction.Top: _scrollViewer.ScrollToTop(); break;
-                case ScrollRequestAction.Bottom: _scrollViewer.ScrollToBottom(); break;
-                case ScrollRequestAction.PageUp: _scrollViewer.PageUp(); break;
-                case ScrollRequestAction.PageDown: _scrollViewer.PageDown(); break;
-                case ScrollRequestAction.LineUp: _scrollViewer.LineUp(); break;
-                case ScrollRequestAction.LineDown: _scrollViewer.LineDown(); break;
-                case ScrollRequestAction.MouseWheelUp: _vsp.MouseWheelUp(); break;
-                case ScrollRequestAction.MouseWheelDown: _vsp.MouseWheelDown(); break;
-                case ScrollRequestAction.Jump: _scrollViewer.ScrollToVerticalOffset(request.Arg); break;
+                case ScrollRequestAction.Top:
+                    _scrollViewer.ScrollToTop();
+                    break;
+                case ScrollRequestAction.Bottom:
+                    _scrollViewer.ScrollToBottom();
+                    break;
+                case ScrollRequestAction.PageUp:
+                    _scrollViewer.PageUp();
+                    break;
+                case ScrollRequestAction.PageDown:
+                    _scrollViewer.PageDown();
+                    break;
+                case ScrollRequestAction.LineUp:
+                    _scrollViewer.LineUp();
+                    break;
+                case ScrollRequestAction.LineDown:
+                    _scrollViewer.LineDown();
+                    break;
+                case ScrollRequestAction.MouseWheelUp:
+                    _vsp.MouseWheelUp();
+                    break;
+                case ScrollRequestAction.MouseWheelDown:
+                    _vsp.MouseWheelDown();
+                    break;
+                case ScrollRequestAction.Jump:
+                    _scrollViewer.ScrollToVerticalOffset(request.Arg);
+                    break;
             }
         }
 
@@ -1218,12 +1253,18 @@ namespace HangTest
         {
             switch (action)
             {
-                case ScrollAction.PageUp: return ScrollRequestAction.PageUp;
-                case ScrollAction.PageDown: return ScrollRequestAction.PageDown;
-                case ScrollAction.LineUp: return ScrollRequestAction.LineUp;
-                case ScrollAction.LineDown: return ScrollRequestAction.LineDown;
-                case ScrollAction.MouseWheelUp: return ScrollRequestAction.MouseWheelUp;
-                case ScrollAction.MouseWheelDown: return ScrollRequestAction.MouseWheelDown;
+                case ScrollAction.PageUp:
+                    return ScrollRequestAction.PageUp;
+                case ScrollAction.PageDown:
+                    return ScrollRequestAction.PageDown;
+                case ScrollAction.LineUp:
+                    return ScrollRequestAction.LineUp;
+                case ScrollAction.LineDown:
+                    return ScrollRequestAction.LineDown;
+                case ScrollAction.MouseWheelUp:
+                    return ScrollRequestAction.MouseWheelUp;
+                case ScrollAction.MouseWheelDown:
+                    return ScrollRequestAction.MouseWheelDown;
                 default:
                     throw new ArgumentException(String.Format("'{0}' unexpected", action), nameof(action));
             }
@@ -1300,13 +1341,16 @@ namespace HangTest
         }
     }
 
+    [SecurityCritical]
     public class EnumToIntConverter : IValueConverter
     {
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return (int)value;
         }
 
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             int i = (int)value;
@@ -1314,27 +1358,33 @@ namespace HangTest
         }
     }
 
+    [SecurityCritical]
     public class HeightToVisibilityConverter : IValueConverter
     {
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return ((double)value < 16.0) ? Visibility.Collapsed : Visibility.Visible;
         }
 
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }
     }
 
+    [SecurityCritical]
     public class MarginConverter : IValueConverter
     {
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             double margin = (double)value;
             return new Thickness(0, margin, 0, 0);
         }
 
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
@@ -1347,7 +1397,8 @@ namespace HangTest
 
         internal static bool AreClose(double value1, double value2)
         {
-            if (value1 == value2) return true;
+            if (value1 == value2)
+                return true;
 
             double diff = value1 - value2;
             return (diff < eps) && (diff > -eps);

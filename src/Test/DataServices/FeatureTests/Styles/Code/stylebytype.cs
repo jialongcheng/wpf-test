@@ -18,6 +18,7 @@ using System.Collections;
 using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
 using Microsoft.Test.Discovery;
+using System.Security;
 
 namespace Microsoft.Test.DataServices
 {
@@ -256,8 +257,10 @@ namespace Microsoft.Test.DataServices
     }
 
 
+    [SecurityCritical]
     public class EmployeeStyleSelector : StyleSelector
     {
+        [SecurityCritical]
         public override Style SelectStyle(object item, DependencyObject container)
         {
             FrameworkElement fe = container as FrameworkElement;

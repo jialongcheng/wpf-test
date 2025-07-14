@@ -3,13 +3,14 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
+using System.ComponentModel;
+using System.Data;
+using System.Globalization;
+using System.Security;
+using System.Windows.Data;
 using Microsoft.Test.Discovery;
 using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
-using System.Windows.Data;
-using System.ComponentModel;
-using System.Globalization;
-using System.Data;
 
 namespace Microsoft.Test.DataServices
 {
@@ -70,8 +71,10 @@ namespace Microsoft.Test.DataServices
 
     #region Helper Classes
 
+    [SecurityCritical]
     public class ReproGrouper : IValueConverter
     {
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             DataRowView drv = (DataRowView)value;
@@ -89,6 +92,7 @@ namespace Microsoft.Test.DataServices
         #region IValueConverter Members
 
 
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();

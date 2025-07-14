@@ -5,15 +5,18 @@
 //---------------------------------------------------------------------------
 
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
+using System.Security;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Globalization;
-using System.Collections.Generic;
 
 namespace WpfControlToolkit
 {
+
+    [SecurityCritical]
     public class DateTimeOffsetConverter : IValueConverter
     {
         /// <summary>
@@ -24,6 +27,8 @@ namespace WpfControlToolkit
         /// <param name="parameter">null</param>
         /// <param name="culture">CultureInfo</param>
         /// <returns>title string</returns>
+
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if ((value != null) && (value is DateTime))
@@ -51,6 +56,8 @@ namespace WpfControlToolkit
         /// <summary>
         ///     Not Supported
         /// </summary>
+
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return null;

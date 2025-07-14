@@ -4,14 +4,16 @@
 
 using System;
 using System.Collections.Generic;
-using System.Windows.Data;
 using System.ComponentModel;
+using System.Security;
 using System.Text;
+using System.Windows.Data;
 
 namespace Microsoft.Test.DataServices
 {
-	public class DateTimeToStringConverter : IValueConverter
-	{
+    [SecurityCritical]
+    public class DateTimeToStringConverter : IValueConverter
+    {
 
         #region IValueConverter Members
 
@@ -23,6 +25,7 @@ namespace Microsoft.Test.DataServices
         /// <param name="parameter">offset by this amount</param>
         /// <param name="culture">culture to format the output to</param>
         /// <returns></returns>
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             DateTime dValue = (DateTime)value;
@@ -66,6 +69,7 @@ namespace Microsoft.Test.DataServices
             return output;
         }
 
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             string output = (string)value;

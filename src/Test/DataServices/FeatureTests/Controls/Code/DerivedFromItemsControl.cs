@@ -3,21 +3,23 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
-using System.Threading; using System.Windows.Threading;
-using System.Windows;
-using System.Xml;
-using System.ComponentModel;
-using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows.Data;
-using System.Collections.ObjectModel;
 using System.Collections;
+using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.ComponentModel;
+using System.Security;
+using System.Threading; 
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Media;
+using System.Windows.Threading;
+using System.Xml;
 using Microsoft.Test;
 using Microsoft.Test.DataServices;
+using Microsoft.Test.Discovery;
 using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
-using Microsoft.Test.Discovery;
 
 namespace Microsoft.Test.DataServices
 {
@@ -31,6 +33,7 @@ namespace Microsoft.Test.DataServices
     /// </relatedBugs>
     /// </summary>
     [Test(1, "Controls", "DerivedFromItemsControl")]
+    [SecurityCritical]
     public class DerivedFromItemsControl : XamlTest
     {
         MyListBox _myRBL;
@@ -662,9 +665,14 @@ namespace Microsoft.Test.DataServices
     }
 
     #region class-MyListBox
+
+
+    [SecurityCritical]
     public class MyListBox : ListBox
     {
         public event EventHandler ItemsChanged;
+
+        [SecurityCritical]
         override protected void OnItemsChanged(NotifyCollectionChangedEventArgs args)
         {
             if (ItemsChanged != null)
@@ -675,6 +683,7 @@ namespace Microsoft.Test.DataServices
         }
 
         public event EventHandler StyleChanged;
+        [SecurityCritical]
         protected override void OnStyleChanged(Style oldStyle, Style newStyle)
         {
             if (StyleChanged != null)
@@ -685,6 +694,7 @@ namespace Microsoft.Test.DataServices
         }
 
         public event EventHandler ItemTemplateChanged;
+        [SecurityCritical]
         protected override void OnItemTemplateChanged(DataTemplate oldTemplate, DataTemplate newTemplate)
         {
             if (ItemTemplateChanged != null)
@@ -695,6 +705,7 @@ namespace Microsoft.Test.DataServices
         }
 
         public event EventHandler ItemUIStyleChanged;
+        [SecurityCritical]
         protected override void OnItemContainerStyleChanged(Style oldStyle, Style newStyle)
         {
             if (ItemUIStyleChanged != null)
@@ -705,6 +716,7 @@ namespace Microsoft.Test.DataServices
         }
 
         public event EventHandler ItemTemplateSelectorChanged;
+        [SecurityCritical]
         protected override void OnItemTemplateSelectorChanged(DataTemplateSelector oldTemplateSelector, DataTemplateSelector newTemplateSelector)
         {
             if (ItemTemplateSelectorChanged != null)
@@ -715,6 +727,7 @@ namespace Microsoft.Test.DataServices
         }
 
         public event EventHandler ItemUIStyleSelectorChanged;
+        [SecurityCritical]
         protected override void OnItemContainerStyleSelectorChanged(StyleSelector oldStyleSelector, StyleSelector newStyleSelector)
         {
             if (ItemUIStyleSelectorChanged != null)

@@ -15,6 +15,7 @@ using System.Globalization;
 using System.Collections;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.Security;
 
 namespace Microsoft.Test.DataServices
 {
@@ -83,16 +84,19 @@ namespace Microsoft.Test.DataServices
         #endregion
         
     }
-    
+
     #region Helper Classes
 
+    [SecurityCritical]
     public class SimpleConverter : IValueConverter
     {
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             return culture.Name;
         }
 
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             return Binding.DoNothing;

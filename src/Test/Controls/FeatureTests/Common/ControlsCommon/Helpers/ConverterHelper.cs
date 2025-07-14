@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.Reflection;
+using System.Security;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -13,16 +15,18 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using Avalon.Test.ComponentModel;
 using Avalon.Test.ComponentModel.Utilities;
-using System.Globalization;
 using Microsoft.Test.Logging;
 
 namespace Microsoft.Test.Controls.Helpers
 {
     [ValueConversion(typeof(Visibility), typeof(bool))]
+
+    [SecurityCritical]
     public class VisibilityToBoolConverter : IValueConverter
     {
         #region IValueConverter Members
 
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             GlobalLog.LogStatus(string.Format("VisibilityToBoolConverter called. value: {0}, targetType: {1}", value, targetType));
@@ -35,6 +39,7 @@ namespace Microsoft.Test.Controls.Helpers
             return false;
         }
 
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotSupportedException();

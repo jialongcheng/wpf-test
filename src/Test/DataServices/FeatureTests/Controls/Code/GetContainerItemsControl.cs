@@ -10,6 +10,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Media;
 using System.ComponentModel;
 using System.Windows.Controls;
+using System.Security;
 using System.Threading; 
 using System.Windows.Threading;
 using System.Windows.Input;
@@ -21,8 +22,8 @@ using Microsoft.Test.Discovery;
 
 namespace Microsoft.Test.DataServices
 {
-	/// <summary>
-	/// <description>
+    /// <summary>
+    /// <description>
     /// This tests the helper method ContainerFromElement of ItemsControl. This method is able to 
     /// find the container of a DependencyObject somewhere in the tree of one of the items.
     /// Scenarios tested:
@@ -36,21 +37,21 @@ namespace Microsoft.Test.DataServices
     /// - The element passed as a parameter is the ListBoxItem itself
     /// - Passed an element as a parameter that does not exist in the tree of that ItemsControl
     /// - Passed null and verified it throws
-	/// </description>
+    /// </description>
     /// <relatedBugs>
 
     /// </relatedBugs>
-	/// </summary>
+    /// </summary>
 
 
     [Test(1, "Controls", "GetContainerItemsControl")]
 	public class GetContainerItemsControl : XamlTest
-	{
+    {
         private Page _page;
 
         public GetContainerItemsControl()
             : base(@"GetContainerItemsControl.xaml")
-		{
+        {
             InitializeSteps += new TestStep(Setup);
             RunSteps += new TestStep(GetContainerVisualsOnly);
             RunSteps += new TestStep(GetContainerNonVisuals);
@@ -185,7 +186,7 @@ namespace Microsoft.Test.DataServices
 
             ListBox lb7 = (ListBox)(LogicalTreeHelper.FindLogicalNode(_page, "lb7"));
             ListBoxItem lbi1 = (ListBoxItem)(lb7.ItemContainerGenerator.ContainerFromIndex(0));
-            ListBoxItem lbi2 = (ListBoxItem)(lb7.ContainerFromElement(lbi1)); 
+            ListBoxItem lbi2 = (ListBoxItem)(lb7.ContainerFromElement(lbi1));
             ListBoxItem lbi3 = (ListBoxItem)(ItemsControl.ContainerFromElement(lb7, lbi1));
 
             if (!(lbi1.Equals(lbi2)) || !(lbi1.Equals(lbi3)))
@@ -254,15 +255,18 @@ namespace Microsoft.Test.DataServices
             return TestResult.Pass;
         }
         #endregion
-	}
+    }
 
+    [SecurityCritical]
     public class MyBlueConverter : IValueConverter
     {
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             return Colors.SteelBlue;
         }
 
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             throw new Exception("The method or operation is not implemented.");

@@ -3,7 +3,8 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
-using System.Threading; using System.Windows.Threading;
+using System.Threading; 
+using System.Windows.Threading;
 using System.Windows;
 using System.ComponentModel;
 using System.Windows.Controls;
@@ -14,6 +15,7 @@ using System.Globalization;
 using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
 using Microsoft.Test.Discovery;
+using System.Security;
 
 namespace Microsoft.Test.DataServices
 {
@@ -176,8 +178,9 @@ namespace Microsoft.Test.DataServices
 		}
 	}
 
-	#region MyDependencyObject
-	public class MyButton : Button
+    #region MyDependencyObject
+    [SecurityCritical]
+    public class MyButton : Button
 	{
 		public static readonly DependencyProperty MyDpProperty =
 			DependencyProperty.Register("MyDp", typeof(int), typeof(MyButton),

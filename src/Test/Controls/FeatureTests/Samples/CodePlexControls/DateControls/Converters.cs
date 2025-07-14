@@ -5,13 +5,14 @@
 //---------------------------------------------------------------------------
 
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
+using System.Security;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 using System.Windows.Data;
-using System.Globalization;
-using System.Collections.Generic;
+using System.Windows.Media;
 
 
 namespace WpfControlToolkit
@@ -19,6 +20,7 @@ namespace WpfControlToolkit
     /// <summary>
     /// WeekNumberConverter uses current FirstDayOfWeek and DateTime to calculate the week numbers
     /// </summary>
+    [SecurityCritical]
     public sealed class WeekNumberConverter : IMultiValueConverter
     {
         /// <summary>
@@ -32,6 +34,7 @@ namespace WpfControlToolkit
         /// <param name="parameter">0~5, row index of each month</param>
         /// <param name="culture">CultureInfo</param>
         /// <returns>week number, -1 if fails</returns>
+        [SecurityCritical]
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             if (values == null)
@@ -66,6 +69,7 @@ namespace WpfControlToolkit
         /// <summary>
         /// Not Supported
         /// </summary>
+        [SecurityCritical]
         public object[] ConvertBack(object value, Type[] targetType, object parameter, CultureInfo culture)
         {
             return null;
@@ -76,6 +80,7 @@ namespace WpfControlToolkit
     /// <summary>
     /// MonthYearHeaderConverter converts the month&year properties of VisibleMonth to string with CultureInfo
     /// </summary>
+    [SecurityCritical]
     public sealed class MonthYearHeaderConverter : IValueConverter
     {
         /// <summary>
@@ -86,6 +91,7 @@ namespace WpfControlToolkit
         /// <param name="parameter">null</param>
         /// <param name="culture">CultureInfo</param>
         /// <returns>title string</returns>
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is DateTime)
@@ -108,6 +114,7 @@ namespace WpfControlToolkit
         /// <summary>
         /// Not Supported
         /// </summary>
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return null;
@@ -118,6 +125,8 @@ namespace WpfControlToolkit
     /// <summary>
     /// DayHeaderConverter converts to FirstDayOfWeek and offset to the correct DayOfWeek value
     /// </summary>
+
+    [SecurityCritical]
     public sealed class DayHeaderConverter : IValueConverter
     {
         /// <summary>
@@ -128,6 +137,8 @@ namespace WpfControlToolkit
         /// <param name="parameter">0~6, column index of each month</param>
         /// <param name="culture">CultureInfo</param>
         /// <returns>DayOfWeek value</returns>
+
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is DayOfWeek)
@@ -142,6 +153,8 @@ namespace WpfControlToolkit
         /// <summary>
         /// Not supported
         /// </summary>
+
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return null;
@@ -151,6 +164,8 @@ namespace WpfControlToolkit
     /// <summary>
     /// AbbreviatedDayNameConverter converts the DayOfWeek value to a culture related abbreviated day name string
     /// </summary>
+
+    [SecurityCritical]
     public sealed class AbbreviatedDayNameConverter : IValueConverter
     {
         /// <summary>
@@ -161,6 +176,8 @@ namespace WpfControlToolkit
         /// <param name="parameter">null</param>
         /// <param name="culture"></param>
         /// <returns>abbreviated day name string</returns>
+
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is DayOfWeek)
@@ -182,6 +199,8 @@ namespace WpfControlToolkit
         /// <summary>
         /// Not supported
         /// </summary>
+
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return null;

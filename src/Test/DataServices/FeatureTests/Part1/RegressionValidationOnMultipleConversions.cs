@@ -3,6 +3,12 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
+using System.Collections;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
+using System.Globalization;
+using System.Security;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -10,11 +16,6 @@ using System.Windows.Threading;
 using Microsoft.Test.Discovery;
 using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
-using System.ComponentModel;
-using System.Globalization;
-using System.Collections;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 
 namespace Microsoft.Test.DataServices
 {
@@ -135,11 +136,12 @@ namespace Microsoft.Test.DataServices
     }
 
     #region Helper Classes
-
+    [SecurityCritical]
     class VisibleValidationRule : ValidationRule
     {
         public bool InInvalidState = false;
 
+        [SecurityCritical]
         public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
         {
             var theDateTime = value as String;

@@ -19,7 +19,8 @@ using System.Reflection;
 
 namespace Microsoft.Test.DataServices
 {
-	public class RangeRule : ValidationRule
+    [SecurityCritical]
+    public class RangeRule : ValidationRule
 	{
 		public RangeRule()
 		{
@@ -61,7 +62,8 @@ namespace Microsoft.Test.DataServices
 			}
 		}
 
-		public override ValidationResult Validate(object value, CultureInfo cultureInfo)
+        [SecurityCritical]
+        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
 		{
 			int intvalue;
 			string strValue = value.ToString();

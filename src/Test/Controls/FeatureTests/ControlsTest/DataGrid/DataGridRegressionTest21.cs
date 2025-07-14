@@ -1,13 +1,14 @@
+using System.Collections;
+using System.Security;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Threading;
 using Avalon.Test.ComponentModel.Utilities;
 using Microsoft.Test.Controls.DataSources;
 using Microsoft.Test.Controls.Helpers;
 using Microsoft.Test.Discovery;
 using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
-using System.Windows.Threading;
-using System.Windows.Data;
-using System.Collections;
 
 namespace Microsoft.Test.Controls
 {
@@ -193,8 +194,10 @@ namespace Microsoft.Test.Controls
 
         #region Validation Classes
 
+        [SecurityCritical]
         private class ValidationRuleRawProposedScenario1 : ValidationRule
         {
+            [SecurityCritical]
             public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
             {
                 ValidationResult result = ValidationResult.ValidResult;
@@ -222,8 +225,10 @@ namespace Microsoft.Test.Controls
             }
         }
 
+        [SecurityCritical]
         private class ValidationRuleConvertedProposedScenario1 : ValidationRule
         {
+            [SecurityCritical]
             public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
             {
                 ValidationResult result = ValidationResult.ValidResult;
@@ -251,8 +256,10 @@ namespace Microsoft.Test.Controls
             }
         }
 
+        [SecurityCritical]
         private class ValidationRuleUpdatedValueScenario1 : ValidationRule
         {
+            [SecurityCritical]
             public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
             {
                 ValidationResult result = ValidationResult.ValidResult;

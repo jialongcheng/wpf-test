@@ -3,6 +3,7 @@
 // See the LICENSE file in the project root for more information.
 
 using System.ComponentModel;
+using System.Security;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
@@ -118,6 +119,7 @@ namespace Microsoft.Test.DataServices
         string _author,_title;
     }
 
+    [SecurityCritical]
     public class MyList : FullBindingList<CustomBook>
     {
         public MyList()

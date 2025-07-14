@@ -5,21 +5,20 @@
 using System;
 using System.Collections;
 using System.ComponentModel;
-using System.Threading;
-
-using System.Text;
 using System.Globalization;
 using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Security;
+using System.Text;
+using System.Threading;
 using System.Windows;
+using System.Windows.Automation;
+using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
-using System.Windows.Data;
-using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-
-using System.Runtime.InteropServices;
-using System.Windows.Automation;
 
 
 namespace DRT
@@ -627,13 +626,16 @@ namespace DRT
 
     }
 
+    [SecurityCritical]
     public class PlacementModeConverter : IValueConverter
     {
+        [SecurityCritical]
         public object Convert(object o, Type type, object parameter, CultureInfo culture)
         {
             return System.Convert.ChangeType(o, typeof(int));
         }
 
+        [SecurityCritical]
         public object ConvertBack(object o, Type type, object parameter, CultureInfo culture)
         {
             return Enum.ToObject(typeof(PlacementMode), (int)o);

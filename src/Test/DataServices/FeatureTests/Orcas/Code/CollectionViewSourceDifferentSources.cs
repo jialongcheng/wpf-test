@@ -2,24 +2,25 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Globalization;
-using System.Windows;
-using System.ComponentModel;
-using System.Windows.Media;
-using System.Windows.Data;
-using System.Collections.ObjectModel;
-using Microsoft.Test;
-using System.Windows.Controls;
-using System.Collections.Generic;
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Data;
-using System.Xml;
+using System.Globalization;
+using System.Security;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Markup;
+using System.Windows.Media;
 using System.Windows.Threading;
+using System.Xml;
+using Microsoft.Test;
+using Microsoft.Test.Discovery;
 using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
-using Microsoft.Test.Discovery;
 using Microsoft.Test.Verification;
 
 namespace Microsoft.Test.DataServices
@@ -369,8 +370,10 @@ namespace Microsoft.Test.DataServices
             }
         }
 
+        [SecurityCritical]
         private class IEnumerableGroupConverter : IValueConverter
         {
+            [SecurityCritical]
             public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
             {
                 if (value is string)
@@ -388,6 +391,7 @@ namespace Microsoft.Test.DataServices
                 return null;
             }
 
+            [SecurityCritical]
             public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
             {
                 return null;

@@ -3,19 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28516.95
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaCop", "DRT\AvaCop\AvaCop.csproj", "{2301493A-8DF4-4C7E-9E4B-DB6C365156E8}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtDataSrv", "DRT\DataSrv\DrtDataSrv.csproj", "{075D9D80-0749-402E-B1BC-2BE5517F4413}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtDataSrvMSB", "DRT\DataSrvMSB\DrtDataSrvMSB.csproj", "{D60389D9-6C4F-474F-AE3E-ABDA4A8C6797}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataServicesTest2016", "FeatureTests\2016\DataServicesTest2016.csproj", "{DBC0A9AB-6E96-4855-9C27-412C29B4696A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataServicesTest2017", "FeatureTests\2017\DataServicesTest2017.csproj", "{C2078E89-BB57-46A7-9C46-E4C731624F45}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataServicesTestDev10", "FeatureTests\Dev10\DataServicesTestDev10.csproj", "{C15EE8A4-9641-4BA1-9A97-47FB86DF2CA3}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataServicesTestDev11", "FeatureTests\Dev11\DataServicesTestDev11.csproj", "{E75E16AB-EE10-41A7-9740-C54B76BD6CAD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataServicesTest", "FeatureTests\BuildSources\DataServicesTest.csproj", "{F5714C1B-055D-4DA1-9421-2BD3FBCA3390}"
 EndProject

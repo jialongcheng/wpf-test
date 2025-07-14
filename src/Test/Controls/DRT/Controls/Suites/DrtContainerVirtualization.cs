@@ -7,9 +7,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
+using System.Security;
+using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Automation;
 using System.Windows.Controls;
@@ -19,9 +23,6 @@ using System.Windows.Input;
 using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Threading;
-using System.Text;
-using System.Threading;
-using System.Diagnostics;
 
 namespace DRT
 {
@@ -4094,14 +4095,17 @@ namespace DRT
         #endregion
     }
 
+    [SecurityCritical]
     public class EnumConverter : IValueConverter
     {
+        [SecurityCritical]
         public object Convert(object o, Type type, object parameter, CultureInfo culture)
         {
             bool x = (bool)o;
             return Enum.ToObject(type, x ? 1 : 0);
         }
 
+        [SecurityCritical]
         public object ConvertBack(object o, Type type, object parameter, CultureInfo culture)
         {
             int ret = (int)System.Convert.ChangeType(o, typeof(int));

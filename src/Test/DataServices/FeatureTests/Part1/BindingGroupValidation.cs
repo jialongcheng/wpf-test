@@ -15,6 +15,7 @@ using System.Globalization;
 using System.Collections;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.Security;
 
 namespace Microsoft.Test.DataServices
 {
@@ -81,10 +82,12 @@ namespace Microsoft.Test.DataServices
 
     }
 
-	#region Helper Classes
+    #region Helper Classes
 
+    [SecurityCritical]
     public class NotEmptyRule : ValidationRule
     {
+        [SecurityCritical]
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             Console.WriteLine("Validating that value is not empty.");

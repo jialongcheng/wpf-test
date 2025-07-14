@@ -3,6 +3,7 @@
 // See the LICENSE file in the project root for more information.
 
 using System.Globalization;
+using System.Security;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -88,12 +89,14 @@ namespace Microsoft.Test.DataServices
         #endregion
         
     }
-    
+
     #region Helper Classes
 
+    [SecurityCritical]
     public class ValidateFreezable : ValidationRule
     {
         // Ensure that an item over $100 is available for at least 7 days.
+        [SecurityCritical]
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             BindingGroup bg = value as BindingGroup;

@@ -2,13 +2,14 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using System.Collections.ObjectModel;
+using System.Security;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
 using Microsoft.Test.Discovery;
 using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
-using System.Collections.ObjectModel;
-using System.Windows;
 
 namespace Microsoft.Test.DataServices
 {
@@ -150,9 +151,11 @@ namespace Microsoft.Test.DataServices
         }
     }
 
+    [SecurityCritical]
     public class ItemStyleSelector : StyleSelector
     {
 
+        [SecurityCritical]
         public override Style SelectStyle(object item, DependencyObject container)
         {
             ItemsControl itemsControl = ItemsControl.ItemsControlFromItemContainer(container);

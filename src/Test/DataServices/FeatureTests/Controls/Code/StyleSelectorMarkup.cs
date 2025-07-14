@@ -7,6 +7,7 @@ using System.Threading; using System.Windows.Threading;
 using System.Windows;
 using System.Xml;
 using System.ComponentModel;
+using System.Security;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Data;
@@ -297,6 +298,7 @@ namespace Microsoft.Test.DataServices
 	}
 
 	#region StyleSelectors
+	[SecurityCritical]
 	public class MyUIStyleSelector : StyleSelector
 	{
 		Style _style1;
@@ -312,8 +314,8 @@ namespace Microsoft.Test.DataServices
 			FrameworkElementFactory template2 = new FrameworkElementFactory(typeof(ContentPresenter));
 			template1.AppendChild(template2);
 			ControlTemplate template = new ControlTemplate(typeof(ListBoxItem));
-            template.VisualTree = template1;
-            _style1.Setters.Add(new Setter(ListBoxItem.TemplateProperty, template));
+			template.VisualTree = template1;
+			_style1.Setters.Add(new Setter(ListBoxItem.TemplateProperty, template));
 
 			_style2 = new Style(typeof(ListBoxItem));
 			FrameworkElementFactory template3 = new FrameworkElementFactory(typeof(Border));
@@ -323,10 +325,11 @@ namespace Microsoft.Test.DataServices
 			FrameworkElementFactory template4 = new FrameworkElementFactory(typeof(ContentPresenter));
 			template3.AppendChild(template4);
 			template = new ControlTemplate(typeof(ListBoxItem));
-            template.VisualTree = template3;
-            _style2.Setters.Add(new Setter(ListBoxItem.TemplateProperty, template));
+			template.VisualTree = template3;
+			_style2.Setters.Add(new Setter(ListBoxItem.TemplateProperty, template));
 		}
 
+		[SecurityCritical]
 		public override Style SelectStyle(object item, DependencyObject container)
 		{
 			if (item is Place)
@@ -343,6 +346,7 @@ namespace Microsoft.Test.DataServices
 		}
 	}
 
+	[SecurityCritical]
 	public class MyTemplateSelector : DataTemplateSelector
 	{
 		DataTemplate _dataTemplate1;
@@ -352,18 +356,19 @@ namespace Microsoft.Test.DataServices
 		{
 			_dataTemplate1 = new DataTemplate();
 			FrameworkElementFactory template1 = new FrameworkElementFactory(typeof(TextBlock));
-            template1.SetBinding(TextBlock.TextProperty, new Binding("State"));
-            template1.SetValue(TextBlock.NameProperty, "default");
-            _dataTemplate1.VisualTree = template1;
+			template1.SetBinding(TextBlock.TextProperty, new Binding("State"));
+			template1.SetValue(TextBlock.NameProperty, "default");
+			_dataTemplate1.VisualTree = template1;
 
 			_dataTemplate2 = new DataTemplate();
 			FrameworkElementFactory template2 = new FrameworkElementFactory(typeof(TextBlock));
-            template2.SetBinding(TextBlock.TextProperty, new Binding("Name"));
-            template2.SetValue(TextBlock.FontWeightProperty, FontWeights.Bold);
-            template2.SetValue(TextBlock.NameProperty, "bold");
-            _dataTemplate2.VisualTree = template2;
+			template2.SetBinding(TextBlock.TextProperty, new Binding("Name"));
+			template2.SetValue(TextBlock.FontWeightProperty, FontWeights.Bold);
+			template2.SetValue(TextBlock.NameProperty, "bold");
+			_dataTemplate2.VisualTree = template2;
 		}
 
+		[SecurityCritical]
 		public override DataTemplate SelectTemplate(object item, DependencyObject container)
 		{
 			if (item is Place)

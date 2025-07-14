@@ -9,20 +9,23 @@ namespace DrtAnnotations
     using System.Diagnostics;
     using System.Globalization;
     using System.IO;
+    using System.Security;
     using System.Windows;
+    using System.Windows.Annotations;
+    using System.Windows.Annotations.Storage;
     using System.Windows.Controls;
     using System.Windows.Controls.Primitives;
     using System.Windows.Data;    
     using System.Windows.Documents;
-    using System.Windows.Annotations;
+    using System.Windows.Markup;
     using System.Windows.Media;
     using System.Windows.Resources;
-    using System.Windows.Markup;
-    using System.Windows.Annotations.Storage;
 
 
+    [SecurityCritical]
     public class InkEditingModeConverter : IValueConverter
     {
+        [SecurityCritical]
         public object Convert(object o, Type type, object parameter, CultureInfo culture)
         {
             InkCanvasEditingMode expectedMode = (InkCanvasEditingMode)parameter;
@@ -39,14 +42,17 @@ namespace DrtAnnotations
             }
         }
 
+        [SecurityCritical]
         public object ConvertBack(object o, Type type, object parameter, CultureInfo culture)
         {
             return null;
         }
     }
 
+    [SecurityCritical]
     public class WidthToVisibilityConverter : IValueConverter
     {
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             double width = (double)value;
@@ -55,6 +61,7 @@ namespace DrtAnnotations
             return Visibility.Collapsed;
         }
 
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return null;

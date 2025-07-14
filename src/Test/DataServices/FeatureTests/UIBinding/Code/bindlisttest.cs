@@ -3,21 +3,22 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
-using System.Data;
-using System.ComponentModel;
-using System.Windows;
-using System.Windows.Threading;
-using System.Windows.Data;
-using System.Collections.ObjectModel;
-using System.Threading;
-using System.Globalization;
 using System.Collections;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Data;
+using System.Globalization;
+using System.Security;
+using System.Threading;
+using System.Windows;
 using System.Windows.Controls;
-using Microsoft.Test;
+using System.Windows.Data;
 using System.Windows.Markup;
+using System.Windows.Threading;
+using Microsoft.Test;
+using Microsoft.Test.Discovery;
 using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
-using Microsoft.Test.Discovery;
 using Microsoft.Test.Verification;
 
 namespace Microsoft.Test.DataServices
@@ -371,6 +372,7 @@ namespace Microsoft.Test.DataServices
     }
 
 
+    [SecurityCritical]
     public class MBConverter : IMultiValueConverter
     {
         #region static properties
@@ -400,6 +402,7 @@ namespace Microsoft.Test.DataServices
             set { s_values = value; }
         }
         #endregion
+        [SecurityCritical]
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             s_paramvalue = parameter;
@@ -422,6 +425,7 @@ namespace Microsoft.Test.DataServices
             return s;
         }
 
+        [SecurityCritical]
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             s_count++;

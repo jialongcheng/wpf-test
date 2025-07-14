@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Security;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -879,15 +880,18 @@ namespace Microsoft.Test.DataServices
         /// <summary>
         /// Basic converter that returns the first item
         /// </summary>
+        [SecurityCritical]
         private class IdentityConverter : IMultiValueConverter
         {
             #region IMultiValueConverter Members
 
+            [SecurityCritical]
             public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
             {
                 return values[0];
             }
 
+            [SecurityCritical]
             public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
             {
                 throw new NotImplementedException();

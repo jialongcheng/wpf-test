@@ -16,6 +16,7 @@ using Microsoft.Test;
 using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
 using Microsoft.Test.Discovery;
+using System.Security;
 
 namespace Microsoft.Test.DataServices
 {
@@ -91,6 +92,7 @@ namespace Microsoft.Test.DataServices
 
 	}
 
+    [SecurityCritical]
 	public class GreekKing : Dwarf
 	{
 		public GreekKing()

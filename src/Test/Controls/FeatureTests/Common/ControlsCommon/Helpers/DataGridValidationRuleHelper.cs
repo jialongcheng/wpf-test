@@ -4,15 +4,16 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Reflection;
+using System.Security;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Windows.Data;
 using System.Windows.Media;
 using Avalon.Test.ComponentModel;
 using Avalon.Test.ComponentModel.Utilities;
-using Microsoft.Test.Logging;
-using System.Windows.Data;
 using Microsoft.Test.Controls.DataSources;
+using Microsoft.Test.Logging;
 
 namespace Microsoft.Test.Controls.Helpers
 {
@@ -22,8 +23,10 @@ namespace Microsoft.Test.Controls.Helpers
     /// actual validation is hard coded to a specific condition that the
     /// tests will use to either trigger a failure or not.
     /// </summary>
+    [SecurityCritical]
     public class ItemValidationRule1 : ValidationRule
     {
+        [SecurityCritical]
         public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
         {
             ValidationResult result = ValidationResult.ValidResult;

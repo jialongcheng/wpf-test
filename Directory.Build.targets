@@ -35,8 +35,10 @@
 
       <Reference Include="System.IO.Compression" />
       <Reference Include="System.Security" />
+      <Reference Include="System.Runtime.Serialization" />
       <Reference Include="System.Windows.Forms" />
       <Reference Include="System.Xml" />
+      <Reference Include="System.Xml.Linq" />
 
       <Reference Include="PresentationCore">
         <HintPath>$(WpfBinDirectory)PresentationCore\$(Platform)\$(Configuration)\net481\PresentationCore.dll</HintPath>

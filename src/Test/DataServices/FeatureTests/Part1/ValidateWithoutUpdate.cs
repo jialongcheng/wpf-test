@@ -3,6 +3,13 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
+using System.Globalization;
+using System.Security;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -10,12 +17,6 @@ using System.Windows.Threading;
 using Microsoft.Test.Discovery;
 using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
-using System.ComponentModel;
-using System.Globalization;
-using System.Collections;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.Collections.Generic;
 
 namespace Microsoft.Test.DataServices
 {
@@ -220,17 +221,18 @@ namespace Microsoft.Test.DataServices
             textBox.Text = "NewValue";
 
             return bindingBase;
-        }        
+        }
 
         #endregion
 
         #region Helper Classes
 
-        
+
 
         /// <summary>
         /// A GenericValidationRule to easily define the ValidationStep and presents a 'flight recorder' of if it was called and with what params
         /// </summary>
+        [SecurityCritical]
         private class GenericValidationRule : ValidationRule
         {
             public struct GenericValidationResult
@@ -303,6 +305,7 @@ namespace Microsoft.Test.DataServices
                 }
             }
 
+            [SecurityCritical]
             public override ValidationResult Validate(object value, CultureInfo cultureInfo)
             {
                 Value = value;
@@ -315,8 +318,10 @@ namespace Microsoft.Test.DataServices
 		
     }
 
+    [SecurityCritical]
     public class NamesConverter : IMultiValueConverter
     {
+        [SecurityCritical]
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             if (values == null)
@@ -329,6 +334,7 @@ namespace Microsoft.Test.DataServices
 
         }
 
+        [SecurityCritical]
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             string str = value as string;

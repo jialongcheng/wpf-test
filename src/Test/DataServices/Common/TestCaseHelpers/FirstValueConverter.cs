@@ -18,13 +18,16 @@ using System.Reflection;
 
 namespace Microsoft.Test.DataServices
 {
+    [SecurityCritical]
     public class FirstValueConverter: IMultiValueConverter
     {
+        [SecurityCritical]
         public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             return values[1];
         }
 
+        [SecurityCritical]
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)
         {
             throw new InvalidOperationException("ConverBack should not be called");

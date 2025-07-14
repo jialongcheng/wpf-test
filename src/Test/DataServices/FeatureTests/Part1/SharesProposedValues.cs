@@ -3,19 +3,20 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
+using System.Collections;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
+using System.Globalization;
+using System.Security;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Threading;
 using Microsoft.Test.Discovery;
 using Microsoft.Test.Logging;
 using Microsoft.Test.TestTypes;
-using System.ComponentModel;
-using System.Globalization;
-using System.Collections;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.Windows.Controls.Primitives;
 
 namespace Microsoft.Test.DataServices
 {
@@ -214,11 +215,13 @@ namespace Microsoft.Test.DataServices
         #endregion
         
     }
-    
+
     #region Helper Classes
 
+    [SecurityCritical]
     public class RawRule : ValidationRule
     {
+        [SecurityCritical]
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {            
             string str = (string)value;
@@ -234,8 +237,10 @@ namespace Microsoft.Test.DataServices
         public static readonly string InvalidValue = "invalid raw";
     }
 
+    [SecurityCritical]
     public class ConvRule : ValidationRule
     {
+        [SecurityCritical]
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             string str = (string)value;

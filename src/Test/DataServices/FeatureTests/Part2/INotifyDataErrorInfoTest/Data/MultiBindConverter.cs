@@ -6,16 +6,20 @@ namespace Microsoft.Test.DataServices
 {
     using System;
     using System.Globalization;
+    using System.Security;
     using System.Windows.Data;
 
+    [SecurityCritical]
     public class MultiBindConverter : IMultiValueConverter
     {
+        [SecurityCritical]
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             string name = values[0].ToString();
             return name;
         }
 
+        [SecurityCritical]
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             return new object[] { value };

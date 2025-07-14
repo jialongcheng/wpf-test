@@ -5,18 +5,18 @@
 //---------------------------------------------------------------------------
 
 using System;
-using System.ComponentModel;
-using System.Xml;
-using System.Windows;
 using System.Collections;
 using System.Collections.ObjectModel;
-using System.Windows.Data;
+using System.ComponentModel;
 using System.Globalization;
+using System.Security;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-
-using Microsoft.Test.Logging;
+using System.Windows.Data;
+using System.Xml;
 using Avalon.Test.ComponentModel.Actions;
+using Microsoft.Test.Logging;
 
 namespace Avalon.Test.ComponentModel.UnitTests
 {
@@ -79,8 +79,11 @@ namespace Avalon.Test.ComponentModel.UnitTests
     /// <summary>
     /// this class is used to get Header info from a TabItem.
     /// </summary>
+    [SecurityCritical]
     internal sealed class StatusBarItemContentConvert : IValueConverter
     {
+
+        [SecurityCritical]
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is TabItem)
@@ -94,6 +97,8 @@ namespace Avalon.Test.ComponentModel.UnitTests
         }
 
         //Not support ConvertBack
+
+        [SecurityCritical]
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             GlobalLog.LogEvidence("Not Support ConverBack in StatusBarItemContentConvert");

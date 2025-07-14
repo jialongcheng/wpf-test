@@ -5,6 +5,7 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Globalization;
+using System.Security;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -82,8 +83,10 @@ namespace Microsoft.Test.DataServices
         }
     }
 
+    [SecurityCritical]
     public class MyConverter : IMultiValueConverter
     {
+        [SecurityCritical]
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             int x = (int)values[0];
@@ -91,6 +94,7 @@ namespace Microsoft.Test.DataServices
             return false;
         }
 
+        [SecurityCritical]
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             return new object[] { DependencyProperty.UnsetValue, DependencyProperty.UnsetValue };
