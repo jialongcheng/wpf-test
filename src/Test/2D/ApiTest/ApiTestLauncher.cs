@@ -33,6 +33,7 @@ namespace Microsoft.Test.Graphics
         [STAThread]
         public static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             try
             {
                 s_dispatcher = Dispatcher.CurrentDispatcher;

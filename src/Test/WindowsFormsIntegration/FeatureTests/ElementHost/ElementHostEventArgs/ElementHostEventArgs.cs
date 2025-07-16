@@ -47,6 +47,7 @@ public class ElementHostEventArgs : ReflectBase
     [STAThread]
     public static void Main(string[] args)
     {
+        WpfgfxLoader.Load();
         Application.Run(new ElementHostEventArgs(args));
     }
 

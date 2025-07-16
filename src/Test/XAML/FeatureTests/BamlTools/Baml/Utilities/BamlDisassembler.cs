@@ -24,6 +24,7 @@ namespace Microsoft.Test.Baml.Utilities
         [STAThread]
         public static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             if(args.Length == 0)
             {
                 Usage();

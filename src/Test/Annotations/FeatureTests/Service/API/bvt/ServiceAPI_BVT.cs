@@ -16,6 +16,7 @@ namespace Avalon.Test.Annotations.BVTs
         [STAThread]
         static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             new ServiceAPI_BVT().Run(args);
         }
 

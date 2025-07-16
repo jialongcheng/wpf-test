@@ -19,6 +19,7 @@ class EntryPointType
     [System.STAThread]
     public static void Main(string[] args)
     {
+        WpfgfxLoader.Load();
         try
         {         
             LibraryDoMain(args);

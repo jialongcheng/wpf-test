@@ -20,6 +20,7 @@ namespace Annotations.Test.Framework
         [STAThread]
         public static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             new TestSuiteDriver().Run(args);
         }
     }

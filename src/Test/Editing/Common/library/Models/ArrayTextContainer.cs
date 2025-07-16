@@ -1235,6 +1235,7 @@ namespace Test.Uis.Utils
         [STAThread]
         static void Main()
         {
+            WpfgfxLoader.Load();
             TestArrayTextSymbolConstructor();
             TestArrayTextSymbolMatches();
 

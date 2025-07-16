@@ -500,6 +500,7 @@ namespace Test.Uis.Threading
         [STAThread]
         private static void Main()
         {
+            WpfgfxLoader.Load();
             Application application;
 
             application = new Application();

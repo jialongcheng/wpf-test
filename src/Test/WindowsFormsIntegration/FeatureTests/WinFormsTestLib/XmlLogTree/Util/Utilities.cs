@@ -50,6 +50,7 @@ namespace WFCTestLib.XmlLogTree.Util {
 		// Test method
 		//
 		private static void Main(string[] args) {
+		    WpfgfxLoader.Load();
 			string filename;
 
 			if ( args.Length == 0 )

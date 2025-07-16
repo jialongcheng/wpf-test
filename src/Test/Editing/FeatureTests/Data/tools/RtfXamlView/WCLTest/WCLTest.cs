@@ -828,6 +828,7 @@ namespace W11Builder
       [STAThreadAttribute]
       static void Main()
       {
+          WpfgfxLoader.Load();
          try
          {
             Application.Run(new W11Builder());

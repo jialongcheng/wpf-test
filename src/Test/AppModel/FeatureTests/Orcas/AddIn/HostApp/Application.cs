@@ -25,6 +25,7 @@ namespace ClickCountHostApp
         [System.LoaderOptimization(LoaderOptimization.MultiDomainHost)]
         public static void Main()
         {
+            WpfgfxLoader.Load();
             ClickCountHostApp.App app = new ClickCountHostApp.App();
             MyApp = app;
             app.Run();

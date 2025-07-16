@@ -16,6 +16,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.P1
         [STAThread]
         public static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             try
             {
                 if (args.Length < 1 || args == null)

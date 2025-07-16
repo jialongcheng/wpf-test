@@ -67,6 +67,7 @@
     <Compile Include="@(SourcesAnnotations)" />
     <Compile Include="@(SourcesExceptionValidation)" />
     <Compile Include="Test\Graphics\ClearTypeDetector.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 
   <!--<ItemGroup>

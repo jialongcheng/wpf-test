@@ -11,5 +11,6 @@
   
   <ItemGroup>
     <Compile Include="XamlReader.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 </Project>

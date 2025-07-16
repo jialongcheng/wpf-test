@@ -106,6 +106,7 @@ namespace Test.Uis.Management
         /// </code></example>
         public static void DoMain(string[] args)
         {
+            WpfgfxLoader.Load();
 
             if (args[args.Length - 1] == "/pt")
             {

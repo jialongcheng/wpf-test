@@ -13,6 +13,7 @@ public class DrtDispatcher : DrtBase
     [STAThread]
     public static void Main(string[] args)
     {
+        WpfgfxLoader.Load();
         (new DrtDispatcher()).Run(args);
     }
 

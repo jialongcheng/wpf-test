@@ -29,6 +29,7 @@ public class EventOrdering : ReflectBase
     [STAThread]
     public static void Main(string[] args)
     {
+        WpfgfxLoader.Load();
         Application.Run(new EventOrdering(args));
     }
 

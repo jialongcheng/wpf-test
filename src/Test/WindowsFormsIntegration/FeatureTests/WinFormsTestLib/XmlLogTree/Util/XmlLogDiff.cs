@@ -159,6 +159,7 @@ namespace WFCTestLib.XmlLogTree.Util {
         // Test methods
         //
         private static void Main(string[] args) {
+            WpfgfxLoader.Load();
             XmlLogDiff diff = new XmlLogDiff();
             string f1 = "results.Log", f2 = "results2.log";
 

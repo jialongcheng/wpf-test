@@ -550,6 +550,7 @@ namespace Test.Uis.Data
         [STAThread]
         private static void Main()
         {
+            WpfgfxLoader.Load();
             Application app;            
             
             app = new Application();

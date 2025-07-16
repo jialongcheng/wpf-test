@@ -23,6 +23,7 @@ namespace DRT
         [STAThread]
         public static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             (new DrtMultiTouch()).Run(args);
         }
 

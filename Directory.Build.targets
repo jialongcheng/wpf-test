@@ -23,7 +23,7 @@
    <WpfBinDirectory>C:\Test\WPFDeployment\artifacts\bin\</WpfBinDirectory>
   </PropertyGroup>
 
-  <Target Name="InjectAppConfig" AfterTargets="GenerateBindingRedirects">
+  <Target Name="InjectAppConfig" AfterTargets="GenerateBindingRedirects" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
     <ItemGroup>
       <AppConfigWithBindingRedirects Include="$(MSBuildThisFileDirectory)SharedApp.config" />
     </ItemGroup>

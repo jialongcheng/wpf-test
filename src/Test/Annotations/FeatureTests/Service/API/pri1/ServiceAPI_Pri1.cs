@@ -15,6 +15,7 @@ namespace Avalon.Test.Annotations.Pri1s
         [STAThread]
         static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             new ServiceAPI_Pri1().Run(args);
         }
 

@@ -19,6 +19,7 @@ namespace Microsoft.Test.Wpf.AppModel
         [STAThread]
         static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             TestHelper testHelper = new TestHelper(args);
             string TestName;
 

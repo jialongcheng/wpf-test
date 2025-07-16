@@ -25,6 +25,7 @@ namespace WpfApplication1
         [System.STAThreadAttribute()]
         public static void Main()
         {
+            WpfgfxLoader.Load();
             WpfApplication1.App app = new WpfApplication1.App();
             app.InitializeComponent();
             try

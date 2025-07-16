@@ -15,6 +15,7 @@ namespace CutAndPasteProgram
         [STAThread]
         static void Main()
         {
+            WpfgfxLoader.Load();
             System.Windows.Application app = new System.Windows.Application();
             app.Run(new WindowsFormsHostTests.CutAndPaste(new string[0]));
         }

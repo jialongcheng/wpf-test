@@ -16,6 +16,7 @@ namespace RegressionIssue54
 
      static void Main(string[] args)
      {
+         WpfgfxLoader.Load();
         bool caughtRightException = false;
 
         string exePath = Assembly.GetExecutingAssembly().Location;

@@ -16,6 +16,7 @@ namespace RtfXamlView
         [STAThread]
         static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             RtfXamlViewApp viewerApp = new RtfXamlViewApp(args);
             
             try

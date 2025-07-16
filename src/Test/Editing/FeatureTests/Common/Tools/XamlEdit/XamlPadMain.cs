@@ -28,6 +28,7 @@ namespace XamlPadEdit
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public static void Main()
         {
+            WpfgfxLoader.Load();
             if ((File.Exists("unzip.exe") && (File.Exists("zipResource.zip"))) == false)
             {
                 _resourcesExist = false;

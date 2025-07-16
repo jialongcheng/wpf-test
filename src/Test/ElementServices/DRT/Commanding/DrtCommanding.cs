@@ -27,6 +27,7 @@ public class DrtCommanding : DrtBase
     [STAThread]
     public static void Main(string[] args)
     {
+        WpfgfxLoader.Load();
         (new DrtCommanding()).Run(args);
     }
 

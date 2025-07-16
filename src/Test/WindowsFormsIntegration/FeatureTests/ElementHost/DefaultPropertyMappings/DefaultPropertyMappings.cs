@@ -34,6 +34,7 @@ public class PropertyMappings : ReflectBase
     [STAThread]
     public static void Main(string[] args)
     {
+        WpfgfxLoader.Load();
         System.Windows.Forms.Application.Run(new PropertyMappings(args));
     }
 

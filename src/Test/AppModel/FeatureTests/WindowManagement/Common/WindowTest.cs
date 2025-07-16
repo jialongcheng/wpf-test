@@ -24,6 +24,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.BVT.Window
         [STAThread]
         static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             // Please leave this comment intact.  This makes debugging when launched by STI
             // better as it allows all the driver properties to get set and for the user to attach 
             // very early on in execution.

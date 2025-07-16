@@ -15,6 +15,7 @@ namespace WindowsOSBug934077Program
         [STAThread]
         static void Main()
         {
+            WpfgfxLoader.Load();
             System.Windows.Application app = new System.Windows.Application();
             app.Run(new WindowsFormsHostTests.WindowsOSBug934077(new string[0]));
         }

@@ -15,6 +15,7 @@ namespace AltTabProgram
         [STAThread]
         static void Main()
         {
+            WpfgfxLoader.Load();
             Application.Run(new AltTab(new string[0]));
         }
     }

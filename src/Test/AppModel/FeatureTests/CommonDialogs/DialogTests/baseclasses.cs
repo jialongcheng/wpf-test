@@ -489,6 +489,7 @@ namespace Microsoft.Windows.Test.Client.AppSec
     {
         public static void Main (string[] args)
         {
+            WpfgfxLoader.Load();
             TestApp _app = new TestApp ();
 
             _app.StartupUri = new Uri("test.xaml", UriKind.RelativeOrAbsolute);

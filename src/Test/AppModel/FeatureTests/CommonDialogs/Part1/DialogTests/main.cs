@@ -16,6 +16,7 @@ namespace Microsoft.Test.WPF.AppModel.CommonDialogs
         [STAThread]
         public static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             if (args.Length < 1 || args == null)
             {
                 Logging.LogFail("Wrong Usage.");

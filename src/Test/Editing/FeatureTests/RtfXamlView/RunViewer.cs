@@ -16,6 +16,7 @@ namespace RtfXamlView
         [STAThread]
         static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             ////Process command line arguments
             //string fileNameArg = "";
 

@@ -25,6 +25,7 @@ namespace Microsoft.Test.Drt
 
         public static void Main(string wait)
         {
+            WpfgfxLoader.Load();
             DrtRunner driver = new DrtRunner();
             try
             {

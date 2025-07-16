@@ -24,6 +24,7 @@ namespace Microsoft.Test.AddIn
         [LoaderOptimization(LoaderOptimization.MultiDomainHost)]
         public static void Main()
         {
+            WpfgfxLoader.Load();
             AddInApplication app = new AddInApplication();
         }
 

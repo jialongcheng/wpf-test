@@ -3621,6 +3621,7 @@ namespace Test.Uis.Data
         [STAThread]
         private static void Main()
         {
+            WpfgfxLoader.Load();
             TestFindNextWordBoundaryIndexPlain();
             TestFindNextWordBoundaryIndexRich();
             TestIsCharStandaloneWord();

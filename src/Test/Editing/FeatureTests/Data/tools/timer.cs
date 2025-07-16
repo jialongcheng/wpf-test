@@ -27,6 +27,7 @@ namespace Timer
         [STAThread]
         public static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             try
             {
                 new Timer().DoMain(args);

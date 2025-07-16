@@ -16,6 +16,7 @@ namespace WindowsApplication2
     [STAThread]
     static void Main()
     {
+      WpfgfxLoader.Load();
       Application.EnableVisualStyles();
       Application.Run(new Form1());
     }

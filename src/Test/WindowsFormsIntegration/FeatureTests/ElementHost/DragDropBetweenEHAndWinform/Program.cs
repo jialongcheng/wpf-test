@@ -15,6 +15,7 @@ namespace DragDropBetweenEHAndWinformProgram
         [STAThread]
         static void Main()
         {
+            WpfgfxLoader.Load();
             Application.Run(new DragDropBetweenEHAndWinform(new string[0]));
         }
     }

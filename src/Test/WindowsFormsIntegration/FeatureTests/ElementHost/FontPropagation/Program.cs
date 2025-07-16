@@ -15,6 +15,7 @@ namespace FontPropagationProgram
         [STAThread]
         static void Main()
         {
+            WpfgfxLoader.Load();
             Application.Run(new FontPropagation(new string[0]));
         }
     }

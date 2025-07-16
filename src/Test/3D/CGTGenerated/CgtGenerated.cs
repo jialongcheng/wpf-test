@@ -21,6 +21,7 @@ namespace Microsoft.Test.Graphics
         [STAThread]
         public static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             TestLauncher.Launch(args, typeof(CgtGenerated).Assembly);
         }
 

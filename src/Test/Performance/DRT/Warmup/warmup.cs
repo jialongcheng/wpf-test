@@ -19,6 +19,7 @@ namespace DevTest.Perf.Scenario
         [STAThread]
         public static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             String XAMLFileName = "DrtFiles/WarmupOpt/warmup.xaml";
 
             if (args.Length > 0)

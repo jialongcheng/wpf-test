@@ -30,6 +30,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
 
         public void Run(string[] args)
         {
+            WpfgfxLoader.Load();
             LaunchPageFunctions.Run(args);
         }
     }

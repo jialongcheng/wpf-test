@@ -23,6 +23,7 @@ namespace BamlDasm
         [STAThread]
         public static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             if(args.Length == 0)
             {
                 Usage();

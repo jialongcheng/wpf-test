@@ -15,6 +15,7 @@ namespace DevDivBugs95607Program
         [STAThread]
         static void Main()
         {
+            WpfgfxLoader.Load();
             System.Windows.Application app = new System.Windows.Application();
             app.Run(new WindowsFormsHostTests.DevDivBugs95607(new string[0]));
         }

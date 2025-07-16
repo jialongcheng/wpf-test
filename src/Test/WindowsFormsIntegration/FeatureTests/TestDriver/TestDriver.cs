@@ -23,6 +23,7 @@ public class Driver
     [STAThread]
     public static void Main(string[] args)
     {
+        WpfgfxLoader.Load();
         try
         {
             LogManager.BeginTest(DriverState.TestName);

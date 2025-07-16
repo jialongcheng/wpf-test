@@ -19,6 +19,7 @@ namespace RegressionIssue109
     {
         static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             ParserContext context = new ParserContext();
             context.XamlTypeMapper = XamlTypeMapper.DefaultMapper;
             context.XamlTypeMapper.AddMappingProcessingInstruction("http://my", "RegressionIssue109", "RegressionIssue109");

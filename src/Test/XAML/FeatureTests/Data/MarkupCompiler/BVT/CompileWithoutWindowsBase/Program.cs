@@ -18,6 +18,7 @@ namespace CompileWithoutWindowsBase
         /// </summary>
         public static void Main()
         {
+            WpfgfxLoader.Load();
 	   
             Console.WriteLine(new CustomValueSerializer());
             Console.WriteLine(new ArrayExtension());

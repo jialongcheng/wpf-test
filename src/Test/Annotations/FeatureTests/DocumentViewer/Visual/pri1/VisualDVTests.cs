@@ -16,6 +16,7 @@ namespace Avalon.Test.Annotations.Pri1s
         [STAThread]
         static void Main(string[] args)
 		{
+		    WpfgfxLoader.Load();
 			new TestSuiteDriver(
                  new Type[] { 
                     typeof(Scenario1_5Suite),

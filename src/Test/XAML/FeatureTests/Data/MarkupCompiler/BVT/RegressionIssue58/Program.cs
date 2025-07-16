@@ -18,6 +18,7 @@ namespace XamlExperiment
         [STAThread]
         static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             Application app = (Application)Application.LoadComponent(new Uri("ApplicationStyledNavigationWindow.xaml", UriKind.RelativeOrAbsolute));
             ((IComponentConnector)app).InitializeComponent();
             app.Run();

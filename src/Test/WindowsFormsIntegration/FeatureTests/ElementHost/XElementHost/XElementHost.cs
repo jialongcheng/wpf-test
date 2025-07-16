@@ -35,6 +35,7 @@ public class XElementHost : XControl
     [STAThread]
     public static void Main(String[] args)
     {
+        WpfgfxLoader.Load();
         SWF.Application.Run(new XElementHost(args));
     }
     

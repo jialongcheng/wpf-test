@@ -407,6 +407,7 @@ namespace Test.Uis.Data
         [STAThread]
         static void Main()
         {
+            WpfgfxLoader.Load();
             TestTextLayoutUnit();
 
             TestConstructor();

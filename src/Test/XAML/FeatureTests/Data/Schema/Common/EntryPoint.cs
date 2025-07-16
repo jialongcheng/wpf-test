@@ -18,6 +18,7 @@ namespace Microsoft.Test.Xaml.Schema
         /// </summary>
         public static void Main()
         {
+            WpfgfxLoader.Load();
             try
             {
                 Type testType = FindTestType();

@@ -175,6 +175,7 @@ namespace WFCTestLib.Util {
 
 #if TEST
         public static void Main() {
+            WpfgfxLoader.Load();
             StringTable t = new StringTable();
             t.Add("Foo");
             t.Add("Bar");

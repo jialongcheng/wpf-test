@@ -20,6 +20,7 @@ namespace WinFundamentalReports
         [STAThread]
         static void Main()
         {
+            WpfgfxLoader.Load();
             Application.EnableVisualStyles();
             Application.Run(new WinFundamentalReports.Forms.MainForm());
         }

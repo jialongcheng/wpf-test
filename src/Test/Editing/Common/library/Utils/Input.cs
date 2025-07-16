@@ -1044,6 +1044,7 @@ namespace Test.Uis.Utils
         [STAThread]
         private static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             try
             {
                 new InputDll().Run(args);

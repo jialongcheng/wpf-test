@@ -24,6 +24,7 @@ public class DrtInput : DrtBase
     [STAThread]
     public static void Main(string[] args)
     {
+        WpfgfxLoader.Load();
         (new DrtInput()).Run(args);
     }
 

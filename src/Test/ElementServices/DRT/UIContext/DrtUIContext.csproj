@@ -33,5 +33,6 @@
     <Compile Include="BeginInvokeTest.cs" />
     <Compile Include="InvokeAsyncTest.cs" />
     <Compile Include="UITimerTest.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 </Project>

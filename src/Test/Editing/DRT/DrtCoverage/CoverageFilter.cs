@@ -20,6 +20,7 @@ namespace CovFilter
 
         static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             s_cmdLine = new CmdLine(args);
             new Program().Run();
         }

@@ -20,6 +20,7 @@ namespace Dummy
         [STAThread]
         static void Main(string[] args)
         {
+            WpfgfxLoader.Load();
             s_app = new Application();
             s_app.Startup += new StartupEventHandler(app_StartingUp);
             Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Background, new DispatcherOperationCallback(MyTest), null);

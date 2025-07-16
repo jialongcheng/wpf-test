@@ -46,6 +46,7 @@ namespace Avalon.Test.ComponentModel.Accessibility
         [STAThread]
         public static void Main(String[] args)
         {
+            WpfgfxLoader.Load();
             Application app = new XamlReader();
             Window window = new Window();
             window.Title = "Xaml Loader";
