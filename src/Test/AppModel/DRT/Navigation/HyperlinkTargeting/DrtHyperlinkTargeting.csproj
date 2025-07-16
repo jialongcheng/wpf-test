@@ -17,4 +17,22 @@
     <Page Include="PageA.xaml" />
     <Page Include="PageB.xaml" />
   </ItemGroup>
+
+  <UsingTask TaskName="PreloadAssemblyTask"
+           AssemblyFile="C:\Code\wpf-test\artifacts\bin\BuildTasksProject\x64\Release\win-x64\BuildTasksProject.dll" />
+
+<Target Name="PreloadUIAutomationTypes" BeforeTargets="MarkupCompilePass1">
+  <PreloadAssemblyTask AssemblyPath="C:\Test\WPFDeployment\artifacts\bin\UIAutomationTypes\x64\Release\net481\UIAutomationTypes.dll" />
+</Target>
+
+
+
+  <ItemGroup Condition ="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
+    <Reference Include="UIAutomationTypes">
+      <HintPath>$(WpfBinDirectory)UIAutomationTypes\$(Platform)\$(Configuration)\net481\UIAutomationTypes.dll</HintPath>
+      <Private>true</Private>
+      <SpecificVersion>true</SpecificVersion>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
 </Project>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.0.10715.23 main
+VisualStudioVersion = 18.0.10715.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiTestRazzle", "src\Test\2D\ApiTest\ApiTestRazzle.csproj", "{5875EE1F-C969-47FB-8EFF-708EA83D4D9B}"
 EndProject
@@ -3359,6 +3359,18 @@ Global
 		{5CBF38E0-238E-4B4C-A5E0-711021C17E9D}.Release|x64.Build.0 = Release|x64
 		{5CBF38E0-238E-4B4C-A5E0-711021C17E9D}.Release|x86.ActiveCfg = Release|Any CPU
 		{5CBF38E0-238E-4B4C-A5E0-711021C17E9D}.Release|x86.Build.0 = Release|Any CPU
+		{0F0638DD-C486-5075-05A2-9476A2535E4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F0638DD-C486-5075-05A2-9476A2535E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F0638DD-C486-5075-05A2-9476A2535E4D}.Debug|x64.ActiveCfg = Debug|x64
+		{0F0638DD-C486-5075-05A2-9476A2535E4D}.Debug|x64.Build.0 = Debug|x64
+		{0F0638DD-C486-5075-05A2-9476A2535E4D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0F0638DD-C486-5075-05A2-9476A2535E4D}.Debug|x86.Build.0 = Debug|Any CPU
+		{0F0638DD-C486-5075-05A2-9476A2535E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F0638DD-C486-5075-05A2-9476A2535E4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F0638DD-C486-5075-05A2-9476A2535E4D}.Release|x64.ActiveCfg = Release|x64
+		{0F0638DD-C486-5075-05A2-9476A2535E4D}.Release|x64.Build.0 = Release|x64
+		{0F0638DD-C486-5075-05A2-9476A2535E4D}.Release|x86.ActiveCfg = Release|Any CPU
+		{0F0638DD-C486-5075-05A2-9476A2535E4D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

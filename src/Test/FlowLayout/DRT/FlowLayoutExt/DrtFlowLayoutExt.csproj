@@ -49,7 +49,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Reference Include="ReachFramework" />
+    <Reference Include="ReachFramework" Condition="'$(TargetFrameworkIdentifier)'!='.NETFramework'" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="DrtFiles\arial.ttf" />

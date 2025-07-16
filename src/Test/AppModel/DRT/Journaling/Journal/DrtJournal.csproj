@@ -49,4 +49,14 @@
     <Compile Include="IslandFrame\IslandFrame.cs" />
     <Page    Include="IslandFrame\PageWithFrame.xaml" />
   </ItemGroup>
+
+   <ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
+    <Reference Include="UIAutomationTypes">
+      <HintPath>$(WpfBinDirectory)UIAutomationTypes\$(Platform)\$(Configuration)\net481\UIAutomationTypes.dll</HintPath>
+      <Private>true</Private>
+      <SpecificVersion>true</SpecificVersion>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+
 </Project>

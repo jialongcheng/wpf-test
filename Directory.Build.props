@@ -18,7 +18,6 @@
   <PropertyGroup>
   <NuGetAudit>false</NuGetAudit>
 </PropertyGroup>
-
   
   <Import Project="$(WpfArcadeSdkProps)"
           Condition="Exists('$(WpfArcadeSdkProps)') And Exists('$(WpfArcadeSdkTargets)')"/>

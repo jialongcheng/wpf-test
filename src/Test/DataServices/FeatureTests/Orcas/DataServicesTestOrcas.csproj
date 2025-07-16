@@ -23,7 +23,6 @@
     <ItemGroup>
         <ProjectReference Include="$(TestContractsProject)" />
         <ProjectReference Include="$(DataServicesTestCommonProject)" />
-        <ProjectReference Include="$(WpfTestBasePath)\DataServices\FeatureTests\BuildSources\DataServicesTest.csproj" />
         <ProjectReference Include="$(TestRuntimeProject)" />
     </ItemGroup>
 </Project>

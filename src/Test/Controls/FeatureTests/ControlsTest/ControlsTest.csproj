@@ -113,10 +113,9 @@
     <ItemGroup>
         <ProjectReference Include="$(TestApiCoreProject)" />
         <ProjectReference Include="$(TestApiWpfProject)" />
-        <ProjectReference Include="$(ControlsCommonProject)"/>
+        <ProjectReference Include="$(ControlsCommonProject)" />
         <ProjectReference Include="$(TestContractsProject)" />
         <ProjectReference Include="$(InternalUtilitiesProject)" />
-        <ProjectReference Include="$(TestRuntimeProject)"/>
-        <ProjectReference Include="$(CodePlexControlsProject)"/>
+        <ProjectReference Include="$(TestRuntimeProject)" />
     </ItemGroup>
 </Project>

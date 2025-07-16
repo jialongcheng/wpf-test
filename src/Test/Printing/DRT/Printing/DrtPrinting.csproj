@@ -27,7 +27,7 @@
     <!-- <PackageReference Include="Microsoft.NETCore.Platforms" Version="$(MicrosoftNETCorePlatformsVersion)" /> -->
     <PackageReference Include="System.Management" Version="$(SystemManagementVersion)" />
   </ItemGroup>
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFrameworkIdentifier)'!='.NETFramework'">
     <Reference Include="System.Printing" />
   </ItemGroup>
 </Project>
