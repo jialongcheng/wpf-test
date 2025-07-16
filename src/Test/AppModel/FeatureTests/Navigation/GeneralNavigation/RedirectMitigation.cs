@@ -24,6 +24,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
 
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         String _redirectMitigation_startupUri = @"pack://siteoforigin:,,,/test.html";
         String _redirectMitigation_redirectExternalUri = "";
         Frame _redirectMitigation_navFrame = null;

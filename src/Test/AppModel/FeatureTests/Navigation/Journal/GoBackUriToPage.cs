@@ -16,6 +16,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // GoBackUriToPage (JournalGoBackUriToPageApp)
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         internal enum GoBackUriToPage_CurrentTest
         {
             InitialNav, 

@@ -43,6 +43,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.P1
 
 		protected override void OnStartup (StartupEventArgs e)
 		{
+            WpfgfxLoader.Load();
 			_wMain = new Window ();
 			_wMain.Left = 600;
 			_wMain.Width = 200;

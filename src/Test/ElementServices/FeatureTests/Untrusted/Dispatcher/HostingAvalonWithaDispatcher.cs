@@ -154,6 +154,12 @@ namespace Avalon.Test.Framework.Dispatchers
     /// </summary>
     public class AppTestHostingAvalon : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            WpfgfxLoader.Load();
+            base.OnStartup(e);
+        }
+
         /// <summary>
         /// </summary>
         public AppTestHostingAvalon():base(){}      

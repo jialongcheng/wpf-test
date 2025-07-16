@@ -28,6 +28,7 @@ namespace testapp
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             if (TestLog.Current == null)
             {
                 new TestLog("TransitionElement");

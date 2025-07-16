@@ -10,5 +10,6 @@
   <ItemGroup>
     <Compile Include="DrtWindowFunctionality.cs" />
     <Compile Include="..\..\Logger\Logger.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 </Project>

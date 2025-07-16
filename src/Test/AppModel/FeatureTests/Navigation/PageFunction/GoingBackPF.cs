@@ -13,6 +13,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // GoingBackPF
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         void GoingBackPF_Startup(object sender, StartupEventArgs e)
         {
             LaunchPageFunctions.Run(new string[] { "/test:backtest" });

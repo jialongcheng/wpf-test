@@ -276,6 +276,12 @@ namespace Microsoft.Test.Animation
 
     class AppNav : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         //Constructor.
         public AppNav() { }
 

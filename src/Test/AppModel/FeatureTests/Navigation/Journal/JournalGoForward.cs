@@ -14,6 +14,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // JournalGoForwardApp
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         internal enum JournalGoForward_CurrentTest
         {
             InitialNav,

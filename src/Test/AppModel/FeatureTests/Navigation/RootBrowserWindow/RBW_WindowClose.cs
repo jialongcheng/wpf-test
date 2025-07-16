@@ -13,6 +13,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // WindowClose
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         void RBWWindowClose_Startup(object sender, StartupEventArgs e)
         {
             _rbwTest = new RootBrowserWindowTestClass("WindowClose");

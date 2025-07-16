@@ -32,7 +32,7 @@
 
   <Target Name="InjectWpfgfxLoader"
           BeforeTargets="Compile"
-          Condition="'$(OutputType)' == 'Exe'">
+          Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
     <ItemGroup>
       <Compile Include="$(MSBuildThisFileDirectory)build\shared\InjectWpfgfxLoader.cs" />
     </ItemGroup>

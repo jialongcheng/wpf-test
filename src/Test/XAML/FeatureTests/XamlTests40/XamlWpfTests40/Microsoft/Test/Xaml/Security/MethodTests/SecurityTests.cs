@@ -268,6 +268,7 @@ namespace Microsoft.Test.Xaml.Security.MethodTests
         /// <param name="e">event arguments</param>
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             base.OnStartup(e);
 
             try

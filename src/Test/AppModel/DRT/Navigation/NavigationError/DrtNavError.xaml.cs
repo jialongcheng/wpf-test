@@ -20,6 +20,7 @@ namespace DrtNavError
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             //DispatcherUnhandledException    += new DispatcherUnhandledExceptionEventHandler(OnDispatcherUnhandledException);
             _navWin = new NavigationWindow();
             _navWin.NavigationFailed += new NavigationFailedEventHandler(OnNavigationFailed);

@@ -117,6 +117,7 @@ namespace DRT
          
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             _win = new Window();
             _win.Top = 0;
             _win.Left = 0;

@@ -28,6 +28,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // StockPageFunction
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         // Each element in the enum represents a property/method/event 
         // the public API for the classes in StockPageFunction.cs
         internal enum StockPageFunction_CurrentTest

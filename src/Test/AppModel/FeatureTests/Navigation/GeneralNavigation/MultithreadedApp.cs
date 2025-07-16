@@ -25,6 +25,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     /// </summary>
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         private Hashtable _threads = new Hashtable();
         private int _multithreadedApp_maxThreads = 3;
         private int _multithreadedApp_maxWindowsPerThread = 3;

@@ -15,6 +15,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // MinSize
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         void RBWWindowMinSize_Startup(object sender, StartupEventArgs e)
         {
             _rbwTest = new RootBrowserWindowTestClass("RBWMinSize");

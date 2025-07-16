@@ -13,6 +13,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     public partial class NavigationTests : System.Windows.Application //Application
     //public partial class App : 
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         internal enum LoadCompleted_State
         {
             InitialNav, 

@@ -15,6 +15,12 @@ namespace Avalon.Test
 
     public partial class MyApp : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         
         TestLog _log = null;
          bool _browserhostedapp = false;

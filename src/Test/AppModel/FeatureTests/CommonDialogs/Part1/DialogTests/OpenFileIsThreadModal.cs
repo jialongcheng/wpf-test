@@ -19,6 +19,7 @@ namespace Microsoft.Test.WPF.AppModel.CommonDialogs
 
         protected override void OnStartup (StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             OpenFileDialog openDialog = new OpenFileDialog();
 
             //We need to verify IsThreadModal while the dialog is up.  Use a timer that fires 2 seconds from now.

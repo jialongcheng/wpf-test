@@ -9,6 +9,7 @@
     <ApplicationDefinition Include="DrtNavError.xaml" />
     <Compile Include="..\..\Logger\Logger.cs" />
     <Compile Include="DrtNavError.xaml.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <Page Include="frame.xaml" />
     <Page Include="frame2.xaml" />
   </ItemGroup>

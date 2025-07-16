@@ -14,6 +14,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // IsActive
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         void RBWWindowIsActive_Startup(object sender, StartupEventArgs e)
         {
             _rbwTest = new RootBrowserWindowTestClass("RBWIsActive");

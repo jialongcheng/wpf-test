@@ -17,6 +17,7 @@ namespace DrtStartupUriXamlNavigationWindow
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             Log(@"DrtStartupUriXamlNavigationWindow [AppModel\Microsoft]");
 
             base.OnStartup(e);

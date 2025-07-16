@@ -17,6 +17,12 @@ namespace WpfApplication1
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            WpfgfxLoader.Load();
+            base.OnStartup(e);
+        }
+
         /// <summary>
         /// Custom Main method to do exception handling for app.Run
         /// To skip auto generation of Main, App.xaml build action is changed 

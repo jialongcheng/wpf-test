@@ -64,6 +64,7 @@ namespace Microsoft.Test.Graphics
         // We need to override application behavior to use a styled window with no UI chrome.
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             NavWindow = new NavigationWindow();
             NavWindow.Source = new Uri("pack://application:,,,/scenario3d;component/Tests/launcher.xaml", UriKind.RelativeOrAbsolute);
             NavWindow.Width = 400;

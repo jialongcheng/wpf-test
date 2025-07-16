@@ -34,6 +34,7 @@ namespace Microsoft.Test.Graphics.Regression
         
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             this.ShutdownMode = ShutdownMode.OnExplicitShutdown;
 
             CommonLib.Log.LogStatus("Creating window objects");

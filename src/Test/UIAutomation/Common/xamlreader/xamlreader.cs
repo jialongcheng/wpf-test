@@ -29,6 +29,7 @@ namespace Avalon.Test.ComponentModel.Accessibility
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             object element = null;
 
             // get element from xaml file

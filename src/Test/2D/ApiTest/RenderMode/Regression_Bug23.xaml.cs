@@ -39,6 +39,7 @@ namespace Microsoft.Test.Graphics.Regression
         /// <param name="e"></param>
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             if (IsHWAccelerationDisabled())
             {
                 CommonLib.Log.Result = TestResult.Ignore;

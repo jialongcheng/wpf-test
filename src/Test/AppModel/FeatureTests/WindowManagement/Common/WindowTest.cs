@@ -21,6 +21,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.BVT.Window
 {
     public partial class WindowTestApp: System.Windows.Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         [STAThread]
         static void Main(string[] args)
         {

@@ -13,6 +13,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // NavCodeToMarkupPF
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         void NavCodeToMarkupPF_Startup(object sender, StartupEventArgs e)
         {
             LaunchPageFunctions.Run(new string[] { "/test:markuppfbasic" });

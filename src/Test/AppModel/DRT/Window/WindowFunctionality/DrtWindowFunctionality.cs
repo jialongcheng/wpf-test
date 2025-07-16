@@ -170,6 +170,7 @@ namespace DRT
          * */
         protected override void OnStartup(StartupEventArgs e) 
         {
+            WpfgfxLoader.Load();
             _win = new Window();
             _win.Content = new CrossElement();
 

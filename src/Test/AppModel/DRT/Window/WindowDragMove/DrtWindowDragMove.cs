@@ -78,6 +78,7 @@ namespace DRT
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             _win = new Window();
             _win.WindowStyle = WindowStyle.None;
             _win.Width = 500;

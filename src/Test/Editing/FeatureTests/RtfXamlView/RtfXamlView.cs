@@ -430,6 +430,7 @@ namespace RtfXamlView
       /// <param name="e"></param>
       protected override void OnStartup(StartupEventArgs e)
       {
+            WpfgfxLoader.Load();
          InitializeMainWindow();
 
          _mainWindow.Show();

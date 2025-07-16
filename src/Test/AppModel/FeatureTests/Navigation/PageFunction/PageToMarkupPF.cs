@@ -17,6 +17,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // PageToMarkupPF
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         #region PageToMarkupPF globals
         private int _pageToMarkupPFTest = 0;
 

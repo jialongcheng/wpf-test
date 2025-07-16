@@ -101,6 +101,7 @@ namespace Test.Uis.TextEditing
 
         protected override void OnStartup(System.Windows.StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             DataObject dataObject = new DataObject();
             dataObject.SetText(_data);
             Clipboard.SetDataObject(dataObject, _copy);

@@ -27,6 +27,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     /// </summary>
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         NavigationWindow _filePermission_navWin = null;
 
         enum FilePermission_State

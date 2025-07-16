@@ -15,6 +15,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // MaxSize
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         double _rbwMaxWidth = 800,_rbwMaxHeight = 600;
 
         void RBWWindowMaxSize_Startup(object sender, StartupEventArgs e)

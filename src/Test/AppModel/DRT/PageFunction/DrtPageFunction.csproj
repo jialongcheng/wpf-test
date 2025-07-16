@@ -13,5 +13,6 @@
     <Compile Include="TestTextBox.cs" />
     <Compile Include="MarkupPF1.xaml.cs" />
     <Compile Include="MarkupPF2.xaml.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 </Project>

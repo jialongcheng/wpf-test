@@ -47,6 +47,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
 {
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         enum FragmentNavigation_State
         {
             Init,

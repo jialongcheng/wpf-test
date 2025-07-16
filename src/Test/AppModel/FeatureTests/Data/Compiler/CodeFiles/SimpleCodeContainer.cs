@@ -12,6 +12,12 @@ namespace TestDll
     
     public partial class MyApp : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         
          Microsoft.Test.Logging.TestLog _log = null;
          bool _browserhostedapp = false;

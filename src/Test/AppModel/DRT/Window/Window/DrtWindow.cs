@@ -133,6 +133,7 @@ namespace DRT
 
         protected override void OnStartup(StartupEventArgs e) 
         {
+            WpfgfxLoader.Load();
             UIElementCollection dockChildren;
             _dockPanel = new DockPanel();
             _firstChild = new CrossElement(Dock.Left, 200, 600);

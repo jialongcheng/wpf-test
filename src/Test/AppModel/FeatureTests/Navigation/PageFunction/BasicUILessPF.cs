@@ -13,6 +13,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // BasicUILessPF
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         void BasicUILessPF_Startup(object sender, StartupEventArgs e)
         {
             LaunchPageFunctions.Run(new string[] { "/test:uilessbasic" });

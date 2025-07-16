@@ -21,6 +21,12 @@ namespace Microsoft.Test.Graphics
 
     public partial class MyApp : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         /// <summary/>
         public static void Launch()
         {

@@ -13,6 +13,7 @@
   <ItemGroup>
     <ApplicationDefinition Include="MyApp.xaml" />
     <Compile Include="*.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 
   <ItemGroup>

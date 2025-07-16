@@ -23,6 +23,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // BackForwardApp
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         internal enum BackForwardApp_CurrentTest
         {
             InitialNav,

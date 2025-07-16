@@ -24,6 +24,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // RemoveBackEntry
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         NavigationWindow _removeBackEntry_navWin = null;
 
         enum RemoveBackEntry_CurrentTest

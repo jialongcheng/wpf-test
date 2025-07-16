@@ -47,6 +47,7 @@ Application
 
 		protected override void OnStartup (StartupEventArgs e)
 		{
+            WpfgfxLoader.Load();
 			Window wMain = new Window ();
 			wMain.Left = 100;
 			wMain.Top = 100;

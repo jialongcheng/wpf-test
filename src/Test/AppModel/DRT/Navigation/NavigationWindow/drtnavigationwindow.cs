@@ -80,6 +80,7 @@ namespace DRTNavigationWindow
         
         protected override void OnStartup(StartupEventArgs e) 
         {
+            WpfgfxLoader.Load();
 
             NavigationWindowTest nwt1 = new NavigationWindowTest("NavigationWindowOnAppThread", "NavWindowFoo.xaml", @"drtfiles\navigationwindow\NavWindowBar.xaml");
             nwt1.Window.Closed += new EventHandler(W1ClosedHandler);

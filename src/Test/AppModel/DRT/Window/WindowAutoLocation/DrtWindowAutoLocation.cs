@@ -63,6 +63,7 @@ namespace DRT
 
         protected override void OnStartup(StartupEventArgs e) 
         {
+            WpfgfxLoader.Load();
             Dispatcher.CurrentDispatcher.BeginInvoke(
                 DispatcherPriority.Background,
                 new DispatcherOperationCallback(InitTests),

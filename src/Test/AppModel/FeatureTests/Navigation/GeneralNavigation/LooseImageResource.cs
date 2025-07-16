@@ -18,6 +18,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
 {
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         NavigationWindow _looseImageResource_navWin = null;
         Application _looseImageResource_navApp = null;
 

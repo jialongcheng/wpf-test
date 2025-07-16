@@ -254,6 +254,7 @@ namespace DRT
         // now test stuff that is supposed to work from any thread
         protected override void OnStartup(StartupEventArgs args)
         {
+            WpfgfxLoader.Load();
             Properties[_propertyKey] = _propertyValue;
             Resources = new ResourceDictionary();
             Resources.Add(_resourceKey, _resourceValue);

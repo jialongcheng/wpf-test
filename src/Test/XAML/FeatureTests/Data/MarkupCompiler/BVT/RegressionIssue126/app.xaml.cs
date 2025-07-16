@@ -17,6 +17,7 @@ namespace RegressionIssue126
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             Window1 window = new Window1();
             window.Show();
             base.OnStartup(e);

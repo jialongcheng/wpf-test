@@ -21,6 +21,7 @@ namespace DrtHyperlinkTargeting
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             Log(@"DrtHyperlinkTargeting [AppModel\Microsoft]");
 
             LoadCompleted       += new LoadCompletedEventHandler(this.OnLoadCompleted);

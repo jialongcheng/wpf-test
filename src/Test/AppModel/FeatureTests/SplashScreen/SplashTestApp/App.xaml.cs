@@ -16,6 +16,12 @@ namespace SplashScreenTestApp
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         public App() : base()
         {
             if ( (Environment.GetCommandLineArgs().Length == 2) &&

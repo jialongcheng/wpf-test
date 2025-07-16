@@ -159,6 +159,7 @@ namespace DRT
         //  Set up tests upon application initialization
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             LogFile.WriteLine("0000 - OnStartingUp begin.");
 
             TestInheritanceContext();

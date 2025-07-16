@@ -20,6 +20,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // FinishPFWithNonEmptyFwdJournal
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         #region FinishPFWithNonEmptyFwdJournal globals
         private int _finishPFWithNonEmptyFwdJournalTest = 0;
         private String _finishPFWithNonEmptyFwdJournalExtFile = IMAGEPAGE;

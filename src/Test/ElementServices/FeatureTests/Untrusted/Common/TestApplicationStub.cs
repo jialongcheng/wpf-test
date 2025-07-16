@@ -772,6 +772,7 @@ namespace Avalon.Test.CoreUI.Common
         /// </summary>
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             CoreLogger.LogStatus("In TestApplicationStub.OnStartup()...");
             CoreLogger.LogStatus("Current directory: " + Environment.CurrentDirectory);
 

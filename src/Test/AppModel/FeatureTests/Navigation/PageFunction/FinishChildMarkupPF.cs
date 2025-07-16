@@ -19,6 +19,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // FinishChildMarkupPF
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         #region FinishChildMarkupPF globals
         private int _finishChildMarkupPF_CurrentTest = 0;
 

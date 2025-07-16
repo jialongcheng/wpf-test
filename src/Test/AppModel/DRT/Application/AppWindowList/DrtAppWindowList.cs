@@ -19,6 +19,7 @@ namespace DRT
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             ShutdownMode = ShutdownMode.OnExplicitShutdown;
 
             try

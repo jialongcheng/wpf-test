@@ -314,6 +314,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
         #region App Level overrides 
         protected override void OnStartup (StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             NavigationHelper.Output("Starting Up.");
 
             NavigationHelper.SetStage(TestStage.Run);

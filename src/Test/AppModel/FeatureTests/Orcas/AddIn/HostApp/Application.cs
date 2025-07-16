@@ -13,6 +13,12 @@ namespace ClickCountHostApp
     /// </summary>
     public class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         public App()
         {
             this.StartupUri = new System.Uri("Window1.xaml", System.UriKind.Relative);

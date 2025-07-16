@@ -16,7 +16,8 @@ namespace Editing
 	public partial class EditingTestApplication : Application
     {
  		protected override void OnStartup(StartupEventArgs args)
-  		{		
+  		{
+            WpfgfxLoader.Load();		
 			string[] arguments;
 			
 			//The *.xampp must be loaded by AppMonitor.exe to get the arguments.

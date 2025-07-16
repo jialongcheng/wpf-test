@@ -17,6 +17,7 @@ namespace MyTestNamespace
 
       protected override void OnStartup(StartupEventArgs e)
       {
+            WpfgfxLoader.Load();
           MyWindow win = new MyWindow();
           win.InitializeComponent();
           win.Show();

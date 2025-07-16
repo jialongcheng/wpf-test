@@ -23,6 +23,7 @@ namespace DRT
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             // Open a bunch of windows
             for (int ownerWindowCount = 0; ownerWindowCount < WindowCount; ++ownerWindowCount)
             {

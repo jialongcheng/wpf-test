@@ -13,6 +13,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // Location
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         void RBWWindowLocation_Startup(object sender, StartupEventArgs e)
         {
             _rbwTest = new RootBrowserWindowTestClass("RBWLocation");

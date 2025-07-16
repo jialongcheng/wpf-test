@@ -23,6 +23,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // CustomJournaling
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         internal enum CustomJournaling_CurrentTest
         {
             JournalEachChange,

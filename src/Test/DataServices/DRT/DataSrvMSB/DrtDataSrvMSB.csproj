@@ -14,6 +14,7 @@
     <Compile Include="DataTrigger.xaml.cs" />
     <Compile Remove="$(WpfTestBasePath)\..\CommonAssemblyInfo.cs" />
     <Compile Include="Assemblyinfo.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
   <ItemGroup>
     <Content Include="DrtFiles\DataSrvMSB\Content.JPG">

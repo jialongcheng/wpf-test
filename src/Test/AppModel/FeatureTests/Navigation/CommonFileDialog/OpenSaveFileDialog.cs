@@ -26,6 +26,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
 {
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         private NavigationWindow  _openSaveFileDialog_currNavWin      = null;
         private String            _openSaveFileDialog_currentTest     = null;
 

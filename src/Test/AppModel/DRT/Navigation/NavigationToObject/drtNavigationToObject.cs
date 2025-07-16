@@ -45,6 +45,7 @@ namespace DrtNavigationToObject
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             _win = new NavigationWindow();
             _win.Title = "Hello Hua's test";
 

@@ -16,6 +16,12 @@ using System;
     {
         public class OnStartupBVT : System.Windows.Application
         {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            WpfgfxLoader.Load();
+            base.OnStartup(e);
+        }
+
             protected override void OnStartup(System.Windows.StartupEventArgs e)
             {
                 this.StartupUri = new Uri(@"MappingPIMarkup.xaml", UriKind.RelativeOrAbsolute);

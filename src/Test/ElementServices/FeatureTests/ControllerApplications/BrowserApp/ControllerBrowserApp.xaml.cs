@@ -11,6 +11,12 @@ namespace Avalon.Test.CoreUI.Common
 {
     public partial class ControllerBrowserApp : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            WpfgfxLoader.Load();
+            base.OnStartup(e);
+        }
+
         void AppStartup(object sender, StartupEventArgs e)
         {
             ApplicationController proxy = new ApplicationController();

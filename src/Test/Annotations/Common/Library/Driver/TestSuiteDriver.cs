@@ -57,6 +57,7 @@ namespace Annotations.Test.Framework
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             // If first arg is '/?' then print general driver usage.
             if (args.Length > 0 && args[0].Equals("/?"))
             {

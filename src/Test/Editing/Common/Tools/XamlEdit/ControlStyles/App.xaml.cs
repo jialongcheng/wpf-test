@@ -16,6 +16,12 @@ namespace StyleSnooper
 
     public partial class App : System.Windows.Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            WpfgfxLoader.Load();
+            base.OnStartup(e);
+        }
+
 
     }
 }

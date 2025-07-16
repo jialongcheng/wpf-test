@@ -13,6 +13,7 @@
     <None Include="DrtXamlContainerSecure.cmd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="NavByElement.xaml">

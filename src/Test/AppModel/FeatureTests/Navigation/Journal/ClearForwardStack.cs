@@ -22,6 +22,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // ClearForwardStack
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         internal enum ClearForwardStack_CurrentTest
         {
             InitialNav,

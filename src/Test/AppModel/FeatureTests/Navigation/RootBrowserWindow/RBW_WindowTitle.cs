@@ -14,6 +14,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // WindowTitle
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         void RBWWindowTitle_Startup(object sender, StartupEventArgs e)
         {
             _rbwTest = new RootBrowserWindowTestClass("RBWWindowTitle");

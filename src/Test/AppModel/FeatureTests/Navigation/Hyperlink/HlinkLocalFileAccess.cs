@@ -26,6 +26,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     /// </summary>
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         internal enum HlinkLocalFileAccess_CurrentTest
         {
             UnInit, 

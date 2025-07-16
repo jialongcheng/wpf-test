@@ -23,6 +23,12 @@ namespace XamlExperiment
     /// </summary>
     public partial class ApplicationStyledNavigationWindow : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            WpfgfxLoader.Load();
+            base.OnStartup(e);
+        }
+
         NavigationWindow _win;
 
         private void Application_Startup(object sender, StartupEventArgs e)

@@ -21,6 +21,7 @@ namespace Microsoft.Test.WPF.AppModel.CommonDialogs
 
         protected override void OnStartup (StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             //We need to verify we can't show the dialog on a second thread, so start one.
             ThreadStart start = new ThreadStart(NewThread);
             Thread thread = new Thread(start);

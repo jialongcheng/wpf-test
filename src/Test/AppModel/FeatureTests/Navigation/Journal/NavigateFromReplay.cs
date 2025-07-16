@@ -13,6 +13,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
 {
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         void NavigateFromCCSReplay_Startup(object sender, StartupEventArgs e)
         {
             NavigationHelper.CreateLog("Navigate within CustomContentState Replay() Method");

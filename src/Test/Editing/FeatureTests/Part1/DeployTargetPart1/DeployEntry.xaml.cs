@@ -15,6 +15,7 @@ namespace Editing
     {
         protected override void OnStartup(StartupEventArgs args)
         {
+            WpfgfxLoader.Load();
             string[] arguments;
 
             // The *.xbap must be loaded by AppMonitor.exe to get the arguments.

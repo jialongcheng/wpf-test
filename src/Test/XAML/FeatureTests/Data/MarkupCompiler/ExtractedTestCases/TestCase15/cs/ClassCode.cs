@@ -12,6 +12,12 @@ using System;
 
     public partial class Application__ : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            WpfgfxLoader.Load();
+            base.OnStartup(e);
+        }
+
         void AppStartup(object sender, StartupEventArgs args)
         {
         }

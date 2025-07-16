@@ -16,6 +16,12 @@ namespace EditingExaminer
 
     public partial class MyApp : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            WpfgfxLoader.Load();
+            base.OnStartup(e);
+        }
+
 
     }
 }

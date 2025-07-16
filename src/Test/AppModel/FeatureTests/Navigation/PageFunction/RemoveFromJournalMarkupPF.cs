@@ -17,6 +17,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // RemoveFromJournalMarkupPF
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         #region RemoveFromJournalMarkupPF globals
         private int _removeFromJournalMarkupPFTest = 0;
 

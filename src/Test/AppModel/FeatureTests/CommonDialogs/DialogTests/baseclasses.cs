@@ -248,6 +248,7 @@ namespace Microsoft.Windows.Test.Client.AppSec
         #region App Level overrides 
         protected override void OnStartup (StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             fw.LogEvidence ("\nStarting Up.");
             if (Description != null)
             {

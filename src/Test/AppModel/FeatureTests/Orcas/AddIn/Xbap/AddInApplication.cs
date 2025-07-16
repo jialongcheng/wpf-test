@@ -30,6 +30,7 @@ namespace Microsoft.Test.AddIn
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             base.OnStartup(e);
 
             GlobalLog.LogStatus("Get TestDefinition parameter \'TestFile\' to get the filename");

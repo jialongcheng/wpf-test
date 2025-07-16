@@ -45,6 +45,7 @@ namespace DrtNavigationEvents
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             Navigating          += new NavigatingCancelEventHandler(this.OnNavigating);
             NavigationProgress  += new NavigationProgressEventHandler(this.OnNavigationProgress);
             Navigated           += new NavigatedEventHandler(this.OnNavigated);

@@ -24,6 +24,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // AddBackEntryOnEmptyNS
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
 
         internal enum AddBackEntryOnEmptyNS_CurrentTest
         {

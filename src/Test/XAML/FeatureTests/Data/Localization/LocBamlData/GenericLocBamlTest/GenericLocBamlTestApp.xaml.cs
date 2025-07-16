@@ -9,6 +9,12 @@ namespace Microsoft.Test.Xaml.Localization
 {
     public partial class GenericLocBamlTestApp : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            WpfgfxLoader.Load();
+            base.OnStartup(e);
+        }
+
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             try

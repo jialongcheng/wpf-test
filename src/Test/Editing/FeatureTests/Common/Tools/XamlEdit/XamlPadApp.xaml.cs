@@ -13,6 +13,12 @@ namespace XamlPadEdit
 {
     public partial class XamlPadApp : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            WpfgfxLoader.Load();
+            base.OnStartup(e);
+        }
+
 
 #if !XamlPadExpressApp
         private bool _contentLoaded;

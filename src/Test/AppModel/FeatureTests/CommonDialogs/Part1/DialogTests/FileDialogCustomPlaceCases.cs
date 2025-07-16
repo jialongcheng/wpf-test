@@ -19,6 +19,7 @@ namespace Microsoft.Test.WPF.AppModel.CommonDialogs
 
         protected override void OnStartup (StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             FileDialogCustomPlace customPlace = null;
             try
             {

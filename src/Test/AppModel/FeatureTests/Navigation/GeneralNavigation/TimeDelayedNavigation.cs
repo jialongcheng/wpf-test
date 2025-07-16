@@ -18,6 +18,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     /// </summary>
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         #region constants
         /// <summary>
         /// A default time delay of 1.5 minutes

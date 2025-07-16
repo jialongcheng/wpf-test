@@ -104,6 +104,7 @@ namespace DRT
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             _logger.Log("Creating owner Window...");
 
             // The first window. At (0, 0)

@@ -68,6 +68,7 @@ namespace DRT
         // 
         protected override void OnStartup(StartupEventArgs e) 
         {
+            WpfgfxLoader.Load();
             _win = new Window();
             Button b = new Button();
             b.Content = "Hello World";

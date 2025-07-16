@@ -20,6 +20,7 @@ namespace Microsoft.Test.Wpf.AppModel.HyperlinkSpoofing
         /// <param name="e"></param>
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             string testName = DriverState.DriverParameters["TestToRun"];
             GlobalLog.LogEvidence("test name is: " + testName);
 

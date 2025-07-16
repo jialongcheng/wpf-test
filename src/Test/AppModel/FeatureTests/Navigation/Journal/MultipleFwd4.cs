@@ -14,6 +14,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     // MultipleFwd4
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         internal enum MultipleFwd4_CurrentTest
         {
             InitialNav,

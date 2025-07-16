@@ -34,6 +34,7 @@ namespace Test
         
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             _mainWindow = new NavigationWindow();
             _mainWindow.SandboxExternalContent = false;
             _mainWindow.Width = 200;

@@ -79,6 +79,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
          ***********************************************/
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             Microsoft.Test.CrossProcess.DictionaryStore.StartClient();
             string preLogging = "ENTERING OnStartup";
 

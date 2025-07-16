@@ -16,6 +16,12 @@ namespace Microsoft.Test.Wpf.AppModel
 {
     public partial class SecurityTestApp: System.Windows.Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         [STAThread]
         static void Main(string[] args)
         {

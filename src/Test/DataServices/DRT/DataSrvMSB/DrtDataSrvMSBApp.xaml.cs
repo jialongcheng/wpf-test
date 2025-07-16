@@ -20,6 +20,7 @@ namespace DrtDataSrv
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             LoadCompleted += new LoadCompletedEventHandler(OnLoadCompleted);
             base.OnStartup(e);
         }

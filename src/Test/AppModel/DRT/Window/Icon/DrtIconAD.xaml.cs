@@ -20,6 +20,7 @@ namespace DrtIcon
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             bool hold = false;
             if ((e.Args.Length > 0) && 
                 (e.Args[0].ToLower().Equals("-hold") || e.Args[0].ToLower().Equals("/hold")))

@@ -9,6 +9,12 @@ namespace RegressionIssue48
 {
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            WpfgfxLoader.Load();
+            base.OnStartup(e);
+        }
+
         void AppStartingUp(object sender, EventArgs e)
         {
             Window1 mainWindow = new Window1();

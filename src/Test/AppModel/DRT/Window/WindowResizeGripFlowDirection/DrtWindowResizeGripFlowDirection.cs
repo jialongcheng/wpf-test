@@ -62,6 +62,7 @@ namespace DRT
         // 2) FlowDirection
         protected override void OnStartup(StartupEventArgs e) 
         {
+            WpfgfxLoader.Load();
             ParseCmdLine(e.Args);
             _win = new Window();
             _b = new Button();

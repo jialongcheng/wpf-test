@@ -103,6 +103,7 @@ namespace Avalon.Test.CoreUI.UtilityHelper
     /// <param name="e"></param>
     protected override void OnStartup(StartupEventArgs e)
     {
+            WpfgfxLoader.Load();
       SetupUI();
       base.OnStartup(e);
     }

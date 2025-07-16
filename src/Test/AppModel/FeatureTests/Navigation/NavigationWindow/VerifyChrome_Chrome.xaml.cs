@@ -42,6 +42,12 @@ namespace Microsoft.Windows.Test.Client.AppSec.Navigation
     /// </summary>
     public partial class NavigationTests : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            WpfgfxLoader.Load();
+        }
+
         Application      _navApp         = null;
         NavigationWindow navWin         = null;
         //Frame            placeFrame     = null;

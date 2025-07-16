@@ -346,6 +346,7 @@ namespace DrtPagefunctionTest
 
         protected  override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             for( int i = 0;i < e.Args.Length ;  i++ )
             {
                 switch( e.Args[i].ToLower() )

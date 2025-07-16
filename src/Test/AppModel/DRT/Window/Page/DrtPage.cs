@@ -67,6 +67,7 @@ namespace DRT
         
         protected override void OnStartup(StartupEventArgs e)
         {
+            WpfgfxLoader.Load();
             foreach (string arg in e.Args)
             {
                 switch(arg)

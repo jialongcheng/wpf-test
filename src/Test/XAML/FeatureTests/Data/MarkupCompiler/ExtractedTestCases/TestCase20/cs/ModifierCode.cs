@@ -12,6 +12,12 @@ using System;
 
     public partial class MyAppName : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            WpfgfxLoader.Load();
+            base.OnStartup(e);
+        }
+
         void AppStartup(object sender, StartupEventArgs args)
         {
             FieldInfo fi = typeof(MyClassName).GetField("NameField", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
