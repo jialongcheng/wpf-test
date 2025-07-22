@@ -24,6 +24,7 @@ namespace DRT
         [STAThread]
         public static int Main()
         {
+            WpfgfxLoader.Load();
             WindowAutoSizeApp.DisableProcessWindowsGhosting();
             WindowAutoSizeApp theApp = new WindowAutoSizeApp();
 

@@ -487,6 +487,7 @@ namespace Microsoft.Samples
         [STAThread]
         public static int Main(string [] args)
         {
+            WpfgfxLoader.Load();
             bool interactive = ((IList)args).Contains("-i");
             
             Application application = new Application();

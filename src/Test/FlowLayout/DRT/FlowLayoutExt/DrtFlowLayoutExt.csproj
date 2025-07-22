@@ -8,6 +8,10 @@
     <LinkSubsystem>console</LinkSubsystem>
   </PropertyGroup>
   
+  <PropertyGroup Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
+    <DisableFrameworkReferenceAssemblyPaths>true</DisableFrameworkReferenceAssemblyPaths>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Include="$(DrtCommonRoot)\inc\DrtBase.cs" />
     <Compile Include="..\FlowLayout\DrtLayoutBase.cs" />
@@ -38,6 +42,7 @@
     <Compile Include="TextViewTextBlockSuite.cs" />
     <Compile Include="TextViewTextFlowSuite.cs" />
     <Compile Include="BringIntoViewSuite.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <None Include="DrtFiles\*">
         <Link>DrtFiles\FlowLayoutExt\%(FileName)%(Extension)</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

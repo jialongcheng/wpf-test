@@ -23,6 +23,7 @@ namespace DRT
         [STAThread]
         public static int Main()
         {
+            WpfgfxLoader.Load();
             WindowHeightWidthTopLeftApp theApp = new WindowHeightWidthTopLeftApp();            
             try
             {

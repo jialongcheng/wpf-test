@@ -48,6 +48,7 @@ namespace DRT
         [STAThread]
         public static int Main()
         {    
+            WpfgfxLoader.Load();
             WindowFunctionalityApp theApp = new WindowFunctionalityApp();            
             try
             {

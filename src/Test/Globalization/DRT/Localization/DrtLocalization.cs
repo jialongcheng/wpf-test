@@ -26,6 +26,7 @@ namespace DRT
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtBase drt = new LocalizationTest();
             return drt.Run(args);
         }

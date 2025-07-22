@@ -30,6 +30,7 @@ namespace DRT
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtDialog.DisableProcessWindowsGhosting();
 
             DrtDialog myApp = new DrtDialog();

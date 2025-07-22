@@ -35,6 +35,7 @@ namespace DRT
         [STAThread]
         internal static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtBase drt = new DrtFlow();
             return drt.Run(args);
         }

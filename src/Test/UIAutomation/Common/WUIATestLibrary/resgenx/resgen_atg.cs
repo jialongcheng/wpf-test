@@ -20,6 +20,7 @@ namespace resgenx
 		[STAThread]
 		static int Main(string[] args)
 		{
+		    WpfgfxLoader.Load();
             //args = new string [] { "filter.xsl", "filter-txt2.xsl", "-o", "UIVerify" };
 
             int cArgs = args.Length;

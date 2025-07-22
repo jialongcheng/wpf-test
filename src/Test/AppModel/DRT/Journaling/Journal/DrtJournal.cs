@@ -24,6 +24,7 @@ namespace DrtJournal
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtJournalBase drt = new DrtJournalBase();
             return drt.Run(args);
         }

@@ -26,6 +26,7 @@
     <Compile Include="$(DrtCommonRoot)\bamldump\BamlWriterWrapper.cs" />
     <Compile Include="$(DrtCommonRoot)\bamldump\WrapperUtil.cs" />
     <Compile Include="$(DrtCommonRoot)\inc\DrtBase.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 
   <ItemGroup>

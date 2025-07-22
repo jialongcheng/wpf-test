@@ -19,6 +19,7 @@
     <Compile Include="NoBleedSuite.cs" />
     <Compile Include="TextDocumentViewSuite.cs" />
     <Compile Include="TextParagraphViewSuite.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <None Include="DrtFiles\*">
       <Link>DrtFiles\Selection\%(FileName)%(Extension)</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

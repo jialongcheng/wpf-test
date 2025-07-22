@@ -22,6 +22,7 @@
     <Compile Include="3DMeshCreation\Token.cs" />
     <Compile Include="3DMeshCreation\Tokenizer.cs" />
     <Compile Include="3DMeshCreation\TokenSet.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <None Include="*.png">
       <Link>\DrtFiles\DrtBasic3D\%(FileName)%(Extension)</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -9,5 +9,6 @@
     <Compile Include="DrtPackScheme.cs" />
     <Compile Include="IntranetCredentialPolicy.cs" />
     <Compile Include="$(DrtCommonRoot)\inc\DrtBase.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 </Project>

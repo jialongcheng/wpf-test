@@ -21,6 +21,7 @@
     <Compile Include="ResourceTextWriter.cs" />
     <Compile Include="StringLoader.cs" />
     <Compile Include="TranslationDictionaries.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <EmbeddedResource Include="Resources\StringTable.resText">
         <LogicalName>Resources.StringTable.resources</LogicalName>
     </EmbeddedResource>

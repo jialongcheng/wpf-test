@@ -23,6 +23,7 @@ namespace DRT
         [STAThread]
         public static int Main()
         {
+            WpfgfxLoader.Load();
             /*
             Create a Application
             Set the StartupPage Property

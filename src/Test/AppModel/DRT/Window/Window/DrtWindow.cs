@@ -57,6 +57,7 @@ namespace DRT
         [STAThread]
         public static int Main()
         {
+            WpfgfxLoader.Load();
 
              // Creates an app and a window
              // 1) Closing event is fired

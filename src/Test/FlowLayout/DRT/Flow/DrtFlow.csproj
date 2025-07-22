@@ -37,6 +37,7 @@
     <Compile Include="Viewer\ViewerFlowDirectionTestSuite.cs" />
     <Compile Include="Viewer\ViewerNavTestSuite.cs" />
     <Compile Include="Viewer\ViewerTestSuite.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <None Include="Xaml\*.xaml">
       <Link>DrtFiles\Flow\%(FileName)%(Extension)</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

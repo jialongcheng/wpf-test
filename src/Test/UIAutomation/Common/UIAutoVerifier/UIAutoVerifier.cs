@@ -49,6 +49,7 @@ namespace WPF.Test.UIAutomation
 
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             UIVerifyLogger.SetLoggerType(UIVerifyLogger.PiperLogger);
 
             if (args.Length < 3)

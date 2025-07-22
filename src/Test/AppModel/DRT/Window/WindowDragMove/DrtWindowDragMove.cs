@@ -24,6 +24,7 @@ namespace DRT
         [STAThread]
         public static int Main()
         {            
+            WpfgfxLoader.Load();
             WindowDragMoveApp.DisableProcessWindowsGhosting();
             WindowDragMoveApp theApp = new WindowDragMoveApp();
             try

@@ -51,6 +51,7 @@ class ContainerTests
     [STAThread]
     public static int Main(string[] cmdParams)
     {
+        WpfgfxLoader.Load();
         if( cmdParams.Length == 1 && cmdParams[0] == "/verbose" )
             Log.Verbose = true;
         if( cmdParams.Length == 1 && cmdParams[0] == "/rmclient" )

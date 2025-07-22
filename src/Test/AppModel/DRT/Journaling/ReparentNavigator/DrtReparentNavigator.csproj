@@ -10,6 +10,7 @@
   <ItemGroup>
     <Compile Include="DrtReparentNavigator.cs" />
     <Compile Include="..\..\Logger\logger.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <None Include="DrtReparentNavigatorSecure.cmd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

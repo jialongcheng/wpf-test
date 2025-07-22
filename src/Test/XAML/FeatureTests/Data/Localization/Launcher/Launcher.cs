@@ -13,6 +13,7 @@ namespace CultureSwitcher
 	[STAThread]
 	static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             if (args.Length == 1)
             {
                 LaunchAppInSpecifiedCulture(args[0], "en-US");

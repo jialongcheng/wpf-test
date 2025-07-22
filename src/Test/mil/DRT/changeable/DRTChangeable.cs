@@ -28,6 +28,7 @@ namespace DRTFreezable
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtBase drt = new DRTFreezable();
 
             return drt.Run(args);

@@ -23,6 +23,7 @@ namespace DrtPagefunctionTest
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             try
             {
                 PageFunctionTest pt = new PageFunctionTest();

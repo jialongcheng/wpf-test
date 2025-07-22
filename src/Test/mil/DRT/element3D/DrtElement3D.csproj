@@ -12,11 +12,13 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
   </PropertyGroup>
+
   <ItemGroup>
     <Compile Include="DrtElement3D.cs" />
     <Compile Include="Element3DTestCases.cs" />
     <Compile Include="SphereUIElement3D.cs" />
     <Compile Include="Sphere.cs" />
     <Compile Include="InputHelper.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 </Project>

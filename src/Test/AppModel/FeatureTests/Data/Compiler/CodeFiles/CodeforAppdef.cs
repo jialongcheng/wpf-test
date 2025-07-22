@@ -96,6 +96,7 @@ namespace TestDll {
       [STAThread]
       public static int Main(string[] args) 
       {          
+          WpfgfxLoader.Load();
           System.Windows.Application app = new OnStartupBVT();
           return app.Run();
       }

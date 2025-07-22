@@ -57,6 +57,7 @@ namespace DRT
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtControls drt = new DrtControls();
             int returnValue = 0;
 

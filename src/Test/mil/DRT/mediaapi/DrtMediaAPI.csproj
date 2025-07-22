@@ -17,5 +17,6 @@
     <Compile Include="DrtPrimitives.cs" />
     <Compile Include="DrtPrimitives3D.cs" />
     <Compile Include="DrtTypeConverters.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 </Project>

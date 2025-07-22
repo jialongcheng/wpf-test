@@ -50,6 +50,7 @@
     <Compile Include="TextFlowRenderTrailingSpacesSuite.cs" />
     <Compile Include="TextElementsSuite.cs" />
     <Compile Include="InlineFlowDirectionSuite.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <None Include="DrtFiles\*">
       <Link>DrtFiles\FlowLayout\%(FileName)%(Extension)</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

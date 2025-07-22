@@ -41,6 +41,7 @@ namespace DRT
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             if (args.Length > 2 ||
                 (args.Length == 1 &&
                  (args[0] == "/?" || args[0] == "?")))

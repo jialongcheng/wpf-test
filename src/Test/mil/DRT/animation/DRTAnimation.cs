@@ -53,6 +53,7 @@ namespace DRTAnimation
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtBase drt = new DRTAnimation();
 
             return drt.Run(args);

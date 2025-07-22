@@ -71,6 +71,7 @@
     <Compile Include="..\Suites\DrtVSMGoToState.cs" />
     <Compile Include="..\Suites\DrtMetadata.cs" />
     <Compile Include="..\DrtControls.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
   
   <ItemGroup>

@@ -22,6 +22,7 @@ namespace DRT
         [STAThread]
         public static int Main()
         {
+            WpfgfxLoader.Load();
             WindowMinMaxSizeApp theApp = new WindowMinMaxSizeApp();
 
             try

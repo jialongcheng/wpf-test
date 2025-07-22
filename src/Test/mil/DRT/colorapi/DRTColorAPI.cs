@@ -80,6 +80,7 @@ public class DrtColorAPI
     [STAThread]
     public static int Main()
     {
+        WpfgfxLoader.Load();
         bool succeeded = RunDRTs();
 
         string statusString = succeeded ? "SUCCEEDED" : "FAILED";

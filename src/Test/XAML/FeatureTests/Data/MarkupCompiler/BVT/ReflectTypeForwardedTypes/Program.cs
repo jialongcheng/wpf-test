@@ -18,6 +18,7 @@ namespace ReflectTypeForwardedTypes
         /// </summary>
         public static int Main()
         {
+            WpfgfxLoader.Load();
 
             List<string> forwardedTypes = new List<string>()
             {

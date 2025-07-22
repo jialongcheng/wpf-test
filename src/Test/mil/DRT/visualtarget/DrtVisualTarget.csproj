@@ -11,5 +11,6 @@
   <ItemGroup>
     <Compile Include="$(DrtCommonRoot)\inc\DrtBase.cs" />
     <Compile Include="DrtVisualTarget.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 </Project>

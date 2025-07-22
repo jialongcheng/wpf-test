@@ -62,6 +62,7 @@ namespace DRT
         [STAThread]
         public static int Main()
         {
+            WpfgfxLoader.Load();
             DrtAppShutdown theApp = new DrtAppShutdown();
             theApp.Run();
             if (s_passed)

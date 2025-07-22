@@ -27,6 +27,7 @@ namespace DRT
         [STAThread]
         public static int Main(String[] args)
         {
+            WpfgfxLoader.Load();
             WindowResizeGripFlowDirectionApp.DisableProcessWindowsGhosting();
             WindowResizeGripFlowDirectionApp theApp = new WindowResizeGripFlowDirectionApp();
             try

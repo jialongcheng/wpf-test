@@ -18,6 +18,7 @@
     <Compile Include="JournalingSuite.cs" />
     <Compile Include="NewLoaderSuite.cs" />
     <Compile Include="TransparentWindowSuite.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 
   <ItemGroup>

@@ -33,6 +33,7 @@
     <Compile Include="TextRangeSerializationSuite.cs" />
     <Compile Include="XamlRtfConverterSuite.cs" />
     <Compile Include="XamlRtfConverter.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <None Include="cut.png">
       <Link>DrtFiles\Editing\%(Filename)%(Extension)</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

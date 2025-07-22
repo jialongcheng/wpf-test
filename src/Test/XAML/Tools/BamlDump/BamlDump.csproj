@@ -11,5 +11,6 @@
     <Compile Include="BamlReaderWrapper.cs" />
     <Compile Include="BamlWriterWrapper.cs" />
     <Compile Include="WrapperUtil.cs" />
+    <!-- <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/> -->
   </ItemGroup>
 </Project>

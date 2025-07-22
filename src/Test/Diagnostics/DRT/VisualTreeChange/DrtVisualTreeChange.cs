@@ -26,6 +26,7 @@ namespace DRT
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtVisualTreeChange drt = new DrtVisualTreeChange();
             return drt.Run(args);
         }

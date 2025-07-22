@@ -38,6 +38,7 @@ namespace Annotations.TestCases.Service
 		[STAThread]
 		static int Main(string[] args)
 		{
+		    WpfgfxLoader.Load();
 			if ((args == null) || (args.Length == 0) || (args[0] == null))
 				throw new Exception("ERROR: test name not provided to test driver.");
 

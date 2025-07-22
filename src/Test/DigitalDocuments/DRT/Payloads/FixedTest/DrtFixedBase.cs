@@ -28,6 +28,7 @@ namespace DRT
         [STAThread]
         internal static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtBase drt = new DrtFixedBase();
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             return drt.Run(args);

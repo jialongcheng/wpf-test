@@ -29,6 +29,7 @@ namespace DRT
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             Console.WriteLine("Storyboards Developer Regression Tests [Contact: Microsoft]");
 
             StreamWriter logFile = File.CreateText("DRTStoryboards.log");

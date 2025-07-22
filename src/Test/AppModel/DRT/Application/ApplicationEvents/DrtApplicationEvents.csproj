@@ -10,6 +10,7 @@
   <ItemGroup>
     <Compile Include="DrtApplicationEvents.cs" />
     <Compile Include="..\..\Logger\Logger.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <None Include="DrtApplicationEvents.cmd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

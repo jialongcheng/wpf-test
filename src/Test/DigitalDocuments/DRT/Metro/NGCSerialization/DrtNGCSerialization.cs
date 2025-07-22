@@ -30,6 +30,7 @@ namespace DrtPrinting
         [STAThread]
         static int Main(String[] args)
         {
+            WpfgfxLoader.Load();
             DrtBase drt = new DrtNGCTest();
             return drt.Run(args);
         }

@@ -16,6 +16,7 @@
     <Compile Include="NativeMethods.cs" />
     <Compile Include="TextFindSuites.cs" />
     <Compile Include="UnsafeNativeMethods.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <None Include="DrtFiles\*">
       <Link>DrtFiles\TextFind\%(FileName)%(Extension)</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

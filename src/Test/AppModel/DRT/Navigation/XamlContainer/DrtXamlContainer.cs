@@ -276,6 +276,7 @@ namespace Test
         [STAThread]
         public static int Main()
         {
+            WpfgfxLoader.Load();
             try
             {
                 new DrtXamlContainer().Run();

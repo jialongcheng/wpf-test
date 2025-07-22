@@ -24,6 +24,7 @@ namespace DrtNavigationToObject
         [STAThread]
         static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             try
             {
                 new navapp().Run();

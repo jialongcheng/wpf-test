@@ -17,6 +17,7 @@
     <Compile Include="DRTMil2D.cs" />
     <Compile Include="DRTMil2DBrush.cs" />
     <Compile Include="DRTMil2DDrawing.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <None Include="DrtFiles\*">
       <Link>DrtFiles\DrtMil2D\%(FileName)%(Extension)</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

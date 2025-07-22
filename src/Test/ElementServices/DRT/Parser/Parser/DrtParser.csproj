@@ -26,6 +26,7 @@
     <Compile Include="$(WpfSharedRoot)\MS\Win32\WpfLibraryLoader.cs" />
     <Compile Include="$(DrtCommonRoot)\inc\drtbase.cs" />
     <Compile Include="DRTParser.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <None Include="*.xaml">
         <Link>DrtFiles\Parser\%(Filename)%(Extension)</Link>
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>

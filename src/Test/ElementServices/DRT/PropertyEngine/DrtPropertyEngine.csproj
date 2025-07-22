@@ -33,6 +33,7 @@
     <Compile Include="TestInheritanceContext.cs" />
     <Compile Include="TestValueSource.cs" />
     <Compile Include="TestVisualTransforms.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <None Include="files\*.xaml">
       <Link>DrtFiles\PropertyEngine\%(Filename)%(Extension)</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

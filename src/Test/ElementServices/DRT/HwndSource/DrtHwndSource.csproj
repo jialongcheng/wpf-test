@@ -17,5 +17,6 @@
     <Compile Include="SizeToContentSuite.cs" />
     <Compile Include="WindowClassSuite.cs" />
     <Compile Include="PerPixelTransparencySuite.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 </Project>

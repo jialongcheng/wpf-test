@@ -48,6 +48,7 @@ namespace DrtAnnotations
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtAnnotationsDrt drt = new DrtAnnotationsDrt();
             return drt.Run(args);
         }

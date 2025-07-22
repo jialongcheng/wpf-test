@@ -27,6 +27,7 @@ namespace DRT
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             int ret = (new DrtSerializer()).Run(args);
             
             if (RefreshMode)

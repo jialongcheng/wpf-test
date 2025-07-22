@@ -12,5 +12,6 @@
     <Compile Include="DRTContainer.cs" />
     <Compile Include="$(DrtCommonRoot)\inc\StorageRootWrapper.cs" />
     <Compile Include="$(DrtCommonRoot)\inc\SpewWriter.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 </Project>

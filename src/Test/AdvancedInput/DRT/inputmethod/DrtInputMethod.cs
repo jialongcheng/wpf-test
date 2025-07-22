@@ -20,6 +20,7 @@ namespace DRT
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtBase drt = new DrtInputMethod();
 
             ((DrtInputMethod)drt).WindowSize = new Size(800,600);

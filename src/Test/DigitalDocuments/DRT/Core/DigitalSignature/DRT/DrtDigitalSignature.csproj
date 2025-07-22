@@ -12,6 +12,7 @@
     <Compile Include="XmlDSigTests.cs" />
     <Compile Include="$(DrtCommonRoot)\inc\DrtBase.cs" />
     <Compile Include="$(DrtCommonRoot)\inc\SpewWriter.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <None Include="DrtDigitalSignature.cmd">
       <Link>%(FileName)%(Extension)</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -41,6 +41,7 @@
     <Compile Include="HiAnsiCode.cs" />
     <Compile Include="DeadCharCode.cs" />
     <Compile Include="DrtHkl.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 
 </Project>

@@ -30,6 +30,7 @@ namespace DrtFrameJournaling
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtFrameJournalBase drt = new DrtFrameJournalBase();
 
             return drt.Run(args);

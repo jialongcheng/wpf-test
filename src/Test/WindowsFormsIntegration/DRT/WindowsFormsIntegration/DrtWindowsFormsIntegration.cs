@@ -29,6 +29,7 @@ public class DrtWindowsFormsIntegration : DrtBase
     [STAThread]
     public static int Main(string[] args)
     {
+        WpfgfxLoader.Load();
         DrtBase drt = new DrtWindowsFormsIntegration();
         return drt.Run(args);
     }

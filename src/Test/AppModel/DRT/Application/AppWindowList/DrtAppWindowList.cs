@@ -170,6 +170,7 @@ namespace DRT
         [STAThread]
         public static int Main()
         {
+            WpfgfxLoader.Load();
             DrtAppWindowList theApp = new DrtAppWindowList();
             theApp.Run();
 

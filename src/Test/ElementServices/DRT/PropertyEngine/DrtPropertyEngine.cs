@@ -23,6 +23,7 @@ namespace DRT
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             return new DrtPropertyEngine().Run(args);
         }
 

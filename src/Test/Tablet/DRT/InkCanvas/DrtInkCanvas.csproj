@@ -79,6 +79,7 @@
     <Compile Include="StrokeErasePerfTest.cs" />
     <Compile Include="$(DrtCommonRoot)\inc\ReliabilityAssertException.cs" />
     <Compile Include="$(DrtCommonRoot)\inc\CLRProfilerControl.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 
 </Project>

@@ -17,6 +17,7 @@ namespace DRT
         [STAThread]
         public static int Main()
         {
+            WpfgfxLoader.Load();
             DrtApplication theTest = new DrtApplication();
             DrtApplication.DisableProcessWindowsGhosting();
             

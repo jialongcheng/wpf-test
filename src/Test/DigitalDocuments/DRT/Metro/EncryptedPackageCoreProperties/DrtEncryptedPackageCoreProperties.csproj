@@ -8,6 +8,7 @@
     <Compile Include="$(DrtCommonRoot)\inc\DrtBase.cs" />
     <Compile Include="$(WpfSharedRoot)\MS\Internal\IO\SynchronizingStream.cs" />
     <Compile Include="DrtEncryptedPackageCoreProperties.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <None Include="DrtFiles\*">
       <Link>DrtFiles\EncryptedPackageCoreProperties\%(FileName)%(Extension)</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

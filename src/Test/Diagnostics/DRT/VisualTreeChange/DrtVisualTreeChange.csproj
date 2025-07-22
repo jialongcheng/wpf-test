@@ -20,5 +20,6 @@
     <Compile Include="$(DrtCommonRoot)\inc\DrtBase.cs" />
     <Compile Include="DrtVisualTreeChange.cs" />
     <Compile Include="DrtVisualTreeChangeSuite.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 </Project>

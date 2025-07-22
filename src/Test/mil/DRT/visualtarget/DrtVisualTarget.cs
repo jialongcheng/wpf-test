@@ -23,6 +23,7 @@ public class DrtVisualTarget : DrtBase
     [STAThread]
     public static int Main(string[] args)
     {
+        WpfgfxLoader.Load();
         DrtBase drt = new DrtVisualTarget();
         return drt.Run(args);
     }

@@ -34,6 +34,7 @@ namespace DRTMil2D
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtBase drt = new DRTMil2D();
 
             return drt.Run(args);

@@ -22,6 +22,7 @@ namespace DRT
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             WindowScrollTestApplication theApp = new WindowScrollTestApplication();
 
             try

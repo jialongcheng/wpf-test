@@ -20,6 +20,7 @@ namespace Microsoft.Test.Execution.Debugging
         /// </summary>
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             try
             {
                 CommandLineDictionary dictionary = CommandLineDictionary.FromArguments(args);

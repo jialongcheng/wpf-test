@@ -18,6 +18,7 @@
     <Compile Include="Commands\RegisterForDistributionCommand.cs" />
     <Compile Include="Commands\RunCommand.cs" />
     <Compile Include="MainEntry.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
   
   <ItemGroup>

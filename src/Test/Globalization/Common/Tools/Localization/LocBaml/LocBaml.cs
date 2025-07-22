@@ -35,6 +35,7 @@ namespace BamlLocalization
         [System.STAThread()]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             LocBamlOptions options;
             string errorMessage;
             GetCommandLineOptions(args, out options, out errorMessage);

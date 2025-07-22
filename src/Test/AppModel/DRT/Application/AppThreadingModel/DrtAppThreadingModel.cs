@@ -61,6 +61,7 @@ namespace DRT
         [STAThread]
         public static int Main()
         {
+            WpfgfxLoader.Load();
             _app = new DrtAppThreadingModel();
             if (!TestAppThreadOnlyAPIs())
             {

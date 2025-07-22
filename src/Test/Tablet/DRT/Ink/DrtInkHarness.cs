@@ -22,6 +22,7 @@ namespace DRT
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             drt = new DrtInk();
             int result = drt.Run(args);
             drt.Dispose();

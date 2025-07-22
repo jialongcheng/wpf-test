@@ -19,6 +19,7 @@ namespace DRTNavigationApplication
         [STAThread]
         public static int Main()
         {            
+            WpfgfxLoader.Load();
             try
             {
                 _navApp = new Application();

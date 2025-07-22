@@ -61,6 +61,7 @@ namespace MS.Internal.WppDrt.EDocsUx
         [STAThread]
         static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             return (new DrtDRXSerialization()).Run(args);
         }
 

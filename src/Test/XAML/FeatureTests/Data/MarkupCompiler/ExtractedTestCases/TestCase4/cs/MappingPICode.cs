@@ -53,6 +53,7 @@ using System;
             [System.STAThread()]
             public static int Main(string[] args)
             {
+                WpfgfxLoader.Load();
                 System.Threading.Thread.CurrentThread.SetApartmentState(System.Threading.ApartmentState.STA);
                 OnStartupBVT app = new OnStartupBVT();
                 return app.Run();

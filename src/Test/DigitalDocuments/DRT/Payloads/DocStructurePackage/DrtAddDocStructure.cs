@@ -34,6 +34,7 @@ namespace DrtPrinting
         [STAThread]
         static int Main(String[] args)
         {
+            WpfgfxLoader.Load();
             DrtBase drt = new DrtAddDocStructure();
             return drt.Run(args);
         }

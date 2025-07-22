@@ -29,6 +29,7 @@ namespace DRTNavigationWindow
         [STAThread]
         public static int Main()
         {
+            WpfgfxLoader.Load();
             /*
             Creates an app, a Navigation window on App's thread, and a NavigationWindow on worker thread T2.  It tests
             the following on both NavigationWindows

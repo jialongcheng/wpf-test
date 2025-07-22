@@ -22,6 +22,7 @@ namespace DRT
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtBase drt = new DrtStickyNoteControl();
             int result = drt.Run(args);
             drt.Dispose();

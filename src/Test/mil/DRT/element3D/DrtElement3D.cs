@@ -156,6 +156,7 @@ namespace Microsoft.Samples
         [STAThread]
         public static int Main(string [] args)
         {
+            WpfgfxLoader.Load();
             // Add a loadLIbrary
             // Create a native pinvoke call to load a wpfgfx_cor3.dll in the executable directory.
             string exeDir = AppDomain.CurrentDomain.BaseDirectory;

@@ -15,6 +15,7 @@ namespace DRT
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtXamlSourceInfo drt = new DrtXamlSourceInfo();
             return drt.Run(args);
         }

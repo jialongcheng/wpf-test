@@ -35,6 +35,7 @@ namespace DRTDocumentViewerSuite
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             return (new DrtDocumentViewerSuite()).Run(args);
         }
 

@@ -19,6 +19,7 @@ namespace DRT
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtBase drt = new DrtAppModelSuites();
             return drt.Run(args);
         }

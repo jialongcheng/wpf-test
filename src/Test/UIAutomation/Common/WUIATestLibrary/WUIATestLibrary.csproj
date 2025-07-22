@@ -119,36 +119,4 @@
   <ItemGroup>
     <ProjectReference Include="$(WUIALoggingProject)"/>
   </ItemGroup>
-<!-- 
-<ItemGroup>
-  <FrameworkReference Remove="Microsoft.WindowsDesktop.App" />
-</ItemGroup>
-
-
-  <ItemGroup>
-    <Reference Remove="UIAutomationTypes" />
-  </ItemGroup> -->
-
-  <!-- <ItemGroup Condition="'$(TargetFrameworkIdentifier)' == '.NETFramework'">
-    <Reference Include="UIAutomationClient">
-      <HintPath>$(WpfBinDirectory)UIAutomationClient\$(Platform)\$(Configuration)\net481\UIAutomationClient.dll</HintPath>
-      <Private>true</Private>
-      <SpecificVersion>true</SpecificVersion>
-      <EmbedInteropTypes>false</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="UIAutomationClientSideProviders">
-      <HintPath>$(WpfBinDirectory)UIAutomationClientSideProviders\$(Platform)\$(Configuration)\net481\UIAutomationClientSideProviders.dll</HintPath>
-      <Private>true</Private>
-    </Reference>
-    <Reference Include="UIAutomationProvider">
-      <HintPath>$(WpfBinDirectory)UIAutomationProvider\$(Platform)\$(Configuration)\net481\UIAutomationProvider.dll</HintPath>
-      <Private>true</Private>
-    </Reference>
-    <Reference Include="UIAutomationTypes">
-      <HintPath>$(WpfBinDirectory)UIAutomationTypes\$(Platform)\$(Configuration)\net481\UIAutomationTypes.dll</HintPath>
-      <Private>true</Private>
-      <SpecificVersion>true</SpecificVersion>
-      <EmbedInteropTypes>false</EmbedInteropTypes>
-    </Reference>
-  </ItemGroup> -->
 </Project>

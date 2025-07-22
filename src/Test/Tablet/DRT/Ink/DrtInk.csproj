@@ -37,6 +37,7 @@
     <Compile Include="tests\HitTestTest.cs" />
     <Compile Include="tests\InkExceptionHardening.cs" />
     <Compile Include="$(DrtCommonRoot)\inc\ReliabilityAssertException.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 
 </Project>

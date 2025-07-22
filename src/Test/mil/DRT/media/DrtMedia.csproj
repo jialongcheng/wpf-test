@@ -15,6 +15,7 @@
   <ItemGroup>
     <Compile Include="$(DrtCommonRoot)\inc\drtbase.cs" />
     <Compile Include="DrtMedia.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <None Include="DrtFiles\*">
       <Link>DrtFiles\DrtMedia\%(FileName)%(Extension)</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

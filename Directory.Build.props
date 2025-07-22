@@ -35,5 +35,34 @@
     <PlatformFolder>x86</PlatformFolder>
     <PlatformFolder Condition="'$(Platform)' == 'x64'">x64</PlatformFolder>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Remove="PresentationCore" />
+    <Reference Remove="PresentationFramework" />
+    <Reference Remove="PresentationFramework-SystemCore" />
+    <Reference Remove="PresentationFramework-SystemData" />
+    <Reference Remove="PresentationFramework-SystemDrawing" />
+    <Reference Remove="PresentationFramework-SystemXml" />
+    <Reference Remove="PresentationFramework-SystemXmlLinq" />
+    <Reference Remove="PresentationFramework.Aero" />
+    <Reference Remove="PresentationFramework.Aero2" />
+    <Reference Remove="PresentationFramework.AeroLite" />
+    <Reference Remove="PresentationFramework.Classic" />
+    <Reference Remove="PresentationFramework.Luna" />
+    <Reference Remove="PresentationFramework.Royale" />
+    <Reference Remove="PresentationUI" />
+    <Reference Remove="ReachFramework" />
+    <Reference Remove="System.Printing" />
+    <Reference Remove="System.Windows.Controls.Ribbon" />
+    <Reference Remove="System.Windows.Input.Manipulations" />
+    <Reference Remove="System.Windows.Presentation" />
+    <Reference Remove="System.Xaml" />
+    <Reference Remove="UIAutomationClient" />
+    <Reference Remove="UIAutomationClientSideProviders" />
+    <Reference Remove="UIAutomationProvider" />
+    <Reference Remove="UIAutomationTypes" />
+    <Reference Remove="WindowsBase" />
+    <Reference Remove="WindowsFormsIntegration" />
+  </ItemGroup>
   
 </Project>

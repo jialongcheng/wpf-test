@@ -31,5 +31,6 @@
     <Compile Include="DrtWindowsFormsIntegration.cs" />
     <Compile Include="ElementHostTestSuite.cs" />
     <Compile Include="WindowsFormsHostTestSuite.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 </Project>

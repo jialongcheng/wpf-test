@@ -19,6 +19,7 @@
     <Compile Include="DRTInputScope.cs" />
     <Compile Include="DRTInputLanguage.cs" />
     <Compile Include="MyBoxElement.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
   
 </Project>

@@ -11,6 +11,7 @@
     <Compile Include="PrintHelp.cs" />
     <Compile Include="Render.cs" />
     <Compile Include="$(DrtCommonRoot)\inc\Drtbase.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <None Include="DrtSerialization_Files\*">
       <Link>DrtFiles\VisualSerialization\%(FileName)%(Extension)</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

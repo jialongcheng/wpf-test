@@ -118,6 +118,7 @@ namespace TestDll {
         /// </summary>
         [System.STAThread()]
         public static void BrowserMain(string[] args) {
+            WpfgfxLoader.Load();
             System.Threading.Thread.CurrentThread.ApartmentState = System.Threading.ApartmentState.STA;
             System.Windows.Application app = new OnStartupBVT();
         }

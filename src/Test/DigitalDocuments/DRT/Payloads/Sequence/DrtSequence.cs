@@ -35,6 +35,7 @@ namespace DrtPayloads
         [STAThread]
         internal static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtSequence driver = new DrtSequence("DrtSequence", "Microsoft");
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             return driver.LaunchDRT(args); 

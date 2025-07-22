@@ -29,5 +29,6 @@
     <Compile Include="TimingSuite.cs" />
     <Compile Include="ZeroDuration.cs" />
     <Compile Include="NullTimeManager.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 </Project>

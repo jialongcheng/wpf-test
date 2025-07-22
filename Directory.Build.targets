@@ -68,7 +68,7 @@
   </ItemGroup> -->
 
 
-<Target Name="RemoveGacUIAutomationTypes" AfterTargets="ResolveAssemblyReferences" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
+<Target Name="RemoveGacUIAutomationTypes" BeforeTargets="ResolveAssemblyReferences" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
   <ItemGroup>
     <ReferencePath Remove="@(ReferencePath)" Condition="'%(ReferencePath.FusionName)' == 'UIAutomationTypes, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'" />
   </ItemGroup>
@@ -79,6 +79,21 @@
     <ReferencePath Remove="@(ReferencePath)" Condition="'%(ReferencePath.FusionName)' == 'UIAutomationClient, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'" />
   </ItemGroup>
 </Target>
+
+<Target Name="ForceCopyUIAutomationTypes" AfterTargets="Build" Condition="'$(TargetFrameworkIdentifier)' == '.NETFramework'">
+  <Copy
+    SourceFiles="$(WpfBinDirectory)UIAutomationTypes\$(Platform)\Release\net481\UIAutomationTypes.dll"
+    DestinationFolder="$(OutputPath)"
+    SkipUnchangedFiles="true" />
+</Target>
+
+<Target Name="ForceCopyUIAutomationClient" AfterTargets="Build" Condition="'$(TargetFrameworkIdentifier)' == '.NETFramework'">
+  <Copy
+    SourceFiles="$(WpfBinDirectory)UIAutomationClient\$(Platform)\Release\net481\UIAutomationClient.dll"
+    DestinationFolder="$(OutputPath)"
+    SkipUnchangedFiles="true" />
+</Target>
+
 
   <ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
     <Reference Include="Accessibility" />
@@ -95,6 +110,14 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
 
+    <Reference Include="DirectWriteForwarder">
+      <HintPath>$(WpfBinDirectory)DirectWriteForwarder\$(Platform)\Release\net481\DirectWriteForwarder.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <HintPath>$(WpfBinDirectory)PresentationCore\$(Platform)\Release\net481\PresentationCore.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
     <Reference Include="PresentationCore">
       <HintPath>$(WpfBinDirectory)PresentationCore\$(Platform)\Release\net481\PresentationCore.dll</HintPath>
       <Private>true</Private>
@@ -204,6 +227,30 @@
       <Private>true</Private>
     </Reference>
   </ItemGroup>
+
+<ItemGroup>
+  <None Include="$(WpfBinDirectory)D3DCompiler\$(Platform)\Release\D3DCompiler_47_cor3.dll">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Link>D3DCompiler_47_cor3.dll</Link>
+  </None>
+  <None Include="$(WpfBinDirectory)PenImc\$(Platform)\Release\PenImc_cor3.dll">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Link>PenImc_cor3.dll</Link>
+  </None>
+  <None Include="$(WpfBinDirectory)PresentationNative\$(Platform)\Release\PresentationNative_cor3.dll">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Link>PresentationNative_cor3.dll</Link>
+  </None>
+  <None Include="$(WpfBinDirectory)VCRuntime\$(Platform)\Release\vcruntime140_cor3.dll">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Link>vcruntime140_cor3.dll</Link>
+  </None>
+  <None Include="$(WpfBinDirectory)wpfgfx\$(Platform)\Release\wpfgfx_cor3.dll">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Link>wpfgfx_cor3.dll</Link>
+  </None>
+</ItemGroup>
+
 <!-- 
   <Target Name="ForceUIAutomationTypesIntoMarkupCompile" BeforeTargets="MarkupCompilePass1" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
   <ItemGroup>
@@ -211,7 +258,7 @@
   </ItemGroup>
   </Target> -->
 
-<Target Name="CopyUIAutomationTypesToIntermediate" BeforeTargets="MarkupCompilePass1" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
+<!-- <Target Name="CopyUIAutomationTypesToIntermediate" BeforeTargets="MarkupCompilePass1" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
   <Copy
     SourceFiles="$(WpfBinDirectory)UIAutomationTypes\$(Platform)\Release\net481\UIAutomationTypes.dll"
     DestinationFolder="$(IntermediateOutputPath)" />
@@ -225,19 +272,11 @@
 </Target>
 
 
-  <!-- <Target Name="ForceUIAutomationTypesIntoMarkupCompile" BeforeTargets="MarkupCompilePass1" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
+  <Target Name="ForceUIAutomationTypesIntoMarkupCompile" BeforeTargets="MarkupCompilePass1" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
   <ItemGroup>
     <MarkupCompilePass1AdditionalLibPaths Include="$(WpfBinDirectory)UIAutomationTypes\$(Platform)\Release\net481" />
   </ItemGroup>
-</Target> -->
-
-
-
-  <Target Name="InjectUIAutomationTypesReferencePath" BeforeTargets="MarkupCompilePass1" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
-    <ItemGroup>
-      <ReferencePath Include="$(OutDir)UIAutomationTypes.dll" />
-    </ItemGroup>
-  </Target>
+</Target> 
 
   <Target Name="CopyUIAutomationTypesEarly" BeforeTargets="MarkupCompilePass1" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
     <ItemGroup>
@@ -246,7 +285,14 @@
     <Copy
       SourceFiles="$(WpfBinDirectory)UIAutomationTypes\$(Platform)\Release\net481\UIAutomationTypes.dll"
       DestinationFolder="$(OutDir)" />
-</Target>
+</Target> -->
+
+<!-- 
+ <Target Name="InjectUIAutomationTypesReferencePath" BeforeTargets="MarkupCompilePass1" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
+    <ItemGroup>
+      <ReferencePath Include="$(OutDir)UIAutomationTypes.dll" />
+    </ItemGroup>
+  </Target> -->
 
 
   <Target Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'" Name="AliasNetFxReferences" AfterTargets="ResolveAssemblyReferences" BeforeTargets="CoreCompile">
@@ -255,6 +301,19 @@
     </ItemGroup>
   </Target>
 
-  <!-- <Import Project="AppLocalWPF.targets" Condition="Exists('AppLocalWPF.targets')" /> -->
+  <Target Name="ForcePublishUIAutomationAssemblies" AfterTargets="PublishItemsOutputGroup" Condition="'$(TargetFrameworkIdentifier)' == '.NETFramework'">
+    <Copy
+      SourceFiles="$(WpfBinDirectory)UIAutomationTypes\$(Platform)\Release\net481\UIAutomationTypes.dll"
+      DestinationFolder="$(PublishDir)"
+      SkipUnchangedFiles="true"
+      OverwriteReadOnlyFiles="true" />
+    <Copy
+      SourceFiles="$(WpfBinDirectory)UIAutomationClient\$(Platform)\Release\net481\UIAutomationClient.dll"
+      DestinationFolder="$(PublishDir)"
+      SkipUnchangedFiles="true"
+      OverwriteReadOnlyFiles="true" />
+  </Target>
+
+
 
 </Project>

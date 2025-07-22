@@ -10,6 +10,7 @@
   <ItemGroup>
     <Compile Include="DrtNavigationApplication.cs" />
     <Compile Include="..\..\Logger\Logger.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="NavAppBar.xaml">

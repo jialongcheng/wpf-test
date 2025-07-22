@@ -106,6 +106,7 @@ namespace TestDll {
         
         [System.STAThread()]
         public static int Main(string[] args) {
+            WpfgfxLoader.Load();
 
             System.Threading.Thread.CurrentThread.ApartmentState = System.Threading.ApartmentState.STA;
             System.Windows.Application app = new OnStartupBVT();

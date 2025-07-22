@@ -962,6 +962,7 @@ namespace Microsoft.PrintTest
         [STAThread]
         public static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
 
             DrtBase drt = new VisualSerializationDRT();
 

@@ -30,6 +30,7 @@ namespace DRT
         [STAThread]
         static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtBase drt = new DrtEncryptedPackageCoreProperties();
 
             return drt.Run(args);

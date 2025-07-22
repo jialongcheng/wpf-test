@@ -32,6 +32,7 @@ namespace Microsoft.Test
         [STAThread]
         static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             if (args.Any(arg => arg.EndsWith(debugSti, StringComparison.OrdinalIgnoreCase)))
             {
                 LogManager.LogMessageDangerously("Waiting for debugger to attach to sti.exe...");

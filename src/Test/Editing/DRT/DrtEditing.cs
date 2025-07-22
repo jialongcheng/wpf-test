@@ -20,6 +20,7 @@ namespace DRT
         [STAThread]
         internal static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtBase drt = new DrtEditing();
             return drt.Run(args);
         }

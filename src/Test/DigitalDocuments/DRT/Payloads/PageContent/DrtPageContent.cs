@@ -32,6 +32,7 @@ namespace DrtPayloads
         [STAThread]
         internal static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             DrtPageContent driver = new DrtPageContent("DrtPageContent", "ZhenbinX");
 
             return driver.LaunchDRT(args);

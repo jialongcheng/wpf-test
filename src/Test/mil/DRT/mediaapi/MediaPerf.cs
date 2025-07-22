@@ -90,6 +90,7 @@ public class DrtMediaAPI
     [STAThread]
     public static int Main()
     {
+        WpfgfxLoader.Load();
         const int ITERS = 20;
         const int COUNT = 1000000;
 

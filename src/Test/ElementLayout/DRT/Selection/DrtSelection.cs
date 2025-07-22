@@ -27,6 +27,7 @@ namespace DRT
         [STAThread]
         internal static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             int retVal; 
             DrtSelection drt = new DrtSelection();
             try

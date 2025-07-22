@@ -11,6 +11,7 @@
     <Compile Include="DrtSequence.cs" />
     <Compile Include="..\Common\NativeMethods.cs" />
     <Compile Include="..\Common\UnsafeNativeMethods.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <None Include="DrtFiles\*">
       <Link>DrtFiles\Payloads\Sequence\%(FileName)%(Extension)</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

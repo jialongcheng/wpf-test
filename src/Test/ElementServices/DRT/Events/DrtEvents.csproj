@@ -13,6 +13,7 @@
     <Compile Include="$(DrtCommonRoot)\inc\DrtBase.cs" />
     <Compile Include="DrtEvents.cs" />
     <Compile Include="DrtEventsFramework.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
     <None Include="DRTEvents_1.xaml">
         <Link>DrtFiles\Events\%(Filename)%(Extension)</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

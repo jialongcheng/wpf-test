@@ -19,6 +19,7 @@ namespace Avalon.Test.ComponentModel
         [STAThread]
         static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             bool err = false;
             GlobalLog.LogStatus("Markup Compiler Tests");
 

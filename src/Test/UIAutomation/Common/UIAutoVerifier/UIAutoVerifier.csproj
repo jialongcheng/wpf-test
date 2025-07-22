@@ -14,6 +14,7 @@
     <Compile Include="$(AtPathCommon)\ATGCommon\framework.cs" />
     <Compile Include="$(AtPathCommon)\ATGCommon\WrapperControls.cs" />
     <Compile Include="$(AtPathCommon)\ATGCommon\WrapperApplication.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
   
   <ItemGroup>

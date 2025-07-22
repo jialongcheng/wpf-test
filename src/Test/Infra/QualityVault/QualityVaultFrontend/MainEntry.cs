@@ -42,6 +42,7 @@ namespace Microsoft.Test
         [STAThread]
         private static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             try
             {   
                 // Registering an encoding provider so QV can can use encodings other than the default encoding.

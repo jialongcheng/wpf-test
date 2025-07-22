@@ -80,6 +80,7 @@ public class DrtMediaAPI
     [STAThread]
     public static int Main()
     {
+        WpfgfxLoader.Load();
         bool succeeded = RunDRTs();
 
         string statusString = succeeded ? "SUCCEEDED" : "FAILED";

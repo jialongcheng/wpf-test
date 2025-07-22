@@ -14,6 +14,7 @@ namespace MS.Internal
     {
         static int Main(string[] args)
         {
+            WpfgfxLoader.Load();
             Console.WriteLine("Install WPF bits for test environments.");
 
             try
