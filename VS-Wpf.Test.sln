@@ -135,6 +135,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DRTContainer", "src\Test\El
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtPackageCoreProperties", "src\Test\DigitalDocuments\DRT\Metro\PackageCoreProperties\DrtPackageCoreProperties.csproj", "{B56F5081-34C8-4FDF-AFE7-CC93388C234B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtNGCTest", "src\Test\DigitalDocuments\DRT\Metro\NGCSerialization\DrtNGCTest.csproj", "{8053638C-04E0-4FEE-B0AC-82CB99D6549B}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtEncryptedPackageCoreProperties", "src\Test\DigitalDocuments\DRT\Metro\EncryptedPackageCoreProperties\DrtEncryptedPackageCoreProperties.csproj", "{08A7EAFD-1CDE-49AC-84EE-E6D77A01E20C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtInk", "src\Test\Tablet\DRT\Ink\DrtInk.csproj", "{B1413C37-81A2-4C60-ABB5-7B6843D50455}"

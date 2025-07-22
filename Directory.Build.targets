@@ -23,12 +23,46 @@
    <WpfBinDirectory>C:\Test\WPFDeployment\artifacts\bin\</WpfBinDirectory>
   </PropertyGroup>
 
+<!-- Section to inject shared app.config with binding redirects into the output directory and publish directory -->
   <Target Name="InjectAppConfig" AfterTargets="GenerateBindingRedirects" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
     <ItemGroup>
       <AppConfigWithBindingRedirects Include="$(MSBuildThisFileDirectory)SharedApp.config" />
     </ItemGroup>
     <Copy SourceFiles="@(AppConfigWithBindingRedirects)" DestinationFiles="@(AppConfigWithBindingRedirects->'$(IntermediateOutputPath)$(TargetFileName).config')" />
   </Target>
+
+  <!-- <Target Name="InjectAppConfigBeforePublish" BeforeTargets="_CopyResolvedFilesToPublishPreserveNewest" Condition="'$(TargetFrameworkIdentifier)' == '.NETFramework'">
+    <ItemGroup>
+      <AppConfigWithBindingRedirects Include="$(MSBuildThisFileDirectory)SharedApp.config" />
+    </ItemGroup>
+    <Copy
+      SourceFiles="@(AppConfigWithBindingRedirects)"
+      DestinationFiles="@(AppConfigWithBindingRedirects->'$(IntermediateOutputPath)$(TargetFileName).config')"
+      SkipUnchangedFiles="true" />
+</Target> -->
+
+<Target Name="CopyAppConfigToOutputAndPublish" AfterTargets="Build" Condition="'$(TargetFrameworkIdentifier)' == '.NETFramework'">
+  <ItemGroup>
+    <AppConfigWithBindingRedirects Include="$(MSBuildThisFileDirectory)SharedApp.config" />
+  </ItemGroup>
+  <!-- Copy to OurDir -->
+  <Copy
+    SourceFiles="@(AppConfigWithBindingRedirects)"
+    DestinationFiles="@(AppConfigWithBindingRedirects->'$(OutDir)$(TargetFileName).config')"
+    SkipUnchangedFiles="false"
+    OverwriteReadOnlyFiles="true" />
+
+  <!-- Copy to PublishDir -->
+  <Copy
+    SourceFiles="@(AppConfigWithBindingRedirects)"
+    DestinationFiles="@(AppConfigWithBindingRedirects->'$(PublishDir)$(TargetFileName).config')"
+    SkipUnchangedFiles="true"
+    OverwriteReadOnlyFiles="true" />
+</Target>
+
+<!-- Disable the following target to avoid double copying-->
+<!-- <Target Name="GenerateBindingRedirectsUpdateAppConfig" Condition="'$(TargetFrameworkIdentifier)' == '.NETFramework'"/> -->
+<!-- <Target Name="_WriteAppConfigWithSupportedRuntime" Condition="'$(TargetFrameworkIdentifier)' == '.NETFramework'"/> -->
 
   <Target Name="InjectWpfgfxLoader"
           BeforeTargets="Compile"

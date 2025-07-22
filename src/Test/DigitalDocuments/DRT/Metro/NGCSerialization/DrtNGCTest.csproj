@@ -16,7 +16,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="ReachFramework" />
-    <Reference Include="System.Printing" />
+    <Reference Include="ReachFramework" Condition="'$(TargetFrameworkIdentifier)'!='.NETFramework'" />
+    <Reference Include="System.Printing" Condition="'$(TargetFrameworkIdentifier)'!='.NETFramework'" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 </Project>
