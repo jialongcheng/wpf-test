@@ -14,6 +14,7 @@ namespace D2Payloads
     using System.Windows.Controls.Primitives;  // PageSource
     using System.Diagnostics;
     using System.Reflection;
+    using System.Security;
     using System.Security.Permissions;
     using System.Windows;
     using System.Windows.Controls;
@@ -42,14 +43,14 @@ namespace D2Payloads
 
         public FixedGrid(FixedDocViewer viewer)
         {
-            _children = new VisualCollection(this);                
+            _children = new VisualCollection(this);
             _viewer = viewer;
             _grid = new Grid();
             _grid.ShowGridLines = true;
             _grid.SetResourceReference(Grid.BackgroundProperty, SystemColors.ControlDarkDarkBrushKey);
         }
         #endregion Ctors
-        
+
 
         #region IServiceProvider Members
         /// <summary>
@@ -68,7 +69,7 @@ namespace D2Payloads
                 throw new ArgumentNullException("serviceType");
             }
 
-//             VerifyAccess();
+            //             VerifyAccess();
 
 #if DISABLED_BY_TOM_BREAKING_CHANGE
             if (serviceType == typeof(TextContainer))
@@ -111,20 +112,21 @@ namespace D2Payloads
         ///  Remark: 
         ///       During this virtual call it is not valid to modify the Visual tree. 
         /// </summary>
+        [SecuritySafeCritical]
         protected override Visual GetVisualChild(int index)
-        {            
-            if(_children == null)
+        {
+            if (_children == null)
             {
                 throw new ArgumentOutOfRangeException("index is out of range");
             }
-            if(index < 0 || index >= _children.Count)
+            if (index < 0 || index >= _children.Count)
             {
                 throw new ArgumentOutOfRangeException("index is out of range");
             }
 
             return _children[index];
         }
-        
+
         /// <summary>
         ///  Derived classes override this property to enable the Visual code to enumerate 
         ///  the Visual children. Derived classes need to return the number of children
@@ -133,19 +135,21 @@ namespace D2Payloads
         ///    By default a Visual does not have any children.
         ///
         ///  Remark: During this virtual method the Visual tree must not be modified.
-        /// </summary>        
+        /// </summary>
+
         protected override int VisualChildrenCount
-        {           
-            get 
-            { 
-                if(_children == null)
+        {
+            [SecuritySafeCritical]
+            get
+            {
+                if (_children == null)
                 {
                     throw new ArgumentOutOfRangeException("_children is null");
-                }                
-                return _children.Count; 
+                }
+                return _children.Count;
             }
-        }  
-        
+        }
+
         /// <summary>
 
 
@@ -155,6 +159,7 @@ namespace D2Payloads
         /// </summary>
         /// <param name="availableSize">Available size.</param>
         /// <returns>Computed desired size.</returns>
+        [SecuritySafeCritical]
         protected sealed override Size MeasureOverride(Size availableSize)
         {
             Trace.WriteLine(string.Format("FixedGrid:MeasureOverride {0}", availableSize));
@@ -174,6 +179,7 @@ namespace D2Payloads
         /// Content arrangement.
         /// </summary> 
         /// <param name="finalSize">Size that element should use to arrange itself and its children.</param>
+        [SecuritySafeCritical]
         protected sealed override Size ArrangeOverride(Size finalSize)
         {
             Trace.WriteLine(string.Format("FixedGrid:ArrangeOverride {0}", finalSize));
@@ -218,7 +224,7 @@ namespace D2Payloads
             _gridCells = new FixedCell[Rows * Columns];
             for (int cell = 0; cell < Rows * Columns; cell++)
             {
-                FixedCell  pageCell;
+                FixedCell pageCell;
                 pageCell = new FixedCell();
                 pageCell.SetValue(Grid.RowProperty, cell / Columns);
                 pageCell.SetValue(Grid.ColumnProperty, cell % Columns);
@@ -349,7 +355,7 @@ namespace D2Payloads
         DocumentPage GetDocumentPageFromPoint(Point point)
         {
             // This HitTest results in inner-most Visual
-            PointHitTestResult result = (PointHitTestResult) VisualTreeHelper.HitTest(this, point);
+            PointHitTestResult result = (PointHitTestResult)VisualTreeHelper.HitTest(this, point);
             Visual v = (result != null) ? result.VisualHit : null;
 
             FixedCell pe = null;
@@ -361,7 +367,7 @@ namespace D2Payloads
                 {
                     break;
                 }
-                v = (Visual) VisualTreeHelper.GetParent(v);
+                v = (Visual)VisualTreeHelper.GetParent(v);
             }
 
             // if we hit some PageCell
@@ -434,7 +440,7 @@ namespace D2Payloads
         //---------------------------------------------------------------------
 
         #region Private Fields
-        private VisualCollection _children;                        
+        private VisualCollection _children;
         private readonly FixedDocViewer _viewer;
         private Grid _grid;                     // Grid to display pages
         private FixedCell[] _gridCells;

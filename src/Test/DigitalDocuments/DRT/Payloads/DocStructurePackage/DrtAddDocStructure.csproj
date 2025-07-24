@@ -16,6 +16,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="ReachFramework" />
+    <Reference Include="ReachFramework" Condition="'$(TargetFrameworkIdentifier)' != '.NETFramework'"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 </Project>

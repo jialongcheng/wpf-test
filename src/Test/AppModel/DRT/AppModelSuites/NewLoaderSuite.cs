@@ -140,7 +140,7 @@ namespace DRT
         {
             Uri uri = new Uri("pack://application:,,,/newloadersuitehelperproject;component/thirdpartythemespage.xaml");
 
-            LoadAssembly("newloadersuitehelperproject1/newloadersuitehelperproject.dll");
+            LoadAssembly("newloadersuitehelperproject1/newloadersuitehelperproject.exe");
             StreamResourceInfo part = Application.GetResourceStream(new Uri("/newloadersuitehelperproject;component/thirdpartythemespage.xaml", UriKind.RelativeOrAbsolute));
             DRT.Assert(part != null, "Failed to return default part.");
             Stream s = part.Stream;
@@ -151,7 +151,7 @@ namespace DRT
             DRT.Assert(data != null);
             DRT.Assert(data.Name == "root");
 
-            LoadAssembly("newloadersuitehelperproject.dll");
+            LoadAssembly("newloadersuitehelperproject.exe");
             //Assembly assembly2 = Assembly.ReflectionOnlyLoad("newloadersuitehelperproject");
             StreamResourceInfo part2 = Application.GetResourceStream(new Uri("/newloadersuitehelperproject;component/thirdpartythemespage.xaml", UriKind.RelativeOrAbsolute));
             DRT.Assert(part2 != null, "Failed to return default part.");

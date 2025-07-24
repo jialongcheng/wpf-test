@@ -251,6 +251,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtSelection", "src\Test\El
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtTextFind", "src\Test\ElementLayout\DRT\TextFind\DrtTextFind.csproj", "{55E1485B-329E-4AF6-9EDD-D6A37E352101}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtAddDocStructure", "src\Test\DigitalDocuments\DRT\Payloads\DocStructurePackage\DrtAddDocStructure.csproj", "{96DDCF27-AABB-4A47-8B37-9C8B774E9483}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtDRXSerialization", "src\Test\DigitalDocuments\DRT\ReadingExperience\DrxSerialization\DrtDRXSerialization.csproj", "{E0F0329E-1277-45D2-90E6-DF4FE4DCEAD0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtFixedTest", "src\Test\DigitalDocuments\DRT\Payloads\FixedTest\DrtFixedTest.csproj", "{2AD4FDCA-BEB2-4ED5-9E6E-A2C177D9DE1D}"

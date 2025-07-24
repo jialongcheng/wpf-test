@@ -6,7 +6,10 @@
 // Description: Implements the FixedDocViewer 
 //
 
+using System.Security;
+
 [assembly: System.Security.AllowPartiallyTrustedCallers()]
+[assembly: SecurityRules(SecurityRuleSet.Level1)]
 
 namespace D2Payloads
 {
@@ -29,6 +32,7 @@ namespace D2Payloads
     /// <summary>
     /// </summary>
     [System.Runtime.InteropServices.ComVisible(false)]
+    [SecurityCritical]
     public sealed class FixedDocViewer : Control
     {
         //--------------------------------------------------------------------
@@ -128,6 +132,7 @@ namespace D2Payloads
         /// <summary>
         /// Called when our Template's Tree is created.
         /// </summary>
+        [SecurityCritical]
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
@@ -273,6 +278,7 @@ namespace D2Payloads
         /// jump to.
         /// </summary>
         /// <param name="e"></param>
+        [SecurityCritical]
         protected override void OnKeyUp(KeyEventArgs e)
         {
             Trace.WriteLine(string.Format("OnKeyUp {0}", e.Key));
@@ -339,8 +345,8 @@ namespace D2Payloads
                 case Key.K:     // Previous Row
                 case Key.Prior:     // PageUp
                 case Key.Next:      // PageDown
-                //case Key.Home:        // Home
-                //case Key.End:
+                                    //case Key.Home:        // Home
+                                    //case Key.End:
                     {
                         int delta = 0;
                         _enteredPageNumber = 0;
@@ -475,6 +481,7 @@ namespace D2Payloads
         /// It pages forward or backward depending on the wheel direction.
         /// </summary>
         /// <param name="e">Event Arguments</param>
+        [SecurityCritical]
         protected override void OnMouseWheel(MouseWheelEventArgs e)
         {
             base.OnMouseWheel(e);
