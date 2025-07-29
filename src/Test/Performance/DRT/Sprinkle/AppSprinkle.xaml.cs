@@ -14,8 +14,10 @@ namespace Sprinkle
      {
          protected override void OnStartup(System.Windows.StartupEventArgs e)
          {
-             // Setup the application window.
-             System.Windows.Navigation.NavigationWindow window = new System.Windows.Navigation.NavigationWindow();
+            WpfgfxLoader.Load();
+
+            // Setup the application window.
+            System.Windows.Navigation.NavigationWindow window = new System.Windows.Navigation.NavigationWindow();
              window.ResizeMode = ResizeMode.CanResize;
              window.Width = 800.0;
              window.Height = 700.0;

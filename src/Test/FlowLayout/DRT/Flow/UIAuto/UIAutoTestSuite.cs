@@ -365,7 +365,13 @@ namespace DRT
             if (rootPeer is UIElementAutomationPeer)
             {
                 // Create root AutomationPeer
+#if NETFRAMEWORK
+                UIElement localRoot = ((UIElementAutomationPeer)rootPeer).Owner as UIElement;
+
+#else
                 UIElement localRoot = VisualTreeHelper.GetParent(((UIElementAutomationPeer)rootPeer).Owner) as UIElement;
+#endif
+
                 if (localRoot != null)
                 {
                     HwndSource hwndSource = PresentationSource.FromVisual(localRoot) as HwndSource;
@@ -465,7 +471,7 @@ namespace DRT
             return s_piEPPeer.GetValue((object)rawElement, null) as AutomationPeer;
         }
 
-        #endregion Static Helpers
+#endregion Static Helpers
 
         private static FieldInfo s_fiTRAStart;               // TextRangeAdaptor._start accessor
         private static FieldInfo s_fiTRAEnd;                 // TextRangeAdaptor._end accessor

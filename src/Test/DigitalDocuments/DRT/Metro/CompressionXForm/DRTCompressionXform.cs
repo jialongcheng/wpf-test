@@ -105,8 +105,8 @@ namespace DRT
         public CompressionXformTestSuite()
             : base(Title)
         {
-            TeamContact = "Microsoft"; 
-            Contact = "Microsoft";    
+            TeamContact = "Microsoft";
+            Contact = "Microsoft";
         }
 
         public override DrtTest[] PrepareTests()
@@ -127,31 +127,31 @@ namespace DRT
                 out CryptoProvider cryptoProvider
                 )
         {
-                UnsignedPublishLicense unsignedPublishLicense = new UnsignedPublishLicense();
-                unsignedPublishLicense.Grants.Add(
-                                                        new ContentGrant(
-                                                            new ContentUser(
-                                                                "somebody@somecompany.com",
-                                                                AuthenticationType.Windows
-                                                                ),
-                                                            ContentRight.Owner
-                                                            )
+            UnsignedPublishLicense unsignedPublishLicense = new UnsignedPublishLicense();
+            unsignedPublishLicense.Grants.Add(
+                                                    new ContentGrant(
+                                                        new ContentUser(
+                                                            "somebody@somecompany.com",
+                                                            AuthenticationType.Windows
+                                                            ),
+                                                        ContentRight.Owner
+                                                        )
+                                                    );
+
+            publishLicense = unsignedPublishLicense.Sign(
+                                                        s_secureEnvironment,
+                                                        out authorUseLicense
                                                         );
 
-                publishLicense = unsignedPublishLicense.Sign(
-                                                            s_secureEnvironment,
-                                                            out authorUseLicense
-                                                            );
-    
-                //
-                // Attempt to bind the use license to the secure environment.
-                //
-                cryptoProvider = authorUseLicense.Bind(s_secureEnvironment);
+            //
+            // Attempt to bind the use license to the secure environment.
+            //
+            cryptoProvider = authorUseLicense.Bind(s_secureEnvironment);
         }
 
         void Create(string streamName, string sourceFile, int dataSize, bool defineDataSpaces)
         {
-//            String transformName = "compression." + streamName;
+            //            String transformName = "compression." + streamName;
 
             if (_rmClientSetup)
             {
@@ -159,7 +159,7 @@ namespace DRT
                 PublishLicense publishLicense;
                 CryptoProvider cryptoProvider;
 
-                SetUpPublishingInformation(out authorUseLicense,out publishLicense,out cryptoProvider);
+                SetUpPublishingInformation(out authorUseLicense, out publishLicense, out cryptoProvider);
 
                 EncryptedPackageEnvelope myFile = EncryptedPackageEnvelope.Create(s_fileName, publishLicense, cryptoProvider);
                 StorageInfo rootStorage = myFile.StorageInfo;
@@ -173,11 +173,11 @@ namespace DRT
                     else
                     {
                         //second rootStorage: true is for normal compression (false is no compression)
-                        testSI = rootStorage.CreateStream(streamName,CompressionOption.Normal, EncryptionOption.None);
+                        testSI = rootStorage.CreateStream(streamName, CompressionOption.Normal, EncryptionOption.None);
                         DRT.Assert(testSI.CompressionOption == CompressionOption.Normal &&
                             testSI.EncryptionOption == EncryptionOption.None, "CompressionOption/EncryptionOption failure - getting compression and encryption options failed");
                     }
-                
+
                     Stream testStream = testSI.GetStream();
                     FileToStream(sourceFile, testStream, dataSize);
                     testStream.Flush();
@@ -198,7 +198,7 @@ namespace DRT
             else
             {
                 StorageRootWrapper myFile = StorageRootWrapper.Open(s_fileName, FileMode.OpenOrCreate);
-                
+
                 if (defineDataSpaces)
                 {
                     // Create a stream in one data space 
@@ -209,7 +209,7 @@ namespace DRT
                     else
                     {
                         //second argument: true is for normal compression (false is no compression)
-                        testSI = myFile.CreateStream(streamName,CompressionOption.Normal, EncryptionOption.None);
+                        testSI = myFile.CreateStream(streamName, CompressionOption.Normal, EncryptionOption.None);
                         DRT.Assert(testSI.CompressionOption == CompressionOption.Normal &&
                             testSI.EncryptionOption == EncryptionOption.None, "CompressionOption/EncryptionOption failure - getting compression and encryption options failed");
                     }
@@ -240,16 +240,16 @@ namespace DRT
             {
                 EncryptedPackageEnvelope myFile = EncryptedPackageEnvelope.Open(s_fileName);
                 StorageInfo rootStorage = myFile.StorageInfo;
-                
+
                 // Verify first test string
                 StreamInfo si = null;
                 if (rootStorage.StreamExists(streamName))
                 {
-                    si =  rootStorage.GetStreamInfo( streamName);
+                    si = rootStorage.GetStreamInfo(streamName);
                     DRT.Assert(!expectTransforms || si.CompressionOption != CompressionOption.NotCompressed, "CompressionOption failure - getting compression option failed");
                 }
                 else
-                    si =  rootStorage.CreateStream( streamName);
+                    si = rootStorage.CreateStream(streamName);
                 Stream s = si.GetStream();
 
                 // Check stream content for test stream 1
@@ -267,11 +267,11 @@ namespace DRT
                 StreamInfo si = null;
                 if (myFile.StreamExists(streamName))
                 {
-                    si =  myFile.GetStreamInfo( streamName);
+                    si = myFile.GetStreamInfo(streamName);
                     DRT.Assert(!expectTransforms || si.CompressionOption != CompressionOption.NotCompressed, "CompressionOption failure - getting compression option failed");
                 }
                 else
-                    si =  myFile.CreateStream( streamName);
+                    si = myFile.CreateStream(streamName);
                 Stream s = si.GetStream();
 
                 // Check stream content for test stream 1
@@ -289,7 +289,7 @@ namespace DRT
             StreamInfo si = null;
 
             EncryptedPackageEnvelope myFile = null;
-            StorageRootWrapper rootWrapper= null;
+            StorageRootWrapper rootWrapper = null;
 
             // Re-open
             if (_rmClientSetup)
@@ -297,43 +297,43 @@ namespace DRT
                 myFile = EncryptedPackageEnvelope.Open(s_fileName, FileAccess.ReadWrite);
                 StorageInfo rootStorage = myFile.StorageInfo;
                 if (rootStorage.StreamExists(streamName))
-                    si = rootStorage.GetStreamInfo( streamName);
+                    si = rootStorage.GetStreamInfo(streamName);
                 else
-                    si = rootStorage.CreateStream( streamName);
+                    si = rootStorage.CreateStream(streamName);
             }
             else
             {
                 rootWrapper = StorageRootWrapper.Open(s_fileName, FileMode.Open);
                 if (rootWrapper.StreamExists(streamName))
-                    si = rootWrapper.GetStreamInfo( streamName);
+                    si = rootWrapper.GetStreamInfo(streamName);
                 else
-                    si = rootWrapper.CreateStream( streamName);
+                    si = rootWrapper.CreateStream(streamName);
             }
-            
+
             Stream s = si.GetStream();
             shadowStream.Seek(0, SeekOrigin.Begin);
 
             // overwrite
-            s.Seek(22, SeekOrigin.Begin);       shadowStream.Seek(22, SeekOrigin.Begin);
-            s.WriteByte(0xFF);                  shadowStream.WriteByte(0xFF);
-            s.Seek(-9000, SeekOrigin.End);      shadowStream.Seek(-9000, SeekOrigin.End);
+            s.Seek(22, SeekOrigin.Begin); shadowStream.Seek(22, SeekOrigin.Begin);
+            s.WriteByte(0xFF); shadowStream.WriteByte(0xFF);
+            s.Seek(-9000, SeekOrigin.End); shadowStream.Seek(-9000, SeekOrigin.End);
             for (int i = 0; i < 100; i++)
             {
-                s.WriteByte(0xFF);              shadowStream.WriteByte(0xFF);
+                s.WriteByte(0xFF); shadowStream.WriteByte(0xFF);
             }
-            s.Flush();                          shadowStream.Flush();
+            s.Flush(); shadowStream.Flush();
 
             // Check stream content for test stream 1
-            s.Seek(0, SeekOrigin.Begin);        shadowStream.Seek(0, SeekOrigin.Begin);
+            s.Seek(0, SeekOrigin.Begin); shadowStream.Seek(0, SeekOrigin.Begin);
             CompareStreams(s, shadowStream);
 
             // modify
-            s.SetLength(99);                    shadowStream.SetLength(99);
+            s.SetLength(99); shadowStream.SetLength(99);
 
             // StreamInfo stream does not update Position on truncating SetLength
-            s.Position = s.Length;              shadowStream.Position = shadowStream.Length;
+            s.Position = s.Length; shadowStream.Position = shadowStream.Length;
 
-            s.WriteByte(0xFF);                  shadowStream.WriteByte(0xFF);
+            s.WriteByte(0xFF); shadowStream.WriteByte(0xFF);
 
             // Shut down
             if (_rmClientSetup)
@@ -350,26 +350,26 @@ namespace DRT
 
             // Re-open
             EncryptedPackageEnvelope myFile = null;
-            StorageRootWrapper rootWrapper= null;
+            StorageRootWrapper rootWrapper = null;
 
             if (_rmClientSetup)
             {
                 myFile = EncryptedPackageEnvelope.Open(s_fileName, FileAccess.Read);
                 StorageInfo rootStorage = myFile.StorageInfo;
                 if (rootStorage.StreamExists(streamName))
-                    si = rootStorage.GetStreamInfo( streamName);
+                    si = rootStorage.GetStreamInfo(streamName);
                 else
-                    si = rootStorage.CreateStream( streamName);
+                    si = rootStorage.CreateStream(streamName);
             }
             else
             {
                 rootWrapper = StorageRootWrapper.Open(s_fileName, FileMode.Open, FileAccess.Read);
                 if (rootWrapper.StreamExists(streamName))
-                    si = rootWrapper.GetStreamInfo( streamName);
+                    si = rootWrapper.GetStreamInfo(streamName);
                 else
-                    si = rootWrapper.CreateStream( streamName);
+                    si = rootWrapper.CreateStream(streamName);
             }
-            
+
             Stream s = si.GetStream();
 
             int readSize = 0x1000;
@@ -403,27 +403,27 @@ namespace DRT
 
             // Re-open
             EncryptedPackageEnvelope myFile = null;
-            StorageRootWrapper rootWrapper= null;
+            StorageRootWrapper rootWrapper = null;
 
             if (_rmClientSetup)
             {
                 myFile = EncryptedPackageEnvelope.Open(s_fileName, FileAccess.Read);
                 StorageInfo rootStorage = myFile.StorageInfo;
                 DRT.Assert(rootStorage.StreamExists(streamName));
-                si = rootStorage.GetStreamInfo( streamName);
+                si = rootStorage.GetStreamInfo(streamName);
             }
             else
             {
                 rootWrapper = StorageRootWrapper.Open(s_fileName, FileMode.Open, FileAccess.Read);
                 DRT.Assert(rootWrapper.StreamExists(streamName));
-                si = rootWrapper.GetStreamInfo( streamName);
+                si = rootWrapper.GetStreamInfo(streamName);
             }
-            
+
             Stream s = si.GetStream();
 
             // Check stream content for test stream 1
             CompareStreamAndFile(s, sourceFile);
-                //           s.Close();
+            //           s.Close();
 
             // Shut down
             if (_rmClientSetup)
@@ -500,24 +500,24 @@ namespace DRT
                 // Verify with shadow
                 StreamInfo si = null;
 
-                 // Re-open
+                // Re-open
                 EncryptedPackageEnvelope myFile = null;
-                StorageRootWrapper rootWrapper= null;
+                StorageRootWrapper rootWrapper = null;
 
                 if (_rmClientSetup)
                 {
                     myFile = EncryptedPackageEnvelope.Open(s_fileName, FileAccess.Read);
                     StorageInfo rootStorage = myFile.StorageInfo;
                     DRT.Assert(rootStorage.StreamExists(streamName));
-                    si = rootStorage.GetStreamInfo( streamName);
+                    si = rootStorage.GetStreamInfo(streamName);
                 }
                 else
                 {
                     rootWrapper = StorageRootWrapper.Open(s_fileName, FileMode.Open, FileAccess.Read);
                     DRT.Assert(rootWrapper.StreamExists(streamName));
-                    si = rootWrapper.GetStreamInfo( streamName);
-                }   
-            
+                    si = rootWrapper.GetStreamInfo(streamName);
+                }
+
                 Stream s = si.GetStream();
 
                 // Check stream content for test stream 1
@@ -581,12 +581,12 @@ namespace DRT
 
         }
 
-        private void 
+        private void
         ExerciseVersionCompatibility(DrtFormatVersion fileVersion, DrtFormatVersion codeVersion, bool expectVersionConflict, bool readFails, bool writeFails)
         {
             Stream idStream = CreateVersionHoldingStream(fileVersion, true);
             Stream idStreamReadOnly = CreateVersionHoldingStream(fileVersion, false);
-            Stream readOnlyEmptyStream = new MemoryStream(new byte[0]{}, false);
+            Stream readOnlyEmptyStream = new MemoryStream(new byte[0] { }, false);
 
             // This is the stream who's format is versioned.  For DrtCompressionXform it would be transformed.
             MemoryStream dataStream = new MemoryStream();
@@ -601,7 +601,7 @@ namespace DRT
             // read-only stream - should simply read and compare (but can throw if writer needs to be updated)
             // fails for v2 updating v1 scenario - no need to test because our code never has a writable data stream and read-only
             // instance-data stream.
- //           PossibleNotSupportedException(FileAccess.Write, codeVersion, idStreamReadOnly, dataStream, writeFails, expectVersionConflict);
+            //           PossibleNotSupportedException(FileAccess.Write, codeVersion, idStreamReadOnly, dataStream, writeFails, expectVersionConflict);
 
             // Scenario 1: Read from data stream
             PossibleNotSupportedException(FileAccess.Read, codeVersion, idStream, dataStream, false || readFails, expectVersionConflict);      // no exception expected
@@ -623,7 +623,7 @@ namespace DRT
             PossibleNotSupportedException(FileAccess.ReadWrite, codeVersion, idStream, dataStream, false, expectVersionConflict);
         }
 
-        private void PossibleNotSupportedException(FileAccess access, DrtFormatVersion fv, Stream idStream, Stream dataStream, 
+        private void PossibleNotSupportedException(FileAccess access, DrtFormatVersion fv, Stream idStream, Stream dataStream,
             bool expectingException, bool expectVersionException)
         {
             bool exceptionCaught = false;
@@ -712,7 +712,7 @@ namespace DRT
             return new MemoryStream(temp.GetBuffer(), 0, (int)temp.Length, writable);
         }
 
-#region Utility
+        #region Utility
         void CompareStreams(Stream s1, Stream s2)
         {
             int blockNumber = 0;
@@ -726,7 +726,7 @@ namespace DRT
             {
                 int read1 = r1.Read(buf1, 0, buf1.Length);
                 int read2 = r2.Read(buf2, 0, buf2.Length);
-                DRT.Assert(read1 == read2,"Decode failure - read count is different: " + read1.ToString() + " vs " + read2.ToString());
+                DRT.Assert(read1 == read2, "Decode failure - read count is different: " + read1.ToString() + " vs " + read2.ToString());
 
                 int i = 0;
                 while (i < read1 && i < read2)
@@ -762,7 +762,7 @@ namespace DRT
                 int i = 0;
                 while (i < read1 && i < read2)
                 {
-                    DRT.Assert (buf1[i] == buf2[i], "Decode failure in block: " + blockNumber.ToString() + " - data is different at position: " + i.ToString());
+                    DRT.Assert(buf1[i] == buf2[i], "Decode failure in block: " + blockNumber.ToString() + " - data is different at position: " + i.ToString());
                     ++i;
                 }
 
@@ -837,13 +837,13 @@ namespace DRT
         }
         #endregion
 
-        public override void ReleaseResources() 
-        { 
+        public override void ReleaseResources()
+        {
             // clean up - delete fileName
             Console.WriteLine("\nDeleting container fileName: " + s_fileName);
             FileInfo fi = new FileInfo(s_fileName);
-//            if (fi.Exists)
-//               fi.Delete();
+            //            if (fi.Exists)
+            //               fi.Delete();
         }
     }
 

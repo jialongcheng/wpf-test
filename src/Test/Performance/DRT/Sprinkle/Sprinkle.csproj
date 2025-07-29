@@ -11,5 +11,6 @@
   <ItemGroup>
     <ApplicationDefinition Include="AppSprinkle.xaml" />
     <Compile Include="AppSprinkle.xaml.cs" />
+    <Compile Include="$(RepoRoot)build\shared\InjectWpfgfxLoader.cs" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'"/>
   </ItemGroup>
 </Project>

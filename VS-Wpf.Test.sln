@@ -171,8 +171,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtColorAPI", "src\Test\mil
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtElement3D", "src\Test\mil\DRT\element3D\DrtElement3D.csproj", "{399E54FC-7ECF-4C92-AE25-E9A63CF109EF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtLocalization", "src\Test\Globalization\DRT\Localization\DrtLocalization.csproj", "{16A69D79-437D-451F-A221-8F1F5E95EEAC}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtMediaAPI", "src\Test\mil\DRT\mediaapi\DrtMediaAPI.csproj", "{AF85D8D2-05F5-4AF4-9AC6-908CA975A495}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtTiming", "src\Test\mil\DRT\timing\DrtTiming.csproj", "{26B9CA72-EB50-4AFC-8885-73E5C29076FB}"

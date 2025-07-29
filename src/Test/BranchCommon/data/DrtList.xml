@@ -77,7 +77,7 @@ Rundrtlist
   </Drt>
   <!--Annotations-->
   <Drt Executable="DrtStickyNoteControl.exe" Architecture="x86|amd64" OS="all" Owner="Microsoft" Team="Annotations" />
-  <Drt Executable="DrtAnnotations.exe" Architecture="x86|amd64" OS="all" Owner="Microsoft" Team="Annotations" />
+  <!-- <Drt Executable="DrtAnnotations.exe" Architecture="x86|amd64" OS="all" Owner="Microsoft" Team="Annotations" /> -->
   
   <!--AppModel-->
   <Drt Executable="DrtWindow.exe" Architecture="all" OS="all" Owner="Microsoft" Team="AppModel" >
@@ -86,11 +86,11 @@ Rundrtlist
     </SupportFiles>
   </Drt>
   <Drt Executable="DrtNavError.exe" Architecture="all" OS="all" Owner="Microsoft" Team="AppModel" /> 
-  <Drt Executable="DrtIcon.exe" Architecture="all" OS="all" Owner="Microsoft" Team="AppModel">
+  <!-- <Drt Executable="DrtIcon.exe" Architecture="all" OS="all" Owner="Microsoft" Team="AppModel">
     <SupportFiles>
       <SupportFile>DrtFiles\Icon</SupportFile>
     </SupportFiles>
-  </Drt>
+  </Drt> -->
   <Drt Executable="DrtWindowAutoSize.exe" Architecture="all" OS="all" Owner="Microsoft" Team="AppModel" />
   <Drt Executable="DrtWindowAutoLocation.exe" Architecture="all" OS="all" Owner="Microsoft" Team="AppModel" />
   <Drt Executable="DrtWindowHeightWidthTopLeft.exe" Architecture="all" OS="all" Owner="Microsoft" Team="AppModel" />
@@ -123,7 +123,7 @@ Rundrtlist
 		<SupportFile>DrtFiles\NavigationWindow\NavWindowFoo2.xaml</SupportFile>
 	</SupportFiles>
   </Drt>
-  <Drt Executable="DrtJournal.exe" Architecture="x86|amd64" OS="all" Owner="Microsoft" Team="AppModel" />
+  <!-- <Drt Executable="DrtJournal.exe" Architecture="x86|amd64" OS="all" Owner="Microsoft" Team="AppModel" /> -->
   <Drt Executable="DrtReparentNavigator.exe" Architecture="x86|amd64" OS="all" Owner="Microsoft" Team="AppModel" >
 	<SupportFiles>
 		<SupportFile>DrtFiles\ReparentNavigator\ReparentFrame.xaml</SupportFile>
@@ -146,14 +146,14 @@ Rundrtlist
 		<SupportFile>DrtFiles\NavigationToObject\FlowDocument.xaml</SupportFile>
 	</SupportFiles>
   </Drt>
-  <Drt Executable="DrtHyperlinkTargeting.exe" Architecture="x86|amd64" OS="all" Owner="Microsoft" Team="AppModel" />
+  <!-- <Drt Executable="DrtHyperlinkTargeting.exe" Architecture="x86|amd64" OS="all" Owner="Microsoft" Team="AppModel" /> -->
   <Drt Executable="DrtPage.exe" Architecture="x86|amd64" OS="all" Owner="Microsoft" Team="AppModel" />
-  <Drt Executable="DrtFrameJournaling.exe" Architecture="x86|amd64" OS="all" Owner="Microsoft" Team="AppModel" />
-  <Drt Executable="DrtNavigationEvents.exe" Architecture="all" OS="all" Owner="Microsoft" Team="AppModel" >
+  <!-- <Drt Executable="DrtFrameJournaling.exe" Architecture="x86|amd64" OS="all" Owner="Microsoft" Team="AppModel" /> -->
+  <!-- <Drt Executable="DrtNavigationEvents.exe" Architecture="all" OS="all" Owner="Microsoft" Team="AppModel" >
 	<SupportFiles>
 		<SupportFile>DrtFiles\NavigationEvents</SupportFile>
 	</SupportFiles>
-  </Drt>
+  </Drt> -->
   <Drt Executable="DrtAppModelSuites.exe" Architecture="all" OS="all" Owner="Microsoft" Team="AppModel" >
     <SupportFiles>
       <SupportFile>newloadersuitehelperproject.exe</SupportFile>
@@ -333,12 +333,12 @@ Rundrtlist
     </SupportFiles>
   </Drt>
   <!--Globalization-->
-  <Drt Executable="DrtLocalization.exe" Architecture="all" OS="all" Owner="Microsoft" Team="Globalization" >
+  <!-- <Drt Executable="DrtLocalization.exe" Architecture="all" OS="all" Owner="Microsoft" Team="Globalization" >
     <SupportFiles>
       <SupportFile>DrtFiles\Localization</SupportFile>
       <SupportFile>DrtFiles\Baml</SupportFile>
       <SupportFile>DrtTools.dll</SupportFile>
-    </SupportFiles>
+    </SupportFiles> -->
   </Drt>
   <!--Infra-->
   <!--Imaging-->

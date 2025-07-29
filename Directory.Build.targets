@@ -20,7 +20,8 @@
   </ItemGroup>
 
   <PropertyGroup>
-   <WpfBinDirectory>C:\Test\WPFDeployment\artifacts\bin\</WpfBinDirectory>
+   <!-- <WpfBinDirectory>C:\Test\WPFDeployment\artifacts\bin\</WpfBinDirectory> -->
+   <WpfBinDirectory>C:\VS-wpf\artifacts\bin\</WpfBinDirectory>
   </PropertyGroup>
 
 <!-- Section to inject shared app.config with binding redirects into the output directory and publish directory -->
