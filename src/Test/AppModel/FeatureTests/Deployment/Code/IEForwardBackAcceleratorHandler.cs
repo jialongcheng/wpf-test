@@ -17,6 +17,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     /// <summary>
     /// UI handler
     /// </summary>
+    [System.Security.SecurityCritical]
     public class IEForwardBackAcceleratorHandler: UIHandler
     {
         /// <summary>

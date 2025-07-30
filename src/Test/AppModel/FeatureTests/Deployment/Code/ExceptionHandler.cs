@@ -16,6 +16,7 @@ namespace Microsoft.Test.Deployment
     /// UIHandler to fail if its HandleWindow method is ever invoked. 
     /// Only use this if the app in question will change its title or process, as it will always fail otherwise.
     /// </summary>
+    [System.Security.SecurityCritical]
     public class FailIfSeenHandler : UIHandler
     {
         #region Private Members
@@ -171,6 +172,7 @@ namespace Microsoft.Test.Deployment
     /// UIHandler to click a button, either by name or AutomationID. 
     /// Preface the button name with AutoID: to use automationID instead of Name.
     /// </summary>
+    [System.Security.SecurityCritical]
     public class GenericDialogHandler : UIHandler
     {
         #region Private Members
@@ -259,6 +261,7 @@ namespace Microsoft.Test.Deployment
     /// UIHandler to pass if its HandleWindow method is ever invoked. 
     /// Only use this if the app in question will change its title or process, as it will always fail otherwise.
     /// </summary>
+    [System.Security.SecurityCritical]
     public class PassIfSeenHandler : UIHandler
     {
         #region Private Members
@@ -541,6 +544,7 @@ namespace Microsoft.Test.Deployment
     /// <summary>
 	/// UIHandler for Application Context Exceptions
 	/// </summary>
+    [System.Security.SecurityCritical]
 	public class ExceptionHandler : UIHandler
 	{
         #region Private Members

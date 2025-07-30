@@ -23,6 +23,7 @@ namespace Microsoft.Test.Deployment
     /// <summary>
     /// Summary description for AppVerifier.
     /// </summary>
+    [System.Security.SecurityCritical]
     public class AppVerifier : UIHandler
     {
         #region Private Members

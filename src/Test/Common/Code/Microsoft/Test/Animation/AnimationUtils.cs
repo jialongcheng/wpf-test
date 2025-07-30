@@ -75,6 +75,7 @@ namespace Microsoft.Test.Animation
     /// <summary>
     /// VisualVerify method for getting color from a point on the screen
     /// </summary>
+    [System.Security.SecurityCritical]
     public class VisualVerifier
     {
 

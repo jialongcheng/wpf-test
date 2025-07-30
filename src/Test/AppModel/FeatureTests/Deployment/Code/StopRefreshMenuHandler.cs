@@ -23,6 +23,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     /// <summary>
     /// UI handler
     /// </summary>
+    [System.Security.SecurityCritical]
     public class StopRefreshMenuHandler: UIHandler
     {
         /// <summary>
@@ -101,6 +102,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     /// <summary>
     /// UI handler
     /// </summary>
+    [System.Security.SecurityCritical]
     public class CtrlNHandler : UIHandler
     {
         [DllImport("kernel32.dll")]
@@ -217,6 +219,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     /// <summary>
     /// UI handler
     /// </summary>
+    [System.Security.SecurityCritical]
     public class RefreshAccelKeyHandler : UIHandler
     {
 
@@ -343,6 +346,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     /// <summary>
     /// UI handler
     /// </summary>
+    [System.Security.SecurityCritical]
     public class FireFoxRefreshHandler : UIHandler
     {
         /// <summary>

@@ -21,6 +21,7 @@ using System.Resources;
 
 namespace Microsoft.Test.Windows.Client.AppSec.Deployment
 {
+    [System.Security.SecurityCritical]
     public class StandaloneCancelHandler : UIHandler
     {
         public StandaloneCancelHandler()
@@ -42,6 +43,7 @@ namespace Microsoft.Test.Windows.Client.AppSec.Deployment
     /// Relaunches an installed .application, then verifies it is not in ClickOnceCache.  
     /// Needs to be run in the context of a TestLogStep
     /// </summary>    
+    [System.Security.SecurityCritical]
     public class CancelDownloadStep : LoaderStep
     {
         #region private data

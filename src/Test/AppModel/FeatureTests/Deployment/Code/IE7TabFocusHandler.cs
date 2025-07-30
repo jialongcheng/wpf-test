@@ -21,6 +21,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     /// <summary>
     /// UI handler
     /// </summary>
+    [System.Security.SecurityCritical]
     public class IE7TabFocusHandler: UIHandler
     {
         /// <summary>
@@ -141,6 +142,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     /// <summary>
     /// UI handler
     /// </summary>
+    [System.Security.SecurityCritical]
     public class IE7DocObjFocusHandler : UIHandler
     {
         /// <summary>
@@ -224,6 +226,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     /// <summary>
     /// Tests Alt+Key, Ctrl+Key, F6/Shift-F6, Arrow keys for correct focus and handling
     /// </summary>
+    [System.Security.SecurityCritical]
     public class IE7InputFilteringHandler : UIHandler
     {
         /// <summary>

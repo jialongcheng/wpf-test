@@ -24,6 +24,7 @@ namespace Microsoft.Test.Deployment {
     /// 
     /// </summary>
     
+    [System.Security.SecurityCritical]
     public class AppMaintenanceStep : LoaderStep 
     {
         #region private data

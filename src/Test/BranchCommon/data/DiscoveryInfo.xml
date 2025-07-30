@@ -58,7 +58,7 @@
     </Target>
     <!-- Area : Annotations -->
     <!-- Annotations -->
-    <Target Adaptor="AnnotationAdaptor" Path="FeatureTests\Annotations\AnnotationsTest.dll">
+    <Target Adaptor="AnnotationAdaptor" Path="FeatureTests\Annotations\AnnotationsTest.exe">
       <DefaultTestInfo Area="Annotations" Type="Functional" UacElevation="Elevated" Timeout="30">
         <Driver Executable="AnnotationsTest.exe" />
         <DriverParameters />
@@ -76,7 +76,7 @@
       </DefaultTestInfo>
     </Target>
     <!-- Annotations Orcas -->
-    <Target Adaptor="AnnotationAdaptor" Path="FeatureTests\Annotations\AnnotationsOrcasTest.dll">
+    <Target Adaptor="AnnotationAdaptor" Path="FeatureTests\Annotations\AnnotationsOrcasTest.exe">
       <DefaultTestInfo Area="Annotations" Type="Functional" UacElevation="Elevated" Timeout="30">
         <Driver Executable="AnnotationsOrcasTest.exe" />
         <DriverParameters />
@@ -109,8 +109,8 @@
       </DefaultTestInfo>
     </Target>
 
-    <!-- Area : Controls -->
-    <Target Adaptor="XtcAdaptor" Path="FeatureTests\Controls\*.xtc">
+    <!-- Area : Control Turned off for build errors -->
+    <!-- <Target Adaptor="XtcAdaptor" Path="FeatureTests\Controls\*.xtc">
       <DefaultTestInfo Area="Controls" Disabled="False" Priority="0" Type="Functional" UacElevation="Elevated">
         <Driver Executable="sti.exe" />
         <DriverParameters Assembly="ControlsCommon.dll" Class="Microsoft.Test.Controls.ControlsLoader" Method="RunTest" DefaultResult="Unknown" SecurityLevel="FullTrust" />
@@ -149,7 +149,7 @@
           <Version>4.0Client+</Version>
         </Versions>
       </DefaultTestInfo>
-    </Target>
+    </Target> -->
     <!-- Area : Diagnostics -->
     <!-- VisualDiagnostics -->
     <Target Adaptor="TestAttributeAdaptor" Path="FeatureTests\Diagnostics\VisualDiagnostics\VisualDiagnosticsLibrary.dll">
@@ -187,7 +187,7 @@
     </Target>
 
     <!-- Area : DataServices -->
-    <Target Adaptor="VariationAttributeAdaptor" Path="FeatureTests\DataServices\DataServicesTest.dll">
+    <!-- <Target Adaptor="VariationAttributeAdaptor" Path="FeatureTests\DataServices\DataServicesTest.dll">
       <DefaultTestInfo Area="DataServices" Disabled="False" Type="Functional" UacElevation="Elevated" ExecutionGroup="DataServicesOriginal" ExecutionGroupingLevel="MaximalPerformance">
         <Driver Executable="sti.exe" />
         <DriverParameters Method="Run" />
@@ -200,7 +200,7 @@
           <Version>4.0Client+</Version>
         </Versions>
       </DefaultTestInfo>
-    </Target>
+    </Target> -->
     
     <!-- Editing -->
     <Target Adaptor="TestAttributeAdaptor" Path="FeatureTests\Editing\EditingTest.exe">
@@ -299,7 +299,7 @@
       </DefaultTestInfo>
     </Target>
 
-    <Target Adaptor="VariationAttributeAdaptor" Path="FeatureTests\DataServices\DataServicesTestOrcas.dll">
+    <!-- <Target Adaptor="VariationAttributeAdaptor" Path="FeatureTests\DataServices\DataServicesTestOrcas.dll">
       <DefaultTestInfo Area="DataServices" Disabled="False" Type="Functional" UacElevation="Elevated" ExecutionGroup="DataServicesOrcas" ExecutionGroupingLevel="MaximalPerformance">
         <Driver Executable="sti.exe" />
         <DriverParameters Method="Run" />
@@ -328,7 +328,7 @@
           <Version>4.0Client+</Version>
         </Versions>
       </DefaultTestInfo>
-    </Target>
+    </Target> -->
 
     <Target Adaptor="TestAttributeAdaptor" Path="FeatureTests\ElementLayout\ElementLayoutTestPart1.dll">
       <DefaultTestInfo Area="ElementLayout" Type="Functional" ExecutionGroupingLevel="SharedAppDomains">

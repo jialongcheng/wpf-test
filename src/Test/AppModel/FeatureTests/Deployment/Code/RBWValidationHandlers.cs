@@ -18,6 +18,7 @@ namespace Microsoft.Test.Deployment
     /// <summary>
     /// Validates resize behavior of Browser apps 
     /// </summary>
+    [System.Security.SecurityCritical]
     public class RootBrowserWindowResizeHandler : UIHandler
     {
         #region Public Members
@@ -85,6 +86,7 @@ namespace Microsoft.Test.Deployment
     /// <summary>
     /// Simply navigates .xbap --> HTML to exercise browser navigation code 
     /// </summary>
+    [System.Security.SecurityCritical]
     public class NavigateAwayToHTMLHandler : UIHandler
     {
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)
@@ -104,6 +106,7 @@ namespace Microsoft.Test.Deployment
     /// <summary>
     /// Exercises various input bubbling scenarios.
     /// </summary>
+    [System.Security.SecurityCritical]
     public class FireFoxInputBubblingHandler : UIHandler
     {
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)

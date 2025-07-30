@@ -19,6 +19,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     /// Loader Step that can be used to activate an Avalon application type
     /// </summary>
 
+    [System.Security.SecurityCritical]
 	public class XamlNavigationHandler1 : Microsoft.Test.Loaders.UIHandler
 	{
         /// <summary>
@@ -141,6 +142,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
         }
     }
 
+    [System.Security.SecurityCritical]
     public class XamlNavigationHandler2 : Microsoft.Test.Loaders.UIHandler
     {
         /// <summary>

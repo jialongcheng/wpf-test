@@ -21,6 +21,7 @@ namespace Microsoft.Test.Deployment {
 	/// <summary>
 	/// Handles the Trustmanager dialog by denying it.
 	/// </summary>
+    [System.Security.SecurityCritical]
 	public class DoNotRunTrustManager : UIHandler
 	{
         /// <summary>

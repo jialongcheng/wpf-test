@@ -53,6 +53,7 @@ namespace Microsoft.Test.Deployment
     /// if Method is "Navigate", it looks for an existing IE window and navigates using it.
     /// </summary>
     
+    [System.Security.SecurityCritical]
     public class NavigationStep : LoaderStep 
     {
         #region private data
@@ -804,6 +805,7 @@ namespace Microsoft.Test.Deployment
         #endregion
     }
 
+    [System.Security.SecurityCritical]
     public class ServerTokenReplacementStep : LoaderStep
     {
         #region Public Members

@@ -14,6 +14,7 @@ namespace Microsoft.Test.Wpf.AppModel.Deployment
     /// UI handler
     /// </summary>
     [Test(0, "Xbap", "ETWEventVerification", Disabled=true)]
+    [System.Security.SecurityCritical]
     public class DeploymentETWTests : EtwEventExistenceTest
     {
         public DeploymentETWTests()

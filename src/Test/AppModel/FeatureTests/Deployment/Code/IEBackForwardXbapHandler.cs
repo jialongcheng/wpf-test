@@ -21,6 +21,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     /// <summary>
     /// UI handler
     /// </summary>
+    [System.Security.SecurityCritical]
     public class IE7BackForwardHandler: UIHandler
     {
         /// <summary>
@@ -75,6 +76,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     }
 
 
+    [System.Security.SecurityCritical]
     public class IE7CanceledNavigationJournalHandler : UIHandler
     {
 
@@ -130,6 +132,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     }
 
 
+    [System.Security.SecurityCritical]
     public class IE7RapidNavigationHandler : UIHandler
     {
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)

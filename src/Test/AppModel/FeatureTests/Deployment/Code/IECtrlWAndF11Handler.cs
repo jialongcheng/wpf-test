@@ -21,6 +21,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     /// UI handler
     /// </summary>
 
+    [System.Security.SecurityCritical]
     public class IECtrlWAndF11Handler: UIHandler
     {
         /// <summary>
@@ -268,6 +269,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     /// Makes sure that SOMETHING prints when printing from browser-hosted content.
     /// The print team will handle making sure it prints correctly
     /// </summary>
+    [System.Security.SecurityCritical]
     public class BrowserContentPrintHandler : UIHandler
     {
         /// <summary>

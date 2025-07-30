@@ -26,6 +26,7 @@ namespace Microsoft.Test.Deployment
 	/// UIHandler to do visual verification of various applications based on being given a small .bmp of 
 	/// content that needs to be present to pass the test.  Do not use large .bmps as this runs prohibitively slow.
 	/// </summary>
+    [System.Security.SecurityCritical]
 	public class VisualVerifier : UIHandler
     {
         #region Private Members

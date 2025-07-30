@@ -22,6 +22,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     /// <summary>
     /// UI handler
     /// </summary>
+    [System.Security.SecurityCritical]
     public class IEMenuMergingValidator: UIHandler
     {
         /// <summary>
@@ -586,6 +587,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     /// <summary>
     /// UI handler
     /// </summary>
+    [System.Security.SecurityCritical]
     public class CtrlSHandler : UIHandler
     {
         public override UIHandlerAction HandleWindow(System.IntPtr topHwnd, System.IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
@@ -614,6 +616,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     /// <summary>
     /// Exercises select/cut/copy/paste from IE menus
     /// </summary>
+    [System.Security.SecurityCritical]
     public class BrowserMenuCommandHandler : UIHandler
     {
         private static UIHandlerAction s_result = UIHandlerAction.Abort;

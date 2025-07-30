@@ -16,6 +16,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomSteps
     /// Loader Step that can be used to activate an Avalon application type
     /// </summary>
 
+    [System.Security.SecurityCritical]
 	public class CheckXbapExitStep : Microsoft.Test.Loaders.LoaderStep
 	{
         /// <summary>

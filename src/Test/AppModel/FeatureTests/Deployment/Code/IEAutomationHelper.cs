@@ -1114,6 +1114,7 @@ namespace Microsoft.Test.Deployment
     /// <summary>
     /// Temporarily puts HTTP internet URL for FileHost-hosted content in the IE Trusted Sites zone.
     /// </summary>
+    [System.Security.SecurityCritical]
     public class AddToTrustedSites : LoaderStep
     {
         // Can easily modify this later to add other paths to trusted sites
@@ -1134,6 +1135,7 @@ namespace Microsoft.Test.Deployment
     /// <summary>
     /// Undoes HTTP internet URL being mapped to IE Trusted Sites zone.
     /// </summary>
+    [System.Security.SecurityCritical]
     public class RemoveFromTrustedSites : LoaderStep
     {
         public override bool DoStep()

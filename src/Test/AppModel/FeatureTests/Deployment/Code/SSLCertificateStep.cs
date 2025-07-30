@@ -19,6 +19,7 @@ namespace Microsoft.Test.Deployment
   /// Used to add a SSL X509Certificate to the Local machine or User store.
   /// Be very careful adding certificates to the store!  
   /// </summary>
+    [System.Security.SecurityCritical]
     public class SSLCertificateStep : LoaderStep
     {
         #region Public members

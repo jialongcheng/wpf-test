@@ -19,6 +19,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     /// <summary>
     /// UI handler
     /// </summary>
+    [System.Security.SecurityCritical]
     public class PresHostDebugHandler : UIHandler
     {
         /// <summary>
@@ -63,6 +64,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
         }
     }
 
+    [System.Security.SecurityCritical]
     public class PresHostDebugSOOUrlStep : LoaderStep
     {
         /// <summary>

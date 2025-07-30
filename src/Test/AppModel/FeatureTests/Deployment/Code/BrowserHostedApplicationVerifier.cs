@@ -73,6 +73,7 @@ namespace Microsoft.Test.Deployment
         }
     }
 
+    [System.Security.SecurityCritical]
     public class UserAgentStringTestVerifier : UIHandler
     {
         public string UserAgentTestValue = "";
@@ -125,6 +126,7 @@ namespace Microsoft.Test.Deployment
         }
     }
 
+    [System.Security.SecurityCritical]
     public class TrustDialogModalityHandler : UIHandler
     {
         [DllImport("user32.dll")]

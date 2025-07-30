@@ -60,6 +60,7 @@ namespace Microsoft.Test.Deployment
     /// <summary>
     /// Handles the Update dialog
     /// </summary>
+    [System.Security.SecurityCritical]
     public class DismissUpdateDialog : UIHandler
     {
         /// <summary>
@@ -92,6 +93,7 @@ namespace Microsoft.Test.Deployment
     /// <summary>
     /// Handles the Maintenance/Uninstall dialog
     /// </summary>
+    [System.Security.SecurityCritical]
     public class DismissMaintenanceDialog : UIHandler
     {
         // Automation IDs of the important buttons.  

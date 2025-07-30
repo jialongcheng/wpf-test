@@ -124,10 +124,13 @@ namespace Microsoft.Test.Discovery
             }
 
             string assemblyPath = testManifestPath.FullName;
+#if !NETFRAMEWORK
+            // If the assembly is a .exe, we need to change it to .dll
             if (Path.GetExtension(assemblyPath).Equals(".exe"))
             {
                 assemblyPath = Path.ChangeExtension(assemblyPath, ".dll");
             }
+#endif
 
             Assembly assembly = Assembly.LoadFrom(assemblyPath);
 

@@ -51,6 +51,7 @@ namespace Microsoft.Test.Deployment
     /// if Method is "Navigate", it looks for an existing IE window and navigates using it.
     /// </summary>
     
+    [System.Security.SecurityCritical]
     public class BrowserNavigationStep : LoaderStep 
     {
         #region private data

@@ -18,6 +18,7 @@ namespace Microsoft.Test.Deployment
     /// Used to corrupt Deployment Manifest files (.xbap and .application) to exercise 
     /// Deployment error UI.  
     /// </summary>
+    [System.Security.SecurityCritical]
     public class IEUnknownContentTestHandler : UIHandler
     {
 

@@ -80,6 +80,7 @@ namespace Microsoft.Test.Deployment
     /// <summary>
     /// Uses databound value in test XAML to ensure that we're running on latest CLR
     /// </summary>
+    [System.Security.SecurityCritical]
     public class XamlVersionCheckHandler : UIHandler
     {
         /// <summary>

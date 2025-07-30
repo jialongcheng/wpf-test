@@ -17,6 +17,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     /// <summary>
     /// UI handler
     /// </summary>
+    [System.Security.SecurityCritical]
     public class WebOCFocusRegressionHandler: UIHandler
     {
         /// <summary>
@@ -77,6 +78,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
 
     }
     
+    [System.Security.SecurityCritical]
     public class WebOCInvariantAssertTestHandler : UIHandler
     {
         /// <param name="topLevelhWnd"></param>

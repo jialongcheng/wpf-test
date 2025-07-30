@@ -49,6 +49,7 @@ namespace Microsoft.Test.Deployment
     /// <summary>
     /// Handles the Maintenance/Uninstall dialog
     /// </summary>
+    [System.Security.SecurityCritical]
     public class BrowserAppExceptionHandler : UIHandler
     {
         public BrowserAppExceptionHandlerAction Action
@@ -255,6 +256,7 @@ namespace Microsoft.Test.Deployment
         }
     }
 
+    [System.Security.SecurityCritical]
     public class BrowserAppExceptionRestartHandler : UIHandler
     {
         public override UIHandlerAction HandleWindow(IntPtr topHwnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)

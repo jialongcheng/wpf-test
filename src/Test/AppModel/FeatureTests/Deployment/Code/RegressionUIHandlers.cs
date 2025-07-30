@@ -19,6 +19,7 @@ using System.Windows.Input;
 
 namespace Microsoft.Test.Deployment.CustomUIHandlers
 {
+    [System.Security.SecurityCritical]
     public class TabThroughHandler : UIHandler
     {
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)
@@ -97,6 +98,7 @@ namespace Microsoft.Test.Deployment.CustomUIHandlers
     /// <summary>
     /// Regression tests 7- WPF HyperLink can be used to bypass IE�s subframe navigation cross-domain restriction
     /// </summary>
+    [System.Security.SecurityCritical]
     public class CrossDomainFrameNavigationHandler : UIHandler
     {
         #region Public Properties
@@ -279,6 +281,7 @@ namespace Microsoft.Test.Deployment.CustomUIHandlers
         #endregion
     }
 
+    [System.Security.SecurityCritical]
     public class IEFavoritesEditorHandler : UIHandler
     {
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)
@@ -412,6 +415,7 @@ namespace Microsoft.Test.Deployment.CustomUIHandlers
 
     // Exercise MailTo: hyperlinks in WPF browser apps.
     // Since the behavior is radically different OS-to-OS, just validates a top-level-window was created.
+    [System.Security.SecurityCritical]
     public class MailToUIHandler : UIHandler
     {
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)
@@ -466,6 +470,7 @@ namespace Microsoft.Test.Deployment.CustomUIHandlers
         }
     }
 
+    [System.Security.SecurityCritical]
     public class XbapHostedInHTMLVerifier : UIHandler
     {
         // Regression test case 3 
@@ -553,6 +558,7 @@ namespace Microsoft.Test.Deployment.CustomUIHandlers
     }
 
     // Regression test 4
+    [System.Security.SecurityCritical]
     public class PresentationHostTextLeakHandler : UIHandler
     {
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
@@ -616,6 +622,7 @@ namespace Microsoft.Test.Deployment.CustomUIHandlers
     /// <summary>
     /// UI handler
     /// </summary>
+    [System.Security.SecurityCritical]
     public class FrameScrollRepaintRegressionHandler : UIHandler
     {
         /// <summary>
@@ -693,6 +700,7 @@ namespace Microsoft.Test.Deployment.CustomUIHandlers
         }
     }
 
+    [System.Security.SecurityCritical]
     public class NestedTranslateAcceleratorRegressionHandler : UIHandler
     {
         public string TestScenario;

@@ -16,6 +16,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     /// <summary>
     /// UI handler
     /// </summary>
+    [System.Security.SecurityCritical]
     public class WebOCFileLockingHandler: UIHandler
     {
         /// <summary>
@@ -97,6 +98,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
         }
     }
 
+    [System.Security.SecurityCritical]
     public class WebOCDisposalRegressionHandler : UIHandler
     {
         /// <summary>

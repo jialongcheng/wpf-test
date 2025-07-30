@@ -43,6 +43,7 @@ namespace Microsoft.Test.Deployment
     }
 
 
+    [System.Security.SecurityCritical]
     internal class CancelDownload : UIHandler
     {
         #region Private Data

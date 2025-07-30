@@ -24,6 +24,7 @@ namespace Microsoft.Test.Deployment
     /// <summary>
     /// "Evil Twin" of regular ActivationStep, this one is designed to handle intentional, custom, misbehaved activations
     /// </summary>
+    [System.Security.SecurityCritical]
     class InvalidActivationStep : ActivationStep
     {
         public enum InvalidActivationScheme
