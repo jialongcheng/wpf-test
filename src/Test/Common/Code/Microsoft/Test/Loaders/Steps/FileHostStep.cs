@@ -56,6 +56,7 @@ namespace Microsoft.Test.Loaders.Steps
         /// Creates a FileHost with the Name specified by the Name property
         /// </summary>
         /// <returns>true</returns>
+        [System.Security.SecurityCritical]
         protected override bool BeginStep() 
         {
             if (UseUTF8Path)
@@ -116,6 +117,7 @@ namespace Microsoft.Test.Loaders.Steps
         /// Closes the TestLog
         /// </summary>
         /// <returns>true</returns>
+        [System.Security.SecurityCritical]
         protected override bool EndStep() 
         {
             fileHost.Close();

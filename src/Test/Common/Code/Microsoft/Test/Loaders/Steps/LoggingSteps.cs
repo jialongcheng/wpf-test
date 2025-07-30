@@ -48,6 +48,7 @@ namespace Microsoft.Test.Loaders.Steps
         /// Creates a TestLog with the Name specified by the Name property
         /// </summary>
         /// <returns>true</returns>
+        [System.Security.SecurityCritical]
         protected override bool BeginStep() 
         {
             log = new TestLog(Name);
@@ -58,6 +59,7 @@ namespace Microsoft.Test.Loaders.Steps
         /// Closes the TestLog
         /// </summary>
         /// <returns>true</returns>
+        [System.Security.SecurityCritical]
         protected override bool EndStep() 
         {
             if ((log != null) && (CloseTestLog))

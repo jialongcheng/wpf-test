@@ -58,6 +58,7 @@ namespace Microsoft.Test.Deployment {
         /// Finds uninstall string in registry and invokes it
         /// </summary>
         /// <returns>true</returns>
+        [System.Security.SecurityCritical]
         protected override bool BeginStep() 
         {
 			// Get current Test Log
@@ -117,6 +118,7 @@ namespace Microsoft.Test.Deployment {
 		/// Checks to see if any entries remain containing AppName
 		/// </summary>
 		/// <returns>true</returns>
+        [System.Security.SecurityCritical]
 		protected override bool EndStep()
 		{
             if (_appPresentToUninstall)

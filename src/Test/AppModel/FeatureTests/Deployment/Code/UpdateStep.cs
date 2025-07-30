@@ -105,6 +105,7 @@ namespace Microsoft.Test.Deployment {
         /// Performs the Activation step
         /// </summary>
         /// <returns>returns true if the rest of the steps should be executed, otherwise, false</returns>
+        [System.Security.SecurityCritical]
         protected override bool BeginStep() 
         {
             // Get current Test Log
@@ -241,6 +242,7 @@ namespace Microsoft.Test.Deployment {
         /// processes
         /// </summary>
         /// <returns>true</returns>
+        [System.Security.SecurityCritical]
         protected override bool EndStep() 
         {
             _appMonitor.WaitForUIHandlerAbort();

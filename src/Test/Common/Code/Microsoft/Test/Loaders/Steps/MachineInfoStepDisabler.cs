@@ -47,6 +47,7 @@ namespace Microsoft.Test.Loaders.Steps
         bool shouldRunChildSteps = true;
         #endregion
 
+        [System.Security.SecurityCritical]
         protected override bool BeginStep()
         {
             bool tempBool = false;
@@ -166,6 +167,7 @@ namespace Microsoft.Test.Loaders.Steps
             }
         }
 
+        [System.Security.SecurityCritical]
         protected override bool EndStep()
         {
             return shouldRunChildSteps;

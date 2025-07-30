@@ -81,6 +81,7 @@ namespace Microsoft.Test.Deployment
         /// TrustManager dialog handler to see if the trustmanager ran more than once.
         /// </summary>
         /// <returns>true</returns>
+        [System.Security.SecurityCritical]
         protected override bool BeginStep()
         {
             // Get current Test Log
@@ -153,6 +154,7 @@ namespace Microsoft.Test.Deployment
         /// Checks to see how many times the trustmanager dialog was handled
         /// </summary>
         /// <returns>true</returns>
+        [System.Security.SecurityCritical]
         protected override bool EndStep()
         {
             GlobalLog.LogDebug("Waiting for UI Handler Abort signal(s)");

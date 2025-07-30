@@ -152,6 +152,7 @@ namespace Microsoft.Test.Deployment
         /// Performs the Navigation step
         /// </summary>
         /// <returns>returns true if the rest of the steps should be executed, otherwise, false</returns>
+        [System.Security.SecurityCritical]
         protected override bool BeginStep() 
         {
             GlobalLog.LogDebug("Starting navigation step to : " + FileName);
@@ -335,6 +336,7 @@ namespace Microsoft.Test.Deployment
         /// processes
         /// </summary>
         /// <returns>true</returns>
+        [System.Security.SecurityCritical]
         protected override bool EndStep() {
             //Wait for the application to be done
             _appMonitor.WaitForUIHandlerAbort();

@@ -156,6 +156,7 @@ namespace Microsoft.Test.Windows.Client.AppSec.Deployment
         /// TrustManager dialog handler to see if the trustmanager ran more than once.
         /// </summary>
         /// <returns>true</returns>
+        [System.Security.SecurityCritical]
         protected override bool BeginStep()
         {
             #region Setup
@@ -706,6 +707,7 @@ namespace Microsoft.Test.Windows.Client.AppSec.Deployment
         /// Process Cleanup
         /// </summary>
         /// <returns>true</returns>
+        [System.Security.SecurityCritical]
         protected override bool EndStep()
         {
             GlobalLog.LogDebug("Finished test ... cleaning up");

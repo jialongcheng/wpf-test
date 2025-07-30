@@ -67,6 +67,7 @@ namespace Microsoft.Test.Loaders.Steps
         /// Execute the specified command
         /// </summary>
         /// <returns>true</returns>
+        [System.Security.SecurityCritical]
         protected override bool BeginStep() 
         {
             Microsoft.Test.Configuration.MachineStateManager.SetRegistryValue(keyName, valueName, valueData);

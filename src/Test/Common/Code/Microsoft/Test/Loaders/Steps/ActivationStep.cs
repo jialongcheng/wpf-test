@@ -295,6 +295,7 @@ namespace Microsoft.Test.Loaders.Steps
         /// Performs the Activation step
         /// </summary>
         /// <returns>returns true if the rest of the steps should be executed, otherwise, false</returns>
+        [System.Security.SecurityCritical]
         protected override bool BeginStep()
         {
             //Create ApplicationMonitor
@@ -567,6 +568,7 @@ namespace Microsoft.Test.Loaders.Steps
         /// processes
         /// </summary>
         /// <returns>true</returns>
+        [System.Security.SecurityCritical]
         protected override bool EndStep()
         {
             //Wait for the application to be done
