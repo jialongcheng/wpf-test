@@ -72,6 +72,7 @@ namespace Microsoft.Test.Deployment
         /// <param name="title"></param>
         /// <param name="notification"></param>
         /// <returns></returns>
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             //Sleep a second to make sure that the dialog is ready
@@ -129,6 +130,7 @@ namespace Microsoft.Test.Deployment
         /// <param name="title"></param>
         /// <param name="notification"></param>
         /// <returns></returns>
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             AutomationElement maintenanceDialogWindow = AutomationElement.FromHandle(topLevelhWnd);

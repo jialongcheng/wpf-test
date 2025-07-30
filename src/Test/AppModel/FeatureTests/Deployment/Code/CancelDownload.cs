@@ -119,6 +119,7 @@ namespace Microsoft.Test.Deployment
         }
         #endregion
 
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             this.TestLog = TestLog.Current;

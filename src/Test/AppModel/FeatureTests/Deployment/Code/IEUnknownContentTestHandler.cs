@@ -24,6 +24,7 @@ namespace Microsoft.Test.Deployment
 
         #region Step Implementation
 
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)
         {
             AutomationElement theWindow = AutomationElement.FromHandle(topLevelhWnd);

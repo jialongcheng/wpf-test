@@ -29,6 +29,7 @@ namespace Microsoft.Test.Windows.Client.AppSec.Deployment
             GlobalLog.LogDebug("Registered Standalone App Canceler for " + this.WindowTitle + ", " + this.ProcessName);
         }
 
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             MTI.Input.SendKeyboardInput(Key.Space, true);

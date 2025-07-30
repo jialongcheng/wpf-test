@@ -38,6 +38,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
         /// <param name="title"></param>
         /// <param name="notification"></param>
         /// <returns></returns>
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(System.IntPtr topHwnd, System.IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             if ((Environment.GetEnvironmentVariable("ProgramFiles(x86)") != null) &&

@@ -628,6 +628,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.BVT
         #endregion
 
         #region interact with main app window
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd,
             System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {

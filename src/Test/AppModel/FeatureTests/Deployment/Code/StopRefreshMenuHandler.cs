@@ -37,6 +37,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
         /// <param name="title"></param>
         /// <param name="notification"></param>
         /// <returns></returns>
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(System.IntPtr topHwnd, System.IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             string stopButtonName = "";
@@ -200,6 +201,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
         /// <param name="title"></param>
         /// <param name="notification"></param>
         /// <returns></returns>
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(System.IntPtr topHwnd, System.IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             Key LocalizedCtrlN = IECtrlNString();
@@ -232,6 +234,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
         /// <param name="title"></param>
         /// <param name="notification"></param>
         /// <returns></returns>
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(System.IntPtr topHwnd, System.IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             GlobalLog.LogEvidence("Starting Refresh accel-key test...");
@@ -358,6 +361,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
         /// <param name="title"></param>
         /// <param name="notification"></param>
         /// <returns></returns>
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(System.IntPtr topHwnd, System.IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             GlobalLog.LogEvidence("Starting FireFox Refresh behavior test...");

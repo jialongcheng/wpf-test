@@ -66,6 +66,7 @@ namespace Microsoft.Test.Loaders.UIHandlers
         /// <param name="title"></param>
         /// <param name="notification"></param>
         /// <returns></returns>
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(System.IntPtr topHwnd, System.IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             ILog log = null;

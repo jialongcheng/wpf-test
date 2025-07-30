@@ -44,6 +44,7 @@ namespace Microsoft.Test.Deployment
         /// <param name="title"></param>
         /// <param name="notification"></param>
         /// <returns></returns>
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             // We fail by default in this handler.  Only pass in special cases.
@@ -201,6 +202,7 @@ namespace Microsoft.Test.Deployment
         /// <param name="title"></param>
         /// <param name="notification"></param>
         /// <returns></returns>
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             GlobalLog.LogDebug("Handling " + title + " window, clicking on button:  " + ButtonToClick);
@@ -296,6 +298,7 @@ namespace Microsoft.Test.Deployment
         /// <param name="title"></param>
         /// <param name="notification"></param>
         /// <returns></returns>
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             // We pass by default in this handler.  Only fail in special cases.
@@ -593,6 +596,7 @@ namespace Microsoft.Test.Deployment
         /// <param name="title"></param>
         /// <param name="notification"></param>
         /// <returns></returns>
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             this.TestLog = TestLog.Current;

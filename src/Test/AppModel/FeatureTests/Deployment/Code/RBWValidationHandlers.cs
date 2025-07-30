@@ -32,6 +32,7 @@ namespace Microsoft.Test.Deployment
         /// <param name="title"></param>
         /// <param name="notification"></param>
         /// <returns></returns>
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(System.IntPtr topLevelhWnd, System.IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             AutomationElement browserWindow = AutomationElement.FromHandle(topLevelhWnd);
@@ -89,6 +90,7 @@ namespace Microsoft.Test.Deployment
     [System.Security.SecurityCritical]
     public class NavigateAwayToHTMLHandler : UIHandler
     {
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)
         {
             AutomationElement browserWindow = AutomationElement.FromHandle(topLevelhWnd);
@@ -109,6 +111,7 @@ namespace Microsoft.Test.Deployment
     [System.Security.SecurityCritical]
     public class FireFoxInputBubblingHandler : UIHandler
     {
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)
         {
             AutomationElement browserWindow = AutomationElement.FromHandle(topLevelhWnd);

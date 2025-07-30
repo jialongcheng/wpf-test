@@ -95,6 +95,7 @@ namespace Microsoft.Test.Deployment
         /// <param name="title"></param>
         /// <param name="notification"></param>
         /// <returns></returns>
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(System.IntPtr topHwnd, System.IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             AutomationElement IEWindow = AutomationElement.FromHandle(topHwnd);
@@ -259,6 +260,7 @@ namespace Microsoft.Test.Deployment
     [System.Security.SecurityCritical]
     public class BrowserAppExceptionRestartHandler : UIHandler
     {
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topHwnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)
         {
             LoaderStep fileHostStep = this.Step;

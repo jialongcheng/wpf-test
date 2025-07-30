@@ -217,6 +217,7 @@ namespace Microsoft.Test.RenderingVerification {
 
         //handles the Dispay Configuration UI
         class ChangeThemesUIHandler : UIHandler {
+        [System.Security.SecurityCritical]
             public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification) {
                 GlobalLog.LogDebug("Display Configuration window found.");
                 AutomationElement window = AutomationElement.FromHandle(topLevelhWnd);
@@ -246,6 +247,7 @@ namespace Microsoft.Test.RenderingVerification {
                 this.resourceString = resourceString;
             }
 
+        [System.Security.SecurityCritical]
             public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)
             {
                 GlobalLog.LogDebug("Display Properties (Appearance tab) window found.");
@@ -288,6 +290,7 @@ namespace Microsoft.Test.RenderingVerification {
                 this.newAppearance = newAppearance;
             }
 
+        [System.Security.SecurityCritical]
             public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)
             {
                 GlobalLog.LogDebug("Appearance settings window found.");

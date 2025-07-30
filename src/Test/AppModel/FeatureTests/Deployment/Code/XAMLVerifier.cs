@@ -49,6 +49,7 @@ namespace Microsoft.Test.Deployment
         /// <param name="title"></param>
         /// <param name="notification"></param>
         /// <returns></returns>
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(System.IntPtr topLevelhWnd, System.IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             UIHandlerAction result = UIHandlerAction.Unhandled;
@@ -88,6 +89,7 @@ namespace Microsoft.Test.Deployment
         /// </summary>
         public string MajorMinorExpectedVersion = null;
 
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             AutomationElement thisWindow = AutomationElement.FromHandle(topLevelhWnd);

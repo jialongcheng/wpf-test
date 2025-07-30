@@ -287,6 +287,7 @@ namespace Microsoft.Test.Hosting
         {
             public IntPtr topLevelhWnd = IntPtr.Zero;
 
+        [System.Security.SecurityCritical]
             public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)
             {
                 this.topLevelhWnd = topLevelhWnd;

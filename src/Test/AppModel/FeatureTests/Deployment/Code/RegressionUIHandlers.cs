@@ -22,6 +22,7 @@ namespace Microsoft.Test.Deployment.CustomUIHandlers
     [System.Security.SecurityCritical]
     public class TabThroughHandler : UIHandler
     {
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)
         {
             GlobalLog.LogEvidence("Verifying tabbing does not cause crashing in WPF browser content" );
@@ -141,6 +142,7 @@ namespace Microsoft.Test.Deployment.CustomUIHandlers
 
         #region Handler Implementation
 
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(System.IntPtr topHwnd, System.IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             AutomationElement IEWindow = AutomationElement.FromHandle(topHwnd);
@@ -284,6 +286,7 @@ namespace Microsoft.Test.Deployment.CustomUIHandlers
     [System.Security.SecurityCritical]
     public class IEFavoritesEditorHandler : UIHandler
     {
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)
         {
             // If you load IEFrame.dll or BrowseLC (Depends on IE version) in Visual Studio, 
@@ -418,6 +421,7 @@ namespace Microsoft.Test.Deployment.CustomUIHandlers
     [System.Security.SecurityCritical]
     public class MailToUIHandler : UIHandler
     {
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)
         {
             // Windows 7 - MailTo: Links fail to display error message in default Windows 7 setup state for WPF and other shell-executed "Mailto" links
@@ -474,6 +478,7 @@ namespace Microsoft.Test.Deployment.CustomUIHandlers
     public class XbapHostedInHTMLVerifier : UIHandler
     {
         // Regression test case 3 
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)
         {
             GlobalLog.LogEvidence("Testing that in-browser focus can cycle through HTML -> WPF (All elements) -> HTML again");
@@ -561,6 +566,7 @@ namespace Microsoft.Test.Deployment.CustomUIHandlers
     [System.Security.SecurityCritical]
     public class PresentationHostTextLeakHandler : UIHandler
     {
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             AutomationElement IEWindow = AutomationElement.FromHandle(topLevelhWnd);
@@ -634,6 +640,7 @@ namespace Microsoft.Test.Deployment.CustomUIHandlers
         /// <param name="title"></param>
         /// <param name="notification"></param>
         /// <returns></returns>
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(System.IntPtr topLevelhWnd, System.IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             
@@ -705,6 +712,7 @@ namespace Microsoft.Test.Deployment.CustomUIHandlers
     {
         public string TestScenario;
 
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)
         {
             AutomationElement mainWindow = AutomationElement.FromHandle(topLevelhWnd);

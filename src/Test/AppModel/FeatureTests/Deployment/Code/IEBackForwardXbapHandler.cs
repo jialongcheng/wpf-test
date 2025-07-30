@@ -38,6 +38,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
         /// <param name="title"></param>
         /// <param name="notification"></param>
         /// <returns></returns>
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(System.IntPtr topHwnd, System.IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             AutomationElement IEWindow = AutomationElement.FromHandle(topHwnd);
@@ -80,6 +81,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     public class IE7CanceledNavigationJournalHandler : UIHandler
     {
 
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)
         {
             if (SystemInformation.Current.IEVersion.StartsWith("6"))
@@ -135,6 +137,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
     [System.Security.SecurityCritical]
     public class IE7RapidNavigationHandler : UIHandler
     {
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, Process process, string title, UIHandlerNotification notification)
         {
             if (SystemInformation.Current.IEVersion.StartsWith("6"))

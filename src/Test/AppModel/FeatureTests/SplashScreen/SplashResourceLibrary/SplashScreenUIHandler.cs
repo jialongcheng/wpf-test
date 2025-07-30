@@ -171,6 +171,7 @@ namespace Microsoft.Test.AppModel.SplashScreen
 
         #region Handler Implementation
 
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             bool passed = true;
@@ -316,6 +317,7 @@ namespace Microsoft.Test.AppModel.SplashScreen
 
         #region Handler Implementation
 
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             // Only used in DriveTestApp case I know... but minimal perf implications

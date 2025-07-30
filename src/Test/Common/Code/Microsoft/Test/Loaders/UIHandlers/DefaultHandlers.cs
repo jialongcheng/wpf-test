@@ -42,6 +42,7 @@ namespace Microsoft.Test.Loaders.UIHandlers
         /// <param name="title"></param>
         /// <param name="notification"></param>
         /// <returns></returns>
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             //
@@ -234,6 +235,7 @@ namespace Microsoft.Test.Loaders.UIHandlers
 
         #region Step Implementation
 
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             //Sleep a second to make sure that the dialog is ready
@@ -406,6 +408,7 @@ namespace Microsoft.Test.Loaders.UIHandlers
         #endregion
 
         #region Step Implementation
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             // Sleep for a bit.  Takes a bit longer for window to be ready in Longhorn.
@@ -556,6 +559,7 @@ namespace Microsoft.Test.Loaders.UIHandlers
         #endregion
 
         #region Step Implementation
+        [System.Security.SecurityCritical]
         public override UIHandlerAction HandleWindow(IntPtr topLevelhWnd, IntPtr hwnd, System.Diagnostics.Process process, string title, UIHandlerNotification notification)
         {
             // Sleep for a bit.  Need to give the FF window a chance to render the address bar.
