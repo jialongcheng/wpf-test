@@ -44,6 +44,7 @@ namespace Microsoft.Test.Deployment
         /// <summary>
         /// Modifies Deployment manifest based on "method" property 
         /// </summary>
+        [System.Security.SecurityCritical]
         public override bool DoStep()
         {
             GlobalLog.LogDebug("Adding certificate " + PathToCert + " to " + this.StoreName.ToString() + " store for " + this.StoreLocation.ToString());

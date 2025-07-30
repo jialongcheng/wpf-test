@@ -827,6 +827,7 @@ namespace Microsoft.Test.Deployment
 
         #endregion
 
+        [System.Security.SecurityCritical]
         public override bool DoStep()
         {
 

@@ -53,6 +53,7 @@ namespace Microsoft.Test.Loaders.Steps
         /// <summary>
         /// Runs original sources for LHCompiler loader as an AppMonitor LoaderStep, returns a value for success.
         /// </summary>
+        [System.Security.SecurityCritical]
         public override bool DoStep()
         {
             GlobalLog.LogEvidence("AppMonitor Compilation Test step started");

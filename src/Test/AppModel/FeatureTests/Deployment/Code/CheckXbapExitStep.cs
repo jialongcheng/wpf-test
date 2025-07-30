@@ -25,6 +25,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomSteps
         /// the ExitEventHandler ran.
         /// </summary>
         /// <returns>true</returns>
+        [System.Security.SecurityCritical]
         public override bool DoStep() 
 		{
             string UriToCheck = DictionaryStore.Current["ActivationStepUri"];

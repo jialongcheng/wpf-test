@@ -78,6 +78,7 @@ namespace Microsoft.Windows.Test.Client.AppSec.Deployment.CustomUIHandlers
         /// Make sure that the Site Of Origin can be spoofed with the -debugsecurityzoneurl flag
         /// </summary>
         /// <returns>true</returns>
+        [System.Security.SecurityCritical]
         public override bool DoStep()
         {
             string currDir = Environment.CurrentDirectory;

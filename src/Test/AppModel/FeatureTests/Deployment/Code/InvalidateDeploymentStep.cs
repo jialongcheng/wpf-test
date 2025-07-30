@@ -66,6 +66,7 @@ namespace Microsoft.Test.Deployment
     /// <summary>
     /// Modifies Deployment manifest based on "method" property 
     /// </summary>
+        [System.Security.SecurityCritical]
     public override bool DoStep()
     {
         GlobalLog.LogDebug("Invalidate Deployment step starting for " + DeploymentManifest);

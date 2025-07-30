@@ -42,6 +42,7 @@ namespace Microsoft.Test.Loaders.Steps
         /// Tries to parse the config file and run the steps parsed.  
         /// </summary>
         /// <returns>returns true if the rest of the steps should be executed, otherwise, false</returns>
+        [System.Security.SecurityCritical]
         public override bool DoStep()
         {
             ApplicationMonitorConfig amc = new ApplicationMonitorConfig(FileName);

@@ -30,6 +30,7 @@ namespace Microsoft.Test.Utilities.StepsEngine
     /// <summary>
     /// Modifies Deployment manifest based on "method" property 
     /// </summary>
+        [System.Security.SecurityCritical]
     public override bool DoStep()
     {
         if (FileName == "")

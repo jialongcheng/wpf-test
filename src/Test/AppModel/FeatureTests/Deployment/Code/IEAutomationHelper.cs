@@ -1121,6 +1121,7 @@ namespace Microsoft.Test.Deployment
         // but the Internet makes most sense because it is the most restricted zone to elevate
         // and I dont feel like implementing a mapping between FileHost scheme and the zone enumeration.       
 
+        [System.Security.SecurityCritical]
         public override bool DoStep()
         {
             // Have to remove Internet zone mapping of this URL to move it.  This will get restored next time AppMonitor runs.
@@ -1138,6 +1139,7 @@ namespace Microsoft.Test.Deployment
     [System.Security.SecurityCritical]
     public class RemoveFromTrustedSites : LoaderStep
     {
+        [System.Security.SecurityCritical]
         public override bool DoStep()
         {
             GlobalLog.LogEvidence("Removing " + FileHost.HttpInternetBaseUrl + " from Trusted Sites zone.");
