@@ -14,6 +14,7 @@ namespace Microsoft.Test.Deployment
     /// <summary>
     /// AppVerifier for Browser-Hosted Applications
     /// </summary>
+    [System.Security.SecurityCritical]
     public class BrowserHostedApplicationVerifier : AppVerifier
     {
         /// <summary>
@@ -44,6 +45,7 @@ namespace Microsoft.Test.Deployment
         }
     }
 
+    [System.Security.SecurityCritical]
     public class FireFoxBrowserHostedApplicationVerifier : AppVerifier
     {
         /// <summary>

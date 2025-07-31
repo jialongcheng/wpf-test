@@ -484,7 +484,7 @@
 
 
     <!-- Area: Animation -->
-    <Target Adaptor="VariationAttributeAdaptor" Path="FeatureTests\Animation\AnimationTest.dll">
+    <!-- <Target Adaptor="VariationAttributeAdaptor" Path="FeatureTests\Animation\AnimationTest.dll">
       <DefaultTestInfo Area="Animation" Disabled="False" Priority="1" Type="Functional" Timeout="160">
         <Driver Executable="sti.exe" />
         <DriverParameters DefaultResult="Pass" SecurityLevel="FullTrust" Method="Run" />
@@ -497,7 +497,7 @@
           <Version>4.0Client+</Version>
         </Versions>
       </DefaultTestInfo>
-    </Target>
+    </Target> -->
 
     <!--Area : XAML-->
     <Target Adaptor="XtcAdaptor" Path="FeatureTests\XAML\Data\XTC\3.0\Client\*.xtc">

@@ -13,6 +13,7 @@ namespace Microsoft.Test.Deployment
     /// <summary>
     /// Appverifier for StandAlone Applications
     /// </summary>
+    [System.Security.SecurityCritical]
     public class StandAloneApplicationVerifier : AppVerifier
     {
 
@@ -34,11 +35,13 @@ namespace Microsoft.Test.Deployment
         /// <value></value>
         public override string AppName
         {
+            [System.Security.SecurityCritical]
             set
             {
                 base.AppName = value;
                 this.ProcessesToCheck.Add(value);
             }
+            [System.Security.SecurityCritical]
             get { return base.AppName; }
         }
 

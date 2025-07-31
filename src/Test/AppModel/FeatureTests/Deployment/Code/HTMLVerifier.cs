@@ -12,6 +12,7 @@ namespace Microsoft.Test.Deployment
 	/// <summary>
 	/// Appverifier for simple HTML markup 
 	/// </summary>
+    [System.Security.SecurityCritical]
 	public class HTMLVerifier : AppVerifier
 	{
 

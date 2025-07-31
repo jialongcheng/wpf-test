@@ -25,6 +25,7 @@ namespace Microsoft.Test.Deployment
     /// Needs to be run in the context of a TestLogStep
     /// </summary>
 
+    [System.Security.SecurityCritical]
     public class RelaunchStep : AppMaintenanceStep
     {
         #region private data

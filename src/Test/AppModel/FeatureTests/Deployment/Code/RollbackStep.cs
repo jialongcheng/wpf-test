@@ -20,6 +20,7 @@ namespace Microsoft.Test.Deployment {
     /// Needs to be run in the context of a TestLogStep
     /// </summary>cd
     
+    [System.Security.SecurityCritical]
     public class RollbackStep : AppMaintenanceStep
     {
         #region private data

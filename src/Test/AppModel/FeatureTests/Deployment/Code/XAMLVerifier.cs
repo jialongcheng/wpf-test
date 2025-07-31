@@ -16,6 +16,7 @@ namespace Microsoft.Test.Deployment
     /// <summary>
     /// Appverifier for simple XAML markup 
     /// </summary>
+    [System.Security.SecurityCritical]
     public class FireFoxXAMLVerifier : AppVerifier
     {
         #region Constructors

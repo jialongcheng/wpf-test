@@ -16,6 +16,7 @@ namespace Microsoft.Test.Deployment
 	/// <summary>
 	/// Appverifier for StandAlone Applications
 	/// </summary>
+    [System.Security.SecurityCritical]
 	public class OnDemandApplicationVerifier : AppVerifier
     {
         #region Public Members
