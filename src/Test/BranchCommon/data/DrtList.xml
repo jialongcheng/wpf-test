@@ -338,8 +338,8 @@ Rundrtlist
       <SupportFile>DrtFiles\Localization</SupportFile>
       <SupportFile>DrtFiles\Baml</SupportFile>
       <SupportFile>DrtTools.dll</SupportFile>
-    </SupportFiles> -->
-  </Drt>
+    </SupportFiles>
+  </Drt> -->
   <!--Infra-->
   <!--Imaging-->
   <Drt Executable="DRTColorAPI.exe" Architecture="all" OS="all" Owner="Microsoft" Team="Imaging" >
