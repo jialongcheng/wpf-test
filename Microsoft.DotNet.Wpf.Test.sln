@@ -191,8 +191,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtDataSrvMSB", "src\Test\D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtNavigationEvents", "src\Test\AppModel\DRT\Navigation\NavigationEvents\DrtNavigationEvents.csproj", "{6EEAE323-87C3-415A-BFE1-1AAB8B4CE79C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrtXamlSourceInfo", "src\Test\Diagnostics\DRT\XamlSourceInfo\DrtXamlSourceInfo.csproj", "{B25F50D7-9424-49A9-BBA5-923D944320DF}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamlSourceInfoTest.Debug", "src\Test\Diagnostics\DRT\XamlSourceInfo\DrtFiles\XamlSourceInfoTest.Debug.csproj", "{C42F6449-D166-490D-BF06-C1DA995A4519}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamlSourceInfoTest.Release", "src\Test\Diagnostics\DRT\XamlSourceInfo\DrtFiles\XamlSourceInfoTest.Release.csproj", "{E0D01380-ECA9-42F8-BFF5-E623842E70F6}"

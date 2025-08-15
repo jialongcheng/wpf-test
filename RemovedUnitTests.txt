@@ -19,3 +19,4 @@
 \src\Test\Globalization\DRT\Localization\DrtLocalization.csproj
 \src\Test\Globalization\DRT\Localization\Basic\Basic.csproj
 \src\Test\Globalization\FeatureTests\Data\MultiLangControl\MultiLangControl.csproj
+\src\Test\Diagnostics\DRT\XamlSourceInfo\DrtXamlSourceInfo.csproj

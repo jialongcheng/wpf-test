@@ -104,6 +104,7 @@ namespace DRT
 
         private void Test_DisableEnableSourceInfo()
         {
+            Environment.SetEnvironmentVariable("ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO", "0");
             string[] disableValues = new string[]
                 {
                     null, "", " ", "\t",
@@ -139,6 +140,7 @@ namespace DRT
                 Drt.Assert(isEnabled == false, "Verify source info is disabled after value '" + (enableValue ?? "<null>") + "'");
             }
 
+            Environment.SetEnvironmentVariable("ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO", "1");
         }
 
         private bool ModifyAndGetIsSourceInfoEnabled(string value)

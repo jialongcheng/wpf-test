@@ -406,12 +406,12 @@ Rundrtlist
   </Drt>
   <!--XET-->
   <Drt Executable="DrtVisualTreeChange.exe" Architecture="all" OS="all" Owner="Microsoft" Team="XET" />
-  <Drt Executable="DrtXamlSourceInfo.exe" Architecture="all" OS="all" Owner="Microsoft" Team="XET">
+  <!-- <Drt Executable="DrtXamlSourceInfo.exe" Architecture="all" OS="all" Owner="Microsoft" Team="XET">
 	<SupportFiles>
 		<SupportFile>DrtFiles\XamlSourceInfoTest.Debug.dll</SupportFile>
 		<SupportFile>DrtFiles\XamlSourceInfoTest.Release.dll</SupportFile>
 	</SupportFiles>
-  </Drt>
+  </Drt> -->
   
   
 </Drts>
