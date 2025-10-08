@@ -149,12 +149,8 @@ namespace DRT
             XamlReader asyncObjectConverter = new XamlReader();
             StackPanel data = Call(_mimeObjectFactoryType, null, "GetObjectAndCloseStream", s, CreateContentType("application/baml+xml"), uri, false, false, false, false, asyncObjectConverter) as StackPanel;
             DRT.Assert(data != null);
-#if NETFRAMEWORK
-            // Load behavior changed in .NET framework - now uses the assembly containing the resource
-            DRT.Assert(data.Name == "testresourceloading");
-#else
             DRT.Assert(data.Name == "root");
-#endif
+
             LoadAssembly("newloadersuitehelperproject.exe");
             //Assembly assembly2 = Assembly.ReflectionOnlyLoad("newloadersuitehelperproject");
             StreamResourceInfo part2 = Application.GetResourceStream(new Uri("/newloadersuitehelperproject;component/thirdpartythemespage.xaml", UriKind.RelativeOrAbsolute));
@@ -164,7 +160,7 @@ namespace DRT
 
             StackPanel data2 = Call(_mimeObjectFactoryType, null, "GetObjectAndCloseStream", s2, CreateContentType("application/baml+xml"), uri, false, false, false, false, asyncObjectConverter) as StackPanel;
             DRT.Assert(data2 != null, "No StackPanel found");
-            DRT.Assert(data2.Name == "testresourceloading");            
+            DRT.Assert(data2.Name == "testresourceloading");
         }
 
         private Assembly LoadAssembly(string filename)

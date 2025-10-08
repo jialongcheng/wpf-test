@@ -8,7 +8,7 @@
     <Compile Include="DrtPackagingApis.cs" />
     <Compile Include="$(DrtCommonRoot)\inc\SpewWriter.cs" />
   </ItemGroup>
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFrameworkIdentifier)'!='.NETFramework'">
     <PackageReference Include="$(SystemIOPackagingPackage)" Version="$(SystemIOPackagingVersion)" />
   </ItemGroup>
 </Project>

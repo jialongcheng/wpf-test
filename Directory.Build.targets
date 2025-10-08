@@ -15,8 +15,9 @@
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'">
-    <PackageReference Include="$(MicrosoftInternalIOPackaging)" Version="$(MicrosoftInternalIOPackagingVersion)"/>
-    <PackageReference Include="$(SystemMemoryPackage)" Version="$(SystemMemoryPackageVersion)" />
+    <!-- <PackageReference Include="$(MicrosoftInternalIOPackaging)" Version="$(MicrosoftInternalIOPackagingVersion)"/> -->
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.0" />
+    <PackageReference Include="System.Memory" Version="4.6.0" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -259,6 +260,10 @@
     </Reference>
     <Reference Include="WindowsFormsIntegration">
       <HintPath>$(WpfBinDirectory)WindowsFormsIntegration\$(Platform)\$(Configuration)\net481\WindowsFormsIntegration.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging">
+      <HintPath>$(WpfBinDirectory)System.IO.Packaging\$(Platform)\$(Configuration)\net481\System.IO.Packaging.dll</HintPath>
       <Private>true</Private>
     </Reference>
   </ItemGroup>
