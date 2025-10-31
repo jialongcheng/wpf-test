@@ -298,7 +298,7 @@ namespace Microsoft.Test.DataServices
 	}
 
 	#region StyleSelectors
-	[SecurityCritical]
+	
 	public class MyUIStyleSelector : StyleSelector
 	{
 		Style _style1;
@@ -329,7 +329,7 @@ namespace Microsoft.Test.DataServices
 			_style2.Setters.Add(new Setter(ListBoxItem.TemplateProperty, template));
 		}
 
-		[SecurityCritical]
+		
 		public override Style SelectStyle(object item, DependencyObject container)
 		{
 			if (item is Place)
@@ -346,7 +346,7 @@ namespace Microsoft.Test.DataServices
 		}
 	}
 
-	[SecurityCritical]
+	
 	public class MyTemplateSelector : DataTemplateSelector
 	{
 		DataTemplate _dataTemplate1;
@@ -368,7 +368,7 @@ namespace Microsoft.Test.DataServices
 			_dataTemplate2.VisualTree = template2;
 		}
 
-		[SecurityCritical]
+		
 		public override DataTemplate SelectTemplate(object item, DependencyObject container)
 		{
 			if (item is Place)

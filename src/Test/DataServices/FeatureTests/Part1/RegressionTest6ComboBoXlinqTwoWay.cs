@@ -179,16 +179,16 @@ namespace Microsoft.Test.DataServices.RegressionTest6
     }
 
     [ValueConversion(typeof(string), typeof(SampleEnumValue))]
-    [SecurityCritical]
+    
     public class ComboConverter : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             return SampleEnumValues.StaticList.Find(m => m.Name == (string)value);
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             return ((SampleEnumValue)value).Name;

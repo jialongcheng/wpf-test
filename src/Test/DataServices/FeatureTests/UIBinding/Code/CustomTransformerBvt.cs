@@ -102,7 +102,7 @@ namespace Microsoft.Test.DataServices
     }
 
 
-    [SecurityCritical]
+    
     public class BoolToColor : IValueConverter
     {
         object _actualValue;
@@ -113,7 +113,7 @@ namespace Microsoft.Test.DataServices
         /// <summary>
         /// Convert from bool to Color
         /// </summary>
-        [SecurityCritical]
+        
         public object Convert(object o, Type type, object parameter, CultureInfo culture)
         {
             _actualValue = o;
@@ -128,7 +128,7 @@ namespace Microsoft.Test.DataServices
         /// <summary>
         /// Convert from Color to bool
         /// </summary>
-        [SecurityCritical]
+        
         public object ConvertBack(object o, Type type, object parameter, CultureInfo culture)
         {
             _actualValue = o;

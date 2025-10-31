@@ -164,7 +164,7 @@ namespace Microsoft.Test.DataServices
         }
     }
 
-    [SecurityCritical]
+    
     public class BooleanToColorConverterWithParam : IValueConverter
     {
         private bool _failed;
@@ -180,7 +180,7 @@ namespace Microsoft.Test.DataServices
             Failed = false;
         }
 
-        [SecurityCritical]
+        
         public object Convert(object o, Type type, object parameter, CultureInfo culture)
         {
             int param = Int32.Parse(parameter.ToString());
@@ -200,7 +200,7 @@ namespace Microsoft.Test.DataServices
             }
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object o, Type type, object parameter, CultureInfo culture)
         {
             return null;

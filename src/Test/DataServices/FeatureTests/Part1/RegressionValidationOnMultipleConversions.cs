@@ -136,12 +136,12 @@ namespace Microsoft.Test.DataServices
     }
 
     #region Helper Classes
-    [SecurityCritical]
+    
     class VisibleValidationRule : ValidationRule
     {
         public bool InInvalidState = false;
 
-        [SecurityCritical]
+        
         public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
         {
             var theDateTime = value as String;

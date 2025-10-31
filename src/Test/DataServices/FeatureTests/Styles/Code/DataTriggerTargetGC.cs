@@ -146,7 +146,7 @@ namespace Microsoft.Test.DataServices
         #endregion
     }
 
-    [SecurityCritical]
+    
     public class PulseTimer : DependencyObject
     {
         public static readonly DependencyProperty PulseProperty =
@@ -159,14 +159,14 @@ namespace Microsoft.Test.DataServices
         }
     }
 
-    [SecurityCritical]
+    
     public class PulseConverter : IMultiValueConverter
     {
         public DependencyObject Target { get; set; }
         public bool HasTarget { get { return (Target != null); } }
         public DataTriggerTargetGC Owner { get; set; }
 
-        [SecurityCritical]
+        
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             // release the reference to the target (if any), and force it to be GC'd.
@@ -182,7 +182,7 @@ namespace Microsoft.Test.DataServices
             return values[0];
         }
 
-        [SecurityCritical]
+        
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();

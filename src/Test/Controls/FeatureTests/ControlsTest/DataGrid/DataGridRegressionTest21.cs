@@ -194,10 +194,10 @@ namespace Microsoft.Test.Controls
 
         #region Validation Classes
 
-        [SecurityCritical]
+        
         private class ValidationRuleRawProposedScenario1 : ValidationRule
         {
-            [SecurityCritical]
+            
             public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
             {
                 ValidationResult result = ValidationResult.ValidResult;
@@ -225,10 +225,10 @@ namespace Microsoft.Test.Controls
             }
         }
 
-        [SecurityCritical]
+        
         private class ValidationRuleConvertedProposedScenario1 : ValidationRule
         {
-            [SecurityCritical]
+            
             public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
             {
                 ValidationResult result = ValidationResult.ValidResult;
@@ -256,10 +256,10 @@ namespace Microsoft.Test.Controls
             }
         }
 
-        [SecurityCritical]
+        
         private class ValidationRuleUpdatedValueScenario1 : ValidationRule
         {
-            [SecurityCritical]
+            
             public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
             {
                 ValidationResult result = ValidationResult.ValidResult;

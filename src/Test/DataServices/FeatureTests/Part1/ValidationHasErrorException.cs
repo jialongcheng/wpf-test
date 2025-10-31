@@ -121,10 +121,10 @@ namespace Microsoft.Test.DataServices
         string _name;
     }
 
-    [SecurityCritical]
+    
     public class NameRule : ValidationRule
     {
-        [SecurityCritical]
+        
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             ValidationResult result = ValidationResult.ValidResult;

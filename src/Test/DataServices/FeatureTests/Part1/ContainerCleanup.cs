@@ -151,11 +151,11 @@ namespace Microsoft.Test.DataServices
         }
     }
 
-    [SecurityCritical]
+    
     public class ItemStyleSelector : StyleSelector
     {
 
-        [SecurityCritical]
+        
         public override Style SelectStyle(object item, DependencyObject container)
         {
             ItemsControl itemsControl = ItemsControl.ItemsControlFromItemContainer(container);

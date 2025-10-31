@@ -828,10 +828,10 @@ namespace Microsoft.Test.DataServices
 
         #endregion
 
-        [SecurityCritical]
+        
         private class NameContainsOGrouper : IValueConverter
         {
-            [SecurityCritical]
+            
             public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
             {
                 PropertyDescriptorCollection pdc = s_dsvp.ConvertToCanonical(value);
@@ -852,7 +852,7 @@ namespace Microsoft.Test.DataServices
             #region IValueConverter Members
 
 
-            [SecurityCritical]
+            
             public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
             {
                 throw new NotImplementedException();

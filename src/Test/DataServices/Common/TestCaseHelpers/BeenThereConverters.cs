@@ -21,10 +21,10 @@ using System.Collections;
 
 namespace Microsoft.Test.DataServices
 {
-    [SecurityCritical]
+    
     public class BeenThereConverterClr : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             CountryWithExtraInfo country = (CountryWithExtraInfo)value;
@@ -32,17 +32,17 @@ namespace Microsoft.Test.DataServices
             return BeenThereGroups.GetGroups(countryName, country);
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             throw new Exception("The method or operation is not implemented.");
         }
     }
 
-    [SecurityCritical]
+    
     public class BeenThereConverterXml : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             XmlElement country = (XmlElement)value;
@@ -51,7 +51,7 @@ namespace Microsoft.Test.DataServices
             return BeenThereGroups.GetGroups(countryName, country);
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             throw new Exception("The method or operation is not implemented.");
@@ -118,10 +118,10 @@ namespace Microsoft.Test.DataServices
         }
     }
 
-    [SecurityCritical]
+    
     public class PopulationConverterClr : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             CountryWithExtraInfo country = (CountryWithExtraInfo)value;
@@ -140,17 +140,17 @@ namespace Microsoft.Test.DataServices
             }
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             throw new Exception("The method or operation is not implemented.");
         }
     }
 
-    [SecurityCritical]
+    
     public class PopulationConverterXml : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             XmlElement country = (XmlElement)value;
@@ -169,41 +169,41 @@ namespace Microsoft.Test.DataServices
             }
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             throw new Exception("The method or operation is not implemented.");
         }
     }
 
-    [SecurityCritical]
+    
     public class FirstLetterConverterClr : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             CountryWithExtraInfo country = (CountryWithExtraInfo)value;
             return ((country.CountryName)[0]).ToString();
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             throw new Exception("The method or operation is not implemented.");
         }
     }
 
-    [SecurityCritical]
+    
     public class FirstLetterConverterXml : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             XmlElement country = (XmlElement)value;
             return ((country["CountryName"].InnerText)[0]).ToString();
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             throw new Exception("The method or operation is not implemented.");

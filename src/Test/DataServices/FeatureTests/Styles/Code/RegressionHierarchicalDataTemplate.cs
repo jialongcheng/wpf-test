@@ -84,7 +84,7 @@ namespace Microsoft.Test.DataServices
     }
 
     // Skeleton StyleSelector whose SelectTemplate method just returns the stored Style.
-    [SecurityCritical]
+    
     public class FixedStyleSelector : StyleSelector
     {
         #region Private Data
@@ -101,7 +101,7 @@ namespace Microsoft.Test.DataServices
             set { _style = value; }
         }
 
-        [SecurityCritical]
+        
         public override Style SelectStyle(object item, DependencyObject container)
         {
             return Style;

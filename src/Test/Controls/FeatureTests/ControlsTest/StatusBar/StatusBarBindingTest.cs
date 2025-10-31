@@ -79,11 +79,11 @@ namespace Avalon.Test.ComponentModel.UnitTests
     /// <summary>
     /// this class is used to get Header info from a TabItem.
     /// </summary>
-    [SecurityCritical]
+    
     internal sealed class StatusBarItemContentConvert : IValueConverter
     {
 
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is TabItem)
@@ -98,7 +98,7 @@ namespace Avalon.Test.ComponentModel.UnitTests
 
         //Not support ConvertBack
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             GlobalLog.LogEvidence("Not Support ConverBack in StatusBarItemContentConvert");

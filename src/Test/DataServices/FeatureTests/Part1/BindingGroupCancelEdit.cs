@@ -201,7 +201,6 @@ namespace Microsoft.Test.DataServices
         }
     }
 
-    [SecurityCritical]
     public class SalaryValidationRule : ValidationRule
     {
         static SalaryValidationRule()
@@ -218,7 +217,6 @@ namespace Microsoft.Test.DataServices
         {
         }
 
-        [SecurityCritical]
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             ValidationResult result = ValidationResult.ValidResult;

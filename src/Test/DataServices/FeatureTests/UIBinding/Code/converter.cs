@@ -223,10 +223,10 @@ namespace Microsoft.Test.DataServices
 
     }
 
-    [SecurityCritical]
+    
     public class MyConverter : IMultiValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             if (targetType == typeof(double))
@@ -237,7 +237,7 @@ namespace Microsoft.Test.DataServices
             return (string)values[0] + " " + (string)values[1].ToString();
         }
 
-        [SecurityCritical]
+        
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
 
@@ -269,10 +269,10 @@ namespace Microsoft.Test.DataServices
 
     }
 
-    [SecurityCritical]
+    
     public class MyConverter1 : IMultiValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
 
@@ -290,7 +290,7 @@ namespace Microsoft.Test.DataServices
             }
         }
 
-        [SecurityCritical]
+        
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             object[] o = new object[2];

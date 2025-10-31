@@ -9,10 +9,10 @@ using System.Windows.Data;
 
 namespace Microsoft.Test.DataServices
 {
-    [SecurityCritical]
+    
     public class NameConverter : IMultiValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             if (values[0] == System.Windows.DependencyProperty.UnsetValue || values[1] == System.Windows.DependencyProperty.UnsetValue || values[2] == System.Windows.DependencyProperty.UnsetValue)
@@ -21,7 +21,7 @@ namespace Microsoft.Test.DataServices
             return name;
         }
 
-        [SecurityCritical]
+        
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             object[] res = new object[3];

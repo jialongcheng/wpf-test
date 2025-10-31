@@ -626,16 +626,16 @@ namespace DRT
 
     }
 
-    [SecurityCritical]
+    
     public class PlacementModeConverter : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object o, Type type, object parameter, CultureInfo culture)
         {
             return System.Convert.ChangeType(o, typeof(int));
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object o, Type type, object parameter, CultureInfo culture)
         {
             return Enum.ToObject(typeof(PlacementMode), (int)o);

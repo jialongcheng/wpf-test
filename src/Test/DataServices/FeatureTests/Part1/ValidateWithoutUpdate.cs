@@ -232,7 +232,7 @@ namespace Microsoft.Test.DataServices
         /// <summary>
         /// A GenericValidationRule to easily define the ValidationStep and presents a 'flight recorder' of if it was called and with what params
         /// </summary>
-        [SecurityCritical]
+        
         private class GenericValidationRule : ValidationRule
         {
             public struct GenericValidationResult
@@ -305,7 +305,7 @@ namespace Microsoft.Test.DataServices
                 }
             }
 
-            [SecurityCritical]
+            
             public override ValidationResult Validate(object value, CultureInfo cultureInfo)
             {
                 Value = value;
@@ -318,10 +318,10 @@ namespace Microsoft.Test.DataServices
 		
     }
 
-    [SecurityCritical]
+    
     public class NamesConverter : IMultiValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             if (values == null)
@@ -334,7 +334,7 @@ namespace Microsoft.Test.DataServices
 
         }
 
-        [SecurityCritical]
+        
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             string str = value as string;

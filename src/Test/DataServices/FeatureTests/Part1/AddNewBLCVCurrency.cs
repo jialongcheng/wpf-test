@@ -64,10 +64,10 @@ namespace Microsoft.Test.DataServices
 
     #region Helper Classes
 
-    [SecurityCritical]
+    
     public class Grouper : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             DataRowView drv = (DataRowView)value;
@@ -85,7 +85,7 @@ namespace Microsoft.Test.DataServices
         #region IValueConverter Members
 
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();

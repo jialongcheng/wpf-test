@@ -59,7 +59,7 @@ namespace MS.Win32
         ///     Critical: The code below has a link demand for unmanaged code permission.This code can be used to
         ///               get to data that a pointer points to which can lead to easier data reading.
         /// </SecurityNote>
-        [SecurityCritical]
+        
         public static object PtrToStructure(IntPtr lparam, Type cls) {
             return Marshal.PtrToStructure(lparam, cls);
         }
@@ -74,7 +74,7 @@ namespace MS.Win32
         /// <securitynote>
         /// Critical - Marshal.PtrToStructure is Critical
         /// </securitynote>
-        [SecurityCritical]
+        
         public static T PtrToStructure<T>(IntPtr lParam)
         {
             return (T)Marshal.PtrToStructure(lParam, typeof(T));
@@ -85,7 +85,7 @@ namespace MS.Win32
         ///     Critical: The code below has a link demand for unmanaged code permission.This code can be used to
         ///               write data to arbitrary memory.
         /// </SecurityNote>
-        [SecurityCritical]
+        
         public static void StructureToPtr(object structure, IntPtr ptr, bool fDeleteOld)
         {
             Marshal.StructureToPtr(structure, ptr, fDeleteOld);
@@ -95,21 +95,21 @@ namespace MS.Win32
         ///<SecurityNote>
         ///  Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Ole32, ExactSpelling = true, CharSet = CharSet.Auto)]
         public static extern int OleGetClipboard(ref IComDataObject data);
         ///<SecurityNote>
         ///  Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Ole32, ExactSpelling=true, CharSet=CharSet.Auto)]
         public static extern int OleSetClipboard(IComDataObject pDataObj);
         ///<SecurityNote>
         ///  Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Ole32, ExactSpelling=true, CharSet=CharSet.Auto)]
         public static extern int OleFlushClipboard();
@@ -211,7 +211,7 @@ namespace MS.Win32
         ///<SecurityNote>
         ///     Critical - elevates via a SUC. Can be used to run arbitrary code.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Gdi32, SetLastError = true, ExactSpelling = true, EntryPoint = "CreateCompatibleBitmap", CharSet = CharSet.Auto)]
         public static extern IntPtr CriticalCreateCompatibleBitmap(HandleRef hDC, int width, int height);
@@ -219,7 +219,7 @@ namespace MS.Win32
         ///<SecurityNote>
         ///     Critical - elevates via a SUC. Can be used to run arbitrary code.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Gdi32, EntryPoint = "GetStockObject", SetLastError = true, CharSet = CharSet.Auto)]
         public static extern IntPtr CriticalGetStockObject(int stockObject);
@@ -227,7 +227,7 @@ namespace MS.Win32
         ///<SecurityNote>
         ///     Critical - elevates via a SUC. Can be used to run arbitrary code.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, EntryPoint = "FillRect", SetLastError = true, CharSet = CharSet.Auto)]
         public static extern int CriticalFillRect(IntPtr hdc, ref NativeMethods.RECT rcFill, IntPtr brush);
@@ -249,7 +249,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical: This code escalates to unmanaged code permission
         /// </SecurityNote>
-        [SecurityCritical]
+        
         public static void DeleteObject(HandleRef hObject)
         {
             HandleCollector.Remove((IntPtr)hObject, NativeMethods.CommonHandles.GDI);
@@ -263,7 +263,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical: This code escalates to unmanaged code permission via a call to IntDeleteObject
         /// </SecurityNote>
-        [SecurityCritical]
+        
         public static bool DeleteObjectNoThrow(HandleRef hObject)
         {
             HandleCollector.Remove((IntPtr)hObject, NativeMethods.CommonHandles.GDI);
@@ -311,7 +311,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     This code elevates to unmanaged code permission
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, SetLastError = true, CharSet = System.Runtime.InteropServices.CharSet.Auto, BestFitMapping = false)]
         public static extern int RegisterClipboardFormat(string format);
@@ -322,7 +322,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     This code elevates to unmanaged code permission
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, EntryPoint="PrintWindow", SetLastError = true, ExactSpelling = true, CharSet = System.Runtime.InteropServices.CharSet.Auto)]
         public static extern bool CriticalPrintWindow(HandleRef hWnd, HandleRef hDC, int flags);
@@ -330,7 +330,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     This code elevates to unmanaged code permission
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, EntryPoint="RedrawWindow", ExactSpelling = true, CharSet = System.Runtime.InteropServices.CharSet.Auto)]
         public static extern bool CriticalRedrawWindow(HandleRef hWnd, IntPtr lprcUpdate, IntPtr hrgnUpdate, int flags);
@@ -410,21 +410,21 @@ namespace MS.Win32
         ///<SecurityNote>
         ///  Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Kernel32, ExactSpelling=true, EntryPoint="RtlMoveMemory", CharSet=CharSet.Unicode)]
         public static extern void CopyMemoryW(IntPtr pdst, string psrc, int cb);
         ///<SecurityNote>
         ///  Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Kernel32, ExactSpelling = true, EntryPoint = "RtlMoveMemory", CharSet = CharSet.Unicode)]
         public static extern void CopyMemoryW(IntPtr pdst, char[] psrc, int cb);
         ///<SecurityNote>
         ///  Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Kernel32, ExactSpelling=true, EntryPoint="RtlMoveMemory")]
         public static extern void CopyMemory(IntPtr pdst, byte[] psrc, int cb);
@@ -434,11 +434,11 @@ namespace MS.Win32
         /// Critical as this code performs an elevation due to an unmanaged code call. Also this
         /// information can be used to exploit the system.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, EntryPoint="GetKeyboardState", CharSet=CharSet.Auto, SetLastError=true)]
         private static extern int IntGetKeyboardState(byte [] keystate);
-        [SecurityCritical]
+        
         public static void GetKeyboardState(byte [] keystate)
         {
             if(IntGetKeyboardState(keystate) == 0)
@@ -464,7 +464,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical: This code elevates to unmanaged code permission by calling into IntGetModuleFileName
         /// </SecurityNote>
-        [SecurityCritical]
+        
         internal static string GetModuleFileName(HandleRef hModule)
         {
             // .Net is currently far behind Windows with regard to supporting paths longer than MAX_PATH.
@@ -502,7 +502,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, ExactSpelling=true, CharSet=CharSet.Auto)]
         public static extern bool TranslateMessage([In, Out] ref System.Windows.Interop.MSG msg);
@@ -511,7 +511,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, CharSet=CharSet.Auto)]
         public static extern IntPtr DispatchMessage([In] ref System.Windows.Interop.MSG msg);
@@ -524,7 +524,7 @@ namespace MS.Win32
         [SecurityCritical, SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, CharSet=CharSet.Auto, EntryPoint="PostThreadMessage", SetLastError=true)]
         private static extern int IntPostThreadMessage(int id, int msg, IntPtr wparam, IntPtr lparam);
-        [SecurityCritical]
+        
         public static void PostThreadMessage(int id, int msg, IntPtr wparam, IntPtr lparam)
         {
             if(IntPostThreadMessage(id, msg, wparam, lparam) == 0)
@@ -551,12 +551,12 @@ namespace MS.Win32
         ///<SecurityNote>
         ///  Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Ole32, EntryPoint="OleInitialize")]
         private static extern int IntOleInitialize(IntPtr val);
 
-        [SecurityCritical]
+        
         public static int OleInitialize()
         {
             return IntOleInitialize(IntPtr.Zero);
@@ -586,7 +586,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical: Closes a passed in handle, LinkDemand on Marshal.GetLastWin32Error
         ///</SecurityNote>
-        [SecurityCritical]
+        
         public static bool CloseHandleNoThrow(HandleRef handle)
         {
             HandleCollector.Remove((IntPtr)handle, NativeMethods.CommonHandles.Kernel);
@@ -606,7 +606,7 @@ namespace MS.Win32
         ///<SecurityNote>
         ///  Critical as this code performs an UnmanagedCodeSecurity elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [DllImport(ExternDll.Ole32, ExactSpelling = true, CharSet = CharSet.Auto)]
         public static extern int CreateStreamOnHGlobal(IntPtr hGlobal, bool fDeleteOnRelease, ref System.Runtime.InteropServices.ComTypes.IStream istream);
 
@@ -618,7 +618,7 @@ namespace MS.Win32
         ///<SecurityNote>
         ///     Critical - elevates via a SUC. Can be used to run arbitrary code.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Gdi32, SetLastError=true, EntryPoint="CreateCompatibleDC", CharSet=CharSet.Auto)]
         public static extern IntPtr CriticalCreateCompatibleDC(HandleRef hDC);
@@ -662,7 +662,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical: Unmaps a file handle, LinkDemand on Marshal.GetLastWin32Error
         ///</SecurityNote>
-        [SecurityCritical]
+        
         public static bool UnmapViewOfFileNoThrow(HandleRef pvBaseAddress)
         {
             HandleCollector.Remove((IntPtr)pvBaseAddress, NativeMethods.CommonHandles.Kernel);
@@ -682,7 +682,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///    Critical: This code calls into unmanaged code which elevates
         /// </SecurityNote>
-        [SecurityCritical]
+        
         public static bool EnableWindow(HandleRef hWnd, bool enable)
         {
             bool result = NativeMethodsSetLastError.EnableWindow(hWnd, enable);
@@ -701,7 +701,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///    Critical: This code calls into unmanaged code which elevates
         /// </SecurityNote>
-        [SecurityCritical]
+        
         public static bool EnableWindowNoThrow(HandleRef hWnd, bool enable)
         {
             // This method is not throwing because the caller don't want to fail after calling this.
@@ -716,7 +716,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///    Critical: This code returns the window which has focus and elevates to unmanaged code
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, ExactSpelling=true, CharSet=CharSet.Auto)]
         public static extern IntPtr GetFocus();
@@ -731,7 +731,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical - calls a critical function.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         internal static bool GetCursorPos([In, Out] NativeMethods.POINT pt)
         {
             bool returnValue = IntGetCursorPos(pt);
@@ -752,7 +752,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical - calls a critical function.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         internal static bool TryGetCursorPos([In, Out] NativeMethods.POINT pt)
         {
             bool returnValue = IntTryGetCursorPos(pt);
@@ -775,7 +775,7 @@ namespace MS.Win32
         ///     Critical:Unmanaged code that gets the state of the keyboard keys
         ///     This can be exploited to get keyboard state.
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, ExactSpelling=true, CharSet=System.Runtime.InteropServices.CharSet.Auto)]
         public static extern int GetWindowThreadProcessId(HandleRef hWnd, out int lpdwProcessId);
@@ -784,7 +784,7 @@ namespace MS.Win32
         ///     Critical:Unmanaged code that gets the state of the keyboard keys
         ///     This can be exploited to get keyboard state.
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, ExactSpelling=true, CharSet=CharSet.Auto)]
         public static extern short GetKeyState(int keyCode);
@@ -792,7 +792,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:Elevates to Unmanaged code permission
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Ole32, ExactSpelling = true, CharSet = System.Runtime.InteropServices.CharSet.Auto, PreserveSig = false)]
         public static extern void DoDragDrop(IComDataObject dataObject, UnsafeNativeMethods.IOleDropSource dropSource, int allowedEffects, int[] finalEffect);
@@ -800,7 +800,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical - this code elevates via SUC.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Ole32, ExactSpelling=true, CharSet=CharSet.Auto)]
         internal static extern void ReleaseStgMedium(ref STGMEDIUM medium);
@@ -808,7 +808,7 @@ namespace MS.Win32
         /// <SecurityNote>
         /// Critical - this code elevates via SUC.
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, ExactSpelling=true, CharSet=System.Runtime.InteropServices.CharSet.Auto)]
         public static extern bool InvalidateRect(HandleRef hWnd, IntPtr rect, bool erase);
@@ -820,7 +820,7 @@ namespace MS.Win32
         /// <SecurityNote>
         /// SecurityCritical due to a call to SetLastError and calls GetWindowText
         /// </SecurityNote>
-        [SecurityCritical]
+        
         internal static int GetWindowText(HandleRef hWnd, [Out] StringBuilder lpString, int nMaxCount)
         {
             int returnValue = NativeMethodsSetLastError.GetWindowText(hWnd, lpString, nMaxCount);
@@ -838,7 +838,7 @@ namespace MS.Win32
         /// <SecurityNote>
         /// SecurityCritical due to a call to SetLastError
         /// </SecurityNote>
-        [SecurityCritical]
+        
         internal static int GetWindowTextLength(HandleRef hWnd)
         {
             int returnValue = NativeMethodsSetLastError.GetWindowTextLength(hWnd);
@@ -856,7 +856,7 @@ namespace MS.Win32
         ///<SecurityNote>
         ///  Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Kernel32, ExactSpelling = true, CharSet = CharSet.Auto, SetLastError = true)]
         public static extern IntPtr GlobalAlloc(int uFlags, IntPtr dwBytes);
@@ -864,7 +864,7 @@ namespace MS.Win32
         ///<SecurityNote>
         ///  Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Kernel32, ExactSpelling = true, CharSet = CharSet.Auto, SetLastError = true)]
         public static extern IntPtr GlobalReAlloc(HandleRef handle, IntPtr bytes, int flags);
@@ -872,7 +872,7 @@ namespace MS.Win32
         ///<SecurityNote>
         ///  Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Kernel32, ExactSpelling = true, CharSet = CharSet.Auto, SetLastError = true)]
         public static extern IntPtr GlobalLock(HandleRef handle);
@@ -880,7 +880,7 @@ namespace MS.Win32
         ///<SecurityNote>
         ///  Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Kernel32, ExactSpelling = true, CharSet = CharSet.Auto, SetLastError = true)]
         public static extern bool GlobalUnlock(HandleRef handle);
@@ -888,7 +888,7 @@ namespace MS.Win32
         ///<SecurityNote>
         ///  Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Kernel32, ExactSpelling = true, CharSet = CharSet.Auto, SetLastError = true)]
         public static extern IntPtr GlobalFree(HandleRef handle);
@@ -896,7 +896,7 @@ namespace MS.Win32
         ///<SecurityNote>
         ///  Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Kernel32, ExactSpelling = true, CharSet = CharSet.Auto, SetLastError = true)]
         public static extern IntPtr GlobalSize(HandleRef handle);
@@ -905,7 +905,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:This code causes an elevation of privilige to unmanaged code
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Imm32, CharSet=CharSet.Auto)]
         public static extern bool ImmSetConversionStatus(HandleRef hIMC, int conversion, int sentence);
@@ -913,7 +913,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:This code causes an elevation of privilige to unmanaged code
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Imm32, CharSet=CharSet.Auto)]
         public static extern bool ImmGetConversionStatus(HandleRef hIMC, ref int conversion, ref int sentence);
@@ -921,7 +921,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:This code causes an elevation of privilige to unmanaged code
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Imm32, CharSet = CharSet.Auto)]
         public static extern IntPtr ImmGetContext(HandleRef hWnd);
@@ -929,7 +929,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:This code causes an elevation of privilige to unmanaged code
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Imm32, CharSet = CharSet.Auto)]
         public static extern bool ImmReleaseContext(HandleRef hWnd, HandleRef hIMC);
@@ -937,7 +937,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:This code causes an elevation of privilige to unmanaged code
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Imm32, CharSet=CharSet.Auto)]
         public static extern IntPtr ImmAssociateContext(HandleRef hWnd, HandleRef hIMC);
@@ -946,7 +946,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:This code causes an elevation of privilige to unmanaged code
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Imm32, CharSet = CharSet.Auto)]
         public static extern bool ImmSetOpenStatus(HandleRef hIMC, bool open);
@@ -954,7 +954,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:This code causes an elevation of privilige to unmanaged code
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Imm32, CharSet = CharSet.Auto)]
         public static extern bool ImmGetOpenStatus(HandleRef hIMC);
@@ -962,7 +962,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:This code causes an elevation of privilige to unmanaged code
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Imm32, CharSet = CharSet.Auto)]
         public static extern bool ImmNotifyIME(HandleRef hIMC, int dwAction, int dwIndex, int dwValue);
@@ -970,7 +970,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:This code causes an elevation of privilige to unmanaged code
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Imm32, CharSet=CharSet.Auto)]
         public static extern int ImmGetProperty(HandleRef hkl, int flags);
@@ -979,7 +979,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:This code causes an elevation of privilige to unmanaged code
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Imm32, CharSet = CharSet.Auto)]
         public static extern int ImmGetCompositionString(HandleRef hIMC, int dwIndex, char[] lpBuf, int dwBufLen);
@@ -988,7 +988,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:This code causes an elevation of privilige to unmanaged code
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Imm32, CharSet = CharSet.Auto)]
         public static extern int ImmGetCompositionString(HandleRef hIMC, int dwIndex, byte[] lpBuf, int dwBufLen);
@@ -997,7 +997,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:This code causes an elevation of privilige to unmanaged code
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Imm32, CharSet = CharSet.Auto)]
         public static extern int ImmGetCompositionString(HandleRef hIMC, int dwIndex, int[] lpBuf, int dwBufLen);
@@ -1006,7 +1006,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:This code causes an elevation of privilige to unmanaged code
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Imm32, CharSet = CharSet.Auto)]
         public static extern int ImmGetCompositionString(HandleRef hIMC, int dwIndex, IntPtr lpBuf, int dwBufLen);
@@ -1023,7 +1023,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:This code causes an elevation of privilige to unmanaged code
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Imm32, CharSet = CharSet.Auto)]
         public static extern int ImmSetCompositionWindow(HandleRef hIMC, [In, Out] ref NativeMethods.COMPOSITIONFORM compform);
@@ -1031,7 +1031,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:This code causes an elevation of privilige to unmanaged code
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Imm32, CharSet = CharSet.Auto)]
         public static extern int ImmSetCandidateWindow(HandleRef hIMC, [In, Out] ref NativeMethods.CANDIDATEFORM candform);
@@ -1043,7 +1043,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical - calls SetFocusWrapper (the real PInvoke method)
         ///</SecurityNote>
-        [SecurityCritical]
+        
         internal static IntPtr SetFocus(HandleRef hWnd)
         {
             IntPtr result = IntPtr.Zero;
@@ -1059,7 +1059,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical - calls SetFocusWrapper (the real PInvoke method)
         ///</SecurityNote>
-        [SecurityCritical]
+        
         internal static bool TrySetFocus(HandleRef hWnd)
         {
             IntPtr result = IntPtr.Zero;
@@ -1069,7 +1069,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical - calls SetFocusWrapper (the real PInvoke method)
         ///</SecurityNote>
-        [SecurityCritical]
+        
         internal static bool TrySetFocus(HandleRef hWnd, ref IntPtr result)
         {
             result = NativeMethodsSetLastError.SetFocus(hWnd);
@@ -1086,7 +1086,7 @@ namespace MS.Win32
         /// <SecurityNote>
         /// Critical - This code returns a critical resource and calls critical code.
         /// </SecurityNote>
-        [SecurityCritical]
+        
         internal static IntPtr GetParent(HandleRef hWnd)
         {
             IntPtr retVal = NativeMethodsSetLastError.GetParent(hWnd);
@@ -1103,7 +1103,7 @@ namespace MS.Win32
         /// <SecurityNote>
         /// Critical - This code returns a critical resource and causes unmanaged code elevation.
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, ExactSpelling = true, CharSet = CharSet.Auto)]
         public static extern IntPtr GetAncestor(HandleRef hWnd, int flags);
@@ -1138,14 +1138,14 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Kernel32, EntryPoint = "GetModuleHandle", CharSet = CharSet.Auto, BestFitMapping = false, ThrowOnUnmappableChar = true, SetLastError = true)]
         private static extern IntPtr IntGetModuleHandle(string modName);
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         internal static IntPtr GetModuleHandle(string modName)
         {
             IntPtr retVal = IntGetModuleHandle(modName);
@@ -1162,7 +1162,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, CharSet=CharSet.Auto)]
         public static extern IntPtr CallWindowProc(IntPtr wndProc, IntPtr hWnd, int msg,
@@ -1171,7 +1171,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, CharSet = CharSet.Unicode, EntryPoint = "DefWindowProcW")]
         public static extern IntPtr DefWindowProc(IntPtr hWnd, Int32 Msg, IntPtr wParam, IntPtr lParam);
@@ -1179,7 +1179,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Kernel32, SetLastError=true, EntryPoint="GetProcAddress", CharSet=CharSet.Ansi, BestFitMapping=false)]
         public static extern IntPtr IntGetProcAddress(HandleRef hModule, string lpProcName);
@@ -1187,7 +1187,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical - calls IntGetProcAddress (the real PInvoke method)
         ///</SecurityNote>
-        [SecurityCritical]
+        
         public static IntPtr GetProcAddress(HandleRef hModule, string lpProcName)
         {
             IntPtr result = IntGetProcAddress(hModule, lpProcName);
@@ -1209,7 +1209,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Kernel32, EntryPoint="GetProcAddress", CharSet=CharSet.Ansi, BestFitMapping=false)]
         public static extern IntPtr GetProcAddressNoThrow(HandleRef hModule, string lpProcName);
@@ -1384,7 +1384,7 @@ namespace MS.Win32
         /// Do not use this - instead use <see cref="LoadLibraryHelper.SecureLoadLibrary"/>
         /// </summary>
         [SuppressUnmanagedCodeSecurity]
-        [SecurityCritical]
+        
         [Obsolete("Use LoadLibraryHelper.SafeLoadLibraryEx instead")]
         [DllImport(ExternDll.Kernel32, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, SetLastError = true)]
         internal static extern IntPtr LoadLibraryEx([In][MarshalAs(UnmanagedType.LPTStr)]string lpFileName, IntPtr hFile, [In] LoadLibraryFlags dwFlags);
@@ -1414,7 +1414,7 @@ namespace MS.Win32
         }
 
         [SuppressUnmanagedCodeSecurity]
-        [SecurityCritical]
+        
         [DllImport(ExternDll.Kernel32, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool GetModuleHandleEx(
@@ -1423,7 +1423,7 @@ namespace MS.Win32
             [Out] out IntPtr hModule);
 
         [SuppressUnmanagedCodeSecurity]
-        [SecurityCritical]
+        
         [DllImport(ExternDll.Kernel32, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool FreeLibrary([In] IntPtr hModule);
@@ -1432,7 +1432,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32)]
         public static extern int GetSystemMetrics(SM nIndex);
@@ -1441,7 +1441,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, SetLastError = true, CharSet=CharSet.Auto, BestFitMapping = false)]
         public static extern bool SystemParametersInfo(int nAction, int nParam, ref NativeMethods.RECT rc, int nUpdate);
@@ -1449,7 +1449,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, SetLastError = true, CharSet = CharSet.Auto, BestFitMapping = false)]
         public static extern bool SystemParametersInfo(int nAction, int nParam, ref int value, int ignore);
@@ -1457,7 +1457,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, SetLastError = true, CharSet = CharSet.Auto, BestFitMapping = false)]
         public static extern bool SystemParametersInfo(int nAction, int nParam, ref bool value, int ignore);
@@ -1465,7 +1465,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, SetLastError = true, CharSet = CharSet.Auto, BestFitMapping = false)]
         public static extern bool SystemParametersInfo(int nAction, int nParam, ref NativeMethods.HIGHCONTRAST_I rc, int nUpdate);
@@ -1473,7 +1473,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, SetLastError = true, CharSet = CharSet.Auto, BestFitMapping = false)]
         public static extern bool SystemParametersInfo(int nAction, int nParam, [In, Out] NativeMethods.NONCLIENTMETRICS metrics, int nUpdate);
@@ -1488,7 +1488,7 @@ namespace MS.Win32
                 ///<SecurityNote>
         /// Critical - performs an elevation via SUC.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, EntryPoint="ClientToScreen", SetLastError=true, ExactSpelling=true, CharSet=CharSet.Auto)]
         private static extern int IntClientToScreen(HandleRef hWnd, [In, Out] NativeMethods.POINT pt);
@@ -1496,7 +1496,7 @@ namespace MS.Win32
         ///<SecurityNote>
         ///     Critical calls critical code - IntClientToScreen
         ///</SecurityNote>
-        [SecurityCritical]
+        
         public static void ClientToScreen(HandleRef hWnd, [In, Out] NativeMethods.POINT pt)
         {
             if(IntClientToScreen(hWnd, pt) == 0)
@@ -1516,7 +1516,7 @@ namespace MS.Win32
         ///     Critical:Elevates to Unmanaged code permission and can be used to
         ///     change the foreground window.
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, ExactSpelling=true, CharSet=CharSet.Auto)]
         public static extern IntPtr GetForegroundWindow();
@@ -1524,7 +1524,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:Elevates to Unmanaged code permission
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Ole32, ExactSpelling=true, CharSet=CharSet.Auto)]
         public static extern int RegisterDragDrop(HandleRef hwnd, UnsafeNativeMethods.IOleDropTarget target);
@@ -1532,7 +1532,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:Elevates to Unmanaged code permission
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Ole32, ExactSpelling=true, CharSet=CharSet.Auto)]
         public static extern int RevokeDragDrop(HandleRef hwnd);
@@ -1542,7 +1542,7 @@ namespace MS.Win32
         ///     Critical:Elevates to Unmanaged code permission and can be used to
         ///     get information of messages in queues.
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, CharSet=CharSet.Auto)]
         public static extern bool PeekMessage([In, Out] ref System.Windows.Interop.MSG msg, HandleRef hwnd, WindowMessage msgMin, WindowMessage msgMax, int remove);
@@ -1557,7 +1557,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, EntryPoint = "PostMessage", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern bool IntPostMessage(HandleRef hwnd, WindowMessage msg, IntPtr wparam, IntPtr lparam);
@@ -1565,7 +1565,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         internal static void PostMessage(HandleRef hwnd, WindowMessage msg, IntPtr wparam, IntPtr lparam)
         {
             if (!IntPostMessage(hwnd, msg, wparam, lparam))
@@ -1577,7 +1577,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, EntryPoint = "PostMessage", CharSet = CharSet.Auto)]
         internal static extern bool TryPostMessage(HandleRef hwnd, WindowMessage msg, IntPtr wparam, IntPtr lparam);
@@ -1586,7 +1586,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, ExactSpelling = true, CharSet = CharSet.Auto)]
         public static extern void NotifyWinEvent(int winEvent, HandleRef hwnd, int objType, int objID);
@@ -1594,7 +1594,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, ExactSpelling = true, EntryPoint = "BeginPaint", CharSet = CharSet.Auto)]
         private static extern IntPtr IntBeginPaint(HandleRef hWnd, [In, Out] ref NativeMethods.PAINTSTRUCT lpPaint);
@@ -1602,7 +1602,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation. via the call to IntBeginPaint
         ///</SecurityNote>
-        [SecurityCritical]
+        
         public static IntPtr BeginPaint(HandleRef hWnd, [In, Out, MarshalAs(UnmanagedType.LPStruct)] ref NativeMethods.PAINTSTRUCT lpPaint) {
             return HandleCollector.Add(IntBeginPaint(hWnd, ref lpPaint), NativeMethods.CommonHandles.HDC);
         }
@@ -1610,14 +1610,14 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, ExactSpelling = true, EntryPoint = "EndPaint", CharSet = CharSet.Auto)]
         private static extern bool IntEndPaint(HandleRef hWnd, ref NativeMethods.PAINTSTRUCT lpPaint);
         ///<SecurityNote>
         /// Critical as this code performs an elevation via the call to IntEndPaint.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         public static bool EndPaint(HandleRef hWnd, [In, MarshalAs(UnmanagedType.LPStruct)] ref NativeMethods.PAINTSTRUCT lpPaint) {
             HandleCollector.Remove(lpPaint.hdc, NativeMethods.CommonHandles.HDC);
@@ -1627,7 +1627,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, SetLastError = true, ExactSpelling = true, EntryPoint = "GetDC", CharSet = CharSet.Auto)]
         private static extern IntPtr IntGetDC(HandleRef hWnd);
@@ -1637,7 +1637,7 @@ namespace MS.Win32
         /// stores a count of the number of instances of a given
         /// handle and not the handle itself.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         public static IntPtr GetDC(HandleRef hWnd)
         {
             IntPtr hDc = IntGetDC(hWnd);
@@ -1654,14 +1654,14 @@ namespace MS.Win32
         /// is by itself not dangerous because handle collector simply
         /// stores a count of the number of instances of a given handle and not the handle itself.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, ExactSpelling = true, EntryPoint = "ReleaseDC", CharSet = CharSet.Auto)]
         private static extern int IntReleaseDC(HandleRef hWnd, HandleRef hDC);
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         public static int ReleaseDC(HandleRef hWnd, HandleRef hDC) {
             HandleCollector.Remove((IntPtr)hDC, NativeMethods.CommonHandles.HDC);
             return IntReleaseDC(hWnd, hDC);
@@ -1671,7 +1671,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Gdi32, SetLastError = true, ExactSpelling = true, CharSet = CharSet.Auto)]
         public static extern int GetDeviceCaps(HandleRef hDC, int nIndex);
@@ -1679,7 +1679,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation to unmanaged code
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, ExactSpelling=true, CharSet=CharSet.Auto)]
         public static extern IntPtr GetActiveWindow();
@@ -1687,7 +1687,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation to unmanaged code
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, ExactSpelling=true, CharSet=CharSet.Auto)]
         public static extern bool SetForegroundWindow(HandleRef hWnd);
@@ -1696,7 +1696,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation to unmanaged code
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Comdlg32, SetLastError = true, ExactSpelling = true, CharSet = System.Runtime.InteropServices.CharSet.Auto)]
         internal static extern int CommDlgExtendedError();
@@ -1704,7 +1704,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation to unmanaged code
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Comdlg32, SetLastError = true, CharSet = CharSet.Unicode)]
         internal static extern bool GetOpenFileName([In, Out] NativeMethods.OPENFILENAME_I ofn);
@@ -1712,7 +1712,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation to unmanaged code
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Comdlg32, SetLastError = true, CharSet = CharSet.Unicode)]
         internal static extern bool GetSaveFileName([In, Out] NativeMethods.OPENFILENAME_I ofn);
@@ -1721,7 +1721,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [return:MarshalAs(UnmanagedType.Bool)]
         [DllImport(ExternDll.User32, ExactSpelling=true, CharSet=CharSet.Auto, SetLastError=true)]
@@ -1730,7 +1730,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [return: MarshalAs(UnmanagedType.Bool)]
         [DllImport(ExternDll.User32, ExactSpelling = true, CharSet = CharSet.Auto, SetLastError = true)]
@@ -1739,7 +1739,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, SetLastError = true)]
         public static extern IntPtr SetActiveWindow(HandleRef hWnd);
@@ -1752,7 +1752,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
 
         [DllImport(ExternDll.User32, ExactSpelling=true, EntryPoint="DestroyCursor", CharSet=CharSet.Auto)]
@@ -1761,7 +1761,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical calls IntDestroyCursor
         ///</SecurityNote>
-        [SecurityCritical]
+        
         public static bool DestroyCursor(IntPtr hCurs) {
             return IntDestroyCursor(hCurs);
         }
@@ -1769,7 +1769,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, EntryPoint="DestroyIcon", CharSet=System.Runtime.InteropServices.CharSet.Auto, SetLastError=true)]
         private static extern bool IntDestroyIcon(IntPtr hIcon);
@@ -1777,7 +1777,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical: calls a critical method (IntDestroyIcon)
         ///</SecurityNote>
-        [SecurityCritical]
+        
         public static bool DestroyIcon(IntPtr hIcon)
         {
             bool result = IntDestroyIcon(hIcon);
@@ -1799,7 +1799,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Gdi32, EntryPoint="DeleteObject", CharSet=System.Runtime.InteropServices.CharSet.Auto, SetLastError=true)]
         private static extern bool IntDeleteObject(IntPtr hObject);
@@ -1807,7 +1807,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical: calls a critical method (IntDeleteObject)
         ///</SecurityNote>
-        [SecurityCritical]
+        
         public static bool DeleteObject(IntPtr hObject)
         {
             bool result = IntDeleteObject(hObject);
@@ -1836,7 +1836,7 @@ namespace MS.Win32
         /// <SecurityNote>
         /// Critical - The method invokes PrivateCreateDIBSection.
         /// </SecurityNote>
-        [SecurityCritical]
+        
         internal static NativeMethods.BitmapHandle CreateDIBSection(HandleRef hdc, ref NativeMethods.BITMAPINFO bitmapInfo, int iUsage, ref IntPtr ppvBits, SafeFileMappingHandle hSection, int dwOffset)
         {
             if (hSection == null)
@@ -1866,7 +1866,7 @@ namespace MS.Win32
         /// <SecurityNote>
         /// Critical - The method invokes PrivateCreateBitmap.
         /// </SecurityNote>
-        [SecurityCritical]
+        
         internal static NativeMethods.BitmapHandle CreateBitmap(int width, int height, int planes, int bitsPerPixel, byte[] lpvBits)
         {
             NativeMethods.BitmapHandle hBitmap = PrivateCreateBitmap(width, height, planes, bitsPerPixel, lpvBits);
@@ -1889,7 +1889,7 @@ namespace MS.Win32
         /// <SecurityNote>
         /// Critical - The method invokes PrivateDestroyIcon.
         /// </SecurityNote>
-        [SecurityCritical]
+        
         internal static bool DestroyIcon(HandleRef handle)
         {
             HandleCollector.Remove((IntPtr)handle, NativeMethods.CommonHandles.Icon);
@@ -1914,7 +1914,7 @@ namespace MS.Win32
         /// <SecurityNote>
         /// Critical - The method invokes PrivateCreateIconIndirect.
         /// </SecurityNote>
-        [SecurityCritical]
+        
         internal static NativeMethods.IconHandle CreateIconIndirect([In, MarshalAs(UnmanagedType.LPStruct)]NativeMethods.ICONINFO iconInfo)
         {
             NativeMethods.IconHandle hIcon = PrivateCreateIconIndirect(iconInfo);
@@ -1964,7 +1964,7 @@ namespace MS.Win32
         ///<SecurityNote>
         ///     Critical: This code elevates to unmanaged code
         ///</SecurityNote>
-        [SecurityCritical]
+        
         public static void CriticalDeleteDC(HandleRef hDC)
         {
             HandleCollector.Remove((IntPtr)hDC, NativeMethods.CommonHandles.HDC);
@@ -1981,14 +1981,14 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, SetLastError=true, EntryPoint="GetMessageW", ExactSpelling=true, CharSet=CharSet.Unicode)]
         private static extern int IntGetMessageW([In, Out] ref System.Windows.Interop.MSG msg, HandleRef hWnd, int uMsgFilterMin, int uMsgFilterMax);
         ///<SecurityNote>
         /// Critical - calls IntGetMessageW (the real PInvoke method)
         ///</SecurityNote>
-        [SecurityCritical]
+        
         public static bool GetMessageW([In, Out] ref System.Windows.Interop.MSG msg, HandleRef hWnd, int uMsgFilterMin, int uMsgFilterMax)
         {
             bool boolResult = false;
@@ -2024,7 +2024,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical: This calls WindowFromPoint(POINTSTRUCT) which is marked SecurityCritical
         /// </SecurityNote>
-        [SecurityCritical]
+        
         public static IntPtr WindowFromPoint(int x, int y) {
             POINTSTRUCT ps = new POINTSTRUCT(x, y);
             return IntWindowFromPoint(ps);
@@ -2043,7 +2043,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical: This code elevates to call into unmanaged Code by calling IntCreateWindowEx
         /// </SecurityNote>
-        [SecurityCritical]
+        
         public static IntPtr CreateWindowEx(int  dwExStyle, string lpszClassName,
                                          string lpszWindowName, int style, int x, int y, int width, int height,
                                          HandleRef hWndParent, HandleRef hMenu, HandleRef hInst, [MarshalAs(UnmanagedType.AsAny)]object pvParam) {
@@ -2060,7 +2060,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, SetLastError = true, EntryPoint="DestroyWindow", CharSet=CharSet.Auto)]
         public static extern bool IntDestroyWindow(HandleRef hWnd);
@@ -2068,7 +2068,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical - calls Security Critical method
         ///</SecurityNote>
-        [SecurityCritical]
+        
         public static void DestroyWindow(HandleRef hWnd)
         {
             if(!IntDestroyWindow(hWnd))
@@ -2093,7 +2093,7 @@ namespace MS.Win32
         ///<SecurityNote>
         ///     Critical - Delegate invoked by elevated (via a SUC) pinvoke.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         public delegate bool EnumChildrenCallback(IntPtr hwnd, IntPtr lParam);
 
         ///<SecurityNote>
@@ -2116,7 +2116,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, SetLastError = true, CharSet = CharSet.Auto)]
         public static extern int GetWindowRgn(HandleRef hWnd, HandleRef hRgn);
@@ -2124,7 +2124,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, SetLastError = true, CharSet = CharSet.Auto)]
         public static extern bool PtInRegion(HandleRef hRgn, int X, int Y);
@@ -2132,7 +2132,7 @@ namespace MS.Win32
         ///<SecurityNote>
         /// Critical as this code performs an elevation.
         ///</SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport("gdi32.dll", CharSet = CharSet.Auto, SetLastError = true, ExactSpelling = true)]
         public static extern IntPtr CreateRectRgn(int x1, int y1, int x2, int y2);
@@ -4032,7 +4032,7 @@ namespace MS.Win32
             /// <SecurityNote>
             /// Critical: Calls Marshal.GetNativeVariantForObject(), which has a LinkDemand for unmanaged code.
             /// </SecurityNote>
-            [SecurityCritical]
+            
             public unsafe static IntPtr ArrayToVARIANTVector(object[] args)
             {
                 IntPtr mem = IntPtr.Zero;
@@ -4067,7 +4067,7 @@ namespace MS.Win32
             /// </SecurityNote>
             /// <param name="mem">The allocated memory to be freed.</param>
             /// <param name="len">The length of the Variant vector to be cleared.</param>
-            [SecurityCritical]
+            
             public unsafe static void FreeVARIANTVector(IntPtr mem, int len)
             {
                 int hr = NativeMethods.S_OK;
@@ -4224,7 +4224,7 @@ namespace MS.Win32
         /// GetMenu does not work on floating menu bars. Floating menu bars are custom controls that mimic
         /// standard menus; they are not menus. To get the handle on a floating menu bar, use the Active Accessibility APIs.
         /// </remarks>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, CallingConvention = CallingConvention.Winapi)]
         internal extern static IntPtr GetMenu([In] HandleRef hWnd);
@@ -4248,7 +4248,7 @@ namespace MS.Win32
         /// Minimum supported client: Windows 10, version 1607 (RS1)
         /// </remarks>
         [SuppressUnmanagedCodeSecurity]
-        [SecurityCritical]
+        
         [DllImport(ExternDll.User32, CallingConvention = CallingConvention.Winapi)]
         internal static extern DpiAwarenessContextHandle SetThreadDpiAwarenessContext(DpiAwarenessContextHandle dpiContext);
 
@@ -4264,7 +4264,7 @@ namespace MS.Win32
         /// Minimum supported client: Windows 10, version 1607 (RS1)
         /// </remarks>
         [SuppressUnmanagedCodeSecurity]
-        [SecurityCritical]
+        
         [DllImport(ExternDll.User32, CallingConvention = CallingConvention.Winapi)]
         internal static extern DpiAwarenessContextHandle GetThreadDpiAwarenessContext();
 
@@ -4330,7 +4330,7 @@ namespace MS.Win32
         /// +-----------------------------------------------------------------------------------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
         /// </remarks>
         [SuppressUnmanagedCodeSecurity]
-        [SecurityCritical]
+        
         [DllImport(ExternDll.User32, CallingConvention = CallingConvention.Winapi)]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool EnumDisplayMonitors(
@@ -4345,7 +4345,7 @@ namespace MS.Win32
         /// <param name="enabled">On success, returns true if the Device Guard policy enforces .NET Dynamic Code policy; otherwise, returns false.</param>
         /// <returns>This method returns S_OK if successful or a failure code otherwise.</returns>
         [SuppressUnmanagedCodeSecurity]
-        [SecurityCritical]
+        
         [DllImport(ExternDll.Wldp, CallingConvention = CallingConvention.Winapi, ExactSpelling = true)]
         internal static extern int WldpIsDynamicCodePolicyEnabled([Out] out bool enabled);
     }

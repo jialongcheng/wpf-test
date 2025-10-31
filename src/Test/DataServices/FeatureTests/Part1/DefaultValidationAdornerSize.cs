@@ -132,10 +132,10 @@ namespace Microsoft.Test.DataServices
 
     #region Helper Classes
 
-    [SecurityCritical]
+    
     public class MyValidationRule : ValidationRule
     {
-        [SecurityCritical]
+        
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             string name = value as string;

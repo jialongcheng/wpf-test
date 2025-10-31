@@ -78,7 +78,7 @@ namespace Microsoft.Test.DataServices
     #region ValueConverter
 
     // This converter is used to check for instantaneous value change in the content due to datacontext switches
-    [SecurityCritical]
+    
     public class ValueConverter : IValueConverter
     {
         #region Private Members
@@ -103,7 +103,7 @@ namespace Microsoft.Test.DataServices
             set { _message = value; }
         }
 
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             String stringValue = String.Empty;
@@ -122,7 +122,7 @@ namespace Microsoft.Test.DataServices
             return culture.TextInfo.ToTitleCase(stringValue);
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             // Not required;

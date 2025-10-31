@@ -55,26 +55,26 @@ namespace Microsoft.Test.DataServices
         }
     }
 
-    [SecurityCritical]
+    
     public class WrapperConverter : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return new Wrapper(value);
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return Binding.DoNothing;
         }
     }
 
-    [SecurityCritical]
+    
     public class UnwrapperConverter : IMultiValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {            
             // Check if the value recieved is of type wrapper or not
@@ -86,7 +86,7 @@ namespace Microsoft.Test.DataServices
             return ((Wrapper)values[0]).Wrapped;
         }
 
-        [SecurityCritical]
+        
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             throw new NotSupportedException();

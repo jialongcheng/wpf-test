@@ -50,7 +50,7 @@ namespace MS.Internal
         ///    Critical - "by definition" - this class is intended only for data that's
         ///               Critical for setting.
         /// </SecurityNote>
-        [SecurityCritical]
+        
         internal SecurityCriticalDataForSet(T value)
         { 
             _value = value; 
@@ -76,7 +76,7 @@ namespace MS.Internal
         #if DEBUG
             [System.Diagnostics.DebuggerStepThrough]
         #endif
-            [SecurityCritical]
+            
             set
             {
                 _value = value;
@@ -86,7 +86,7 @@ namespace MS.Internal
         /// <SecurityNote>
         /// Critical - by definition as this data is Critical for set.
         /// </SecurityNote>>
-        [SecurityCritical]
+        
         private T _value;
     }
 }

@@ -16,7 +16,7 @@ using System.Windows.Data;
 namespace WpfControlToolkit
 {
 
-    [SecurityCritical]
+    
     public class DateTimeOffsetConverter : IValueConverter
     {
         /// <summary>
@@ -28,7 +28,7 @@ namespace WpfControlToolkit
         /// <param name="culture">CultureInfo</param>
         /// <returns>title string</returns>
 
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if ((value != null) && (value is DateTime))
@@ -57,7 +57,7 @@ namespace WpfControlToolkit
         ///     Not Supported
         /// </summary>
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return null;

@@ -341,7 +341,7 @@ namespace Microsoft.Test.DataServices
     }
 
     // Skeleton DataTemplateSelector whose SelectTemplate method just returns the stored DataTemplate.
-    [SecurityCritical]
+    
     public class HDTSelector : DataTemplateSelector
     {
         private DataTemplate _hdt;
@@ -352,7 +352,7 @@ namespace Microsoft.Test.DataServices
             set { _hdt = value; }
         }
 
-        [SecurityCritical]
+        
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
             return HDT;

@@ -19,7 +19,7 @@ using System.Reflection;
 
 namespace Microsoft.Test.DataServices
 {
-    [SecurityCritical]
+    
     public class LengthRangeRule : ValidationRule
 	{
 		public LengthRangeRule()
@@ -42,7 +42,7 @@ namespace Microsoft.Test.DataServices
 			set { _max = value; }
 		}
 
-        [SecurityCritical]
+        
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
 		{
 			string strInserted = value.ToString();

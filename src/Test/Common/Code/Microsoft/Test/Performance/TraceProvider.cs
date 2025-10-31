@@ -26,7 +26,7 @@ namespace Microsoft.Test.Performance
     ///<SecurityNote>
     /// Critical as this code performs an elevation. 
     ///</SecurityNote>
-    [SecurityCritical]
+    
     [SuppressUnmanagedCodeSecurity]
     internal sealed class EtwTrace
     {
@@ -88,7 +88,7 @@ namespace Microsoft.Test.Performance
         ///<SecurityNote>
         /// Critical:  This calls critical code in TraceProvider (Register)
         ///</SecurityNote>
-        [SecurityCritical]
+        
         public TraceProvider(Guid controlGuid)
         {
             uint status = 0;
@@ -212,7 +212,7 @@ namespace Microsoft.Test.Performance
         /// Critical:  This calls critical code in UnsafeNativeMethods.EtwTrace 
         /// and sets critical for set field _registrationHandle
         ///</SecurityNote>
-        [SecurityCritical]
+        
         private unsafe uint Register(Guid controlGuid)
         {
             uint status;
@@ -521,7 +521,7 @@ namespace Microsoft.Test.Performance
         ///<SecurityNote>
         ///Critical - unsafe pointers
         ///</SecurityNote>
-        [SecurityCritical]
+        
         private unsafe string ProcessOneObject(object data, MofField* mofField, char* ptr, ref uint offSet)
         {
             return EncodeObject(data, mofField, ptr, ref offSet, (byte*)null);
@@ -532,7 +532,7 @@ namespace Microsoft.Test.Performance
 
 
 
-        [SecurityCritical]
+        
         private unsafe string EncodeObject(object data, MofField* mofField, char* ptr, ref uint offSet, byte* ptrArgInfo)
         {
             if (data == null)

@@ -218,10 +218,10 @@ namespace Microsoft.Test.DataServices
 
     #region Helper Classes
 
-    [SecurityCritical]
+    
     public class RawRule : ValidationRule
     {
-        [SecurityCritical]
+        
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {            
             string str = (string)value;
@@ -237,10 +237,10 @@ namespace Microsoft.Test.DataServices
         public static readonly string InvalidValue = "invalid raw";
     }
 
-    [SecurityCritical]
+    
     public class ConvRule : ValidationRule
     {
-        [SecurityCritical]
+        
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             string str = (string)value;

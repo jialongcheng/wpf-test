@@ -328,10 +328,10 @@ namespace DRT
         bool _isPageLoaded;
     }
 
-    [SecurityCritical]
+    
     public class VSMValidationRule : ValidationRule
     {
-        [SecurityCritical]
+        
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             ValidationResult result = ValidationResult.ValidResult;

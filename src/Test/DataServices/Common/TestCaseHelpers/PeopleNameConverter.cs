@@ -13,12 +13,12 @@ using System.Windows.Media;
 
 namespace Microsoft.Test.DataServices
 {
-    [SecurityCritical]
+    
     public class PeopleNameConverter : IMultiValueConverter
     {
         #region IMultiValueConverter Members
 
-        [SecurityCritical]
+        
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             string name;
@@ -37,7 +37,7 @@ namespace Microsoft.Test.DataServices
             return name;
         }
 
-        [SecurityCritical]
+        
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             string[] splitValues = ((string)value).Split(' ');

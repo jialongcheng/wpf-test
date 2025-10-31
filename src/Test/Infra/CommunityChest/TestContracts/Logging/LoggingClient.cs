@@ -35,7 +35,7 @@ namespace Microsoft.Test.Logging
     [SecuritySafeCritical]
 #endif
 #if CLR_20
-    [SecurityCritical]
+    
     [SecurityTreatAsSafe]
 #endif
         public void Close()

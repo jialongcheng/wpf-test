@@ -4670,7 +4670,7 @@ namespace MS.Win32 {
             /// <SecurityNote>
             ///     Critical: Sets the pointer to an arbitrary long
             /// </SecurityNote>
-            [SecurityCritical]
+            
             public void SetLong(long lVal) {
                 data1.Value = (IntPtr)(lVal & 0xFFFFFFFF);
                 data2.Value = (IntPtr)((lVal >> 32) & 0xFFFFFFFF);
@@ -4680,7 +4680,7 @@ namespace MS.Win32 {
             ///     Critical: Calls Marshal.AllocCoTaskMem, .WriteInt16 and .WriteInt32 which have LinkDemands.
             ///               Writes to unmanaged memory and returns a pointer to it.
             /// </SecurityNote>
-            [SecurityCritical]
+            
             public IntPtr ToCoTaskMemPtr() {
                 IntPtr mem = Marshal.AllocCoTaskMem(16);
                 Marshal.WriteInt16(mem, vt);
@@ -4695,7 +4695,7 @@ namespace MS.Win32 {
             /// <SecurityNote>
             ///     Critical: Converts an intptr to an object , it acceses PtrToStruct which is critical
             /// </SecurityNote>
-            [SecurityCritical]
+            
             public object ToObject() {
                 IntPtr val = data1.Value;
                 long longVal;
@@ -4846,7 +4846,7 @@ namespace MS.Win32 {
             /// <SecurityNote>
             ///     Critical: Reads an arbitrary IntPtr
             /// </SecurityNote>
-            [SecurityCritical]
+            
             private static IntPtr GetRefInt(IntPtr value) {
                 return Marshal.ReadIntPtr(value);
             }
@@ -6123,7 +6123,7 @@ namespace MS.Win32 {
             ///     Critical: Extensive use of Marshal to allocate and manipulate
             ///             Character buffers.
             /// </SecurityNote>
-            [SecurityCritical]
+            
             internal static CharBuffer CreateBuffer(int size)
             {
                 if (Marshal.SystemDefaultCharSize == 1)

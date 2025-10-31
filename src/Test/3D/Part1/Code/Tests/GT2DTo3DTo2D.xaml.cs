@@ -52,17 +52,17 @@ namespace Microsoft.Test.Graphics
         }
     }
 
-    [SecurityCritical]
+    
     public class PointMultiConverter : IMultiValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             Point3D p = new Point3D(System.Convert.ToDouble(values[0]), System.Convert.ToDouble(values[1]), System.Convert.ToDouble(values[2]));
             return p;
         }
 
-        [SecurityCritical]
+        
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)
         {
             throw new NotImplementedException();

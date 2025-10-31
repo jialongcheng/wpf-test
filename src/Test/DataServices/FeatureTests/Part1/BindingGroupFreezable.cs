@@ -92,11 +92,11 @@ namespace Microsoft.Test.DataServices
 
     #region Helper Classes
 
-    [SecurityCritical]
+    
     public class ValidateFreezable : ValidationRule
     {
         // Ensure that an item over $100 is available for at least 7 days.
-        [SecurityCritical]
+        
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             BindingGroup bg = value as BindingGroup;

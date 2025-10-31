@@ -179,7 +179,7 @@ namespace Microsoft.Test.DataServices
 	}
 
     #region MyDependencyObject
-    [SecurityCritical]
+    
     public class MyButton : Button
 	{
 		public static readonly DependencyProperty MyDpProperty =

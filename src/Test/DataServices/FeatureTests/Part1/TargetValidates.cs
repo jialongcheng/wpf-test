@@ -92,10 +92,10 @@ namespace Microsoft.Test.DataServices
         }
     }
 
-    [SecurityCritical]
+    
     public class ValueIsNotNull : ValidationRule
     {
-        [SecurityCritical]
+        
         public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
         {
             string str = value as string;

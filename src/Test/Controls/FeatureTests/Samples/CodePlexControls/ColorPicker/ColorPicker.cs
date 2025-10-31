@@ -227,10 +227,10 @@ namespace WpfControlToolkit
     }
 
 
-    [SecurityCritical]
+    
     public class ByteColorMultiConverter : IMultiValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (values.Length != 3)
@@ -245,7 +245,7 @@ namespace WpfControlToolkit
             return Color.FromRgb(red, green, blue);
         }
 
-        [SecurityCritical]
+        
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)
         {
             Color color = (Color)value;
@@ -254,16 +254,16 @@ namespace WpfControlToolkit
         }
     }
 
-    [SecurityCritical]
+    
     public class ByteDoubleConverter : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             return (double)(byte)value;
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             return (byte)(double)value;
@@ -271,17 +271,17 @@ namespace WpfControlToolkit
     }
 
     [ValueConversion(typeof(Color), typeof(SolidColorBrush))]
-    [SecurityCritical]
+    
     public class ColorBrushConverter : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             Color color = (Color)value;
             return new SolidColorBrush(color);
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             return null;

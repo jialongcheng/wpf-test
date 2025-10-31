@@ -2061,17 +2061,17 @@ namespace DRT
         /// A ValueConverter class which would be used as a group descriptor.
         /// The value returned by this converter is the count of characters.
         /// </summary>
-        [SecurityCritical]
+        
         private class LetterCountConverter : IValueConverter
         {
-            [SecurityCritical]
+            
             public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
             {
                 string str = (string)value;
                 return str.Length;
             }
 
-            [SecurityCritical]
+            
             public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
             {
                 throw new NotImplementedException();
@@ -3895,13 +3895,13 @@ namespace DRT
         private Person _personCopy;
     }
 
-    [SecurityCritical]
+    
     public class FullNameConverter : IValueConverter
     {
         /// <summary>
         ///     Convert a person into full name
         /// </summary>
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var fullName = string.Empty;
@@ -3925,17 +3925,17 @@ namespace DRT
         /// <summary>
         ///     Not implemented
         /// </summary>
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }
     }
 
-    [SecurityCritical]
+    
     public class SillyNameRule : ValidationRule
     {
-        [SecurityCritical]
+        
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             ValidationResult result = ValidationResult.ValidResult;
@@ -3964,10 +3964,10 @@ namespace DRT
         }
     }
 
-    [SecurityCritical]
+    
     public class JohnAdamsRule : ValidationRule
     {
-        [SecurityCritical]
+        
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             ValidationResult result = ValidationResult.ValidResult;

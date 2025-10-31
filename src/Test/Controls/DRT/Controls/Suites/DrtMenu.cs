@@ -3200,12 +3200,12 @@ namespace DRT
             return mi;
         }
 
-        [SecurityCritical]
+        
         private class MyHeaderConverter : IValueConverter
         {
             #region IValueConverter Members
 
-            [SecurityCritical]
+            
             public object Convert(object o, Type type, object parameter, CultureInfo culture)
             {
                 if (o == null) return null;
@@ -3220,7 +3220,7 @@ namespace DRT
                 return visual == null ? "<null>" : visual.ToString();
             }
 
-            [SecurityCritical]
+            
             public object ConvertBack(object o, Type type, object parameter, CultureInfo culture)
             {
                 return null;
@@ -3229,12 +3229,12 @@ namespace DRT
             #endregion
         }
 
-        [SecurityCritical]
+        
         private class MyItemsSourceConverter : IValueConverter
         {
             #region IValueConverter Members
 
-            [SecurityCritical]
+            
             public object Convert(object o, Type type, object parameter, CultureInfo culture)
             {
                 if (o == null) return null;
@@ -3265,7 +3265,7 @@ namespace DRT
                 return null;
             }
 
-            [SecurityCritical]
+            
             public object ConvertBack(object o, Type type, object parameter, CultureInfo culture)
             {
                 return null;

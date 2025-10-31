@@ -149,14 +149,14 @@ namespace MS.Win32
         /// <SecurityNote>
         /// Critical - Applies SuppressUnmanagedCodeSecurity.
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [SuppressUnmanagedCodeSecurity]
         [ComVisible(true), ComImport(), Guid("B722BCCB-4E68-101B-A2BC-00AA00404770")]
         [InterfaceTypeAttribute(ComInterfaceType.InterfaceIsIUnknown)]        
         internal interface IOleCommandTarget
         {
 
-	        [SecurityCritical]
+	        
             [return: MarshalAs(UnmanagedType.I4)]
             [PreserveSig]
             int QueryStatus(
@@ -167,7 +167,7 @@ namespace MS.Win32
                 [In, Out]
                 IntPtr pCmdText);
 
-	        [SecurityCritical]
+	        
             [return: MarshalAs(UnmanagedType.I4)]
             [PreserveSig]
             int Exec(
@@ -240,7 +240,7 @@ namespace MS.Win32
         /// <SecurityNote>
         /// Critical : Elevates to UnmanagedCode permissions
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [DllImport(ExternDll.Gdi32, ExactSpelling = true, CharSet = CharSet.Auto, SetLastError = true)]
         internal static extern IntPtr SetEnhMetaFileBits(uint cbBuffer, byte[] buffer);
 
@@ -261,7 +261,7 @@ namespace MS.Win32
             /// <SecurityNote>
             ///      Critical:This code calls into a base class which is protected by link demand and by inheritance demand
             /// </SecurityNote>
-            [SecurityCritical]
+            
             protected WpfSafeHandle(bool ownsHandle, int collectorId) : base(ownsHandle)
             {
                 HandleCollector.Add(collectorId);
@@ -288,7 +288,7 @@ namespace MS.Win32
             /// <SecurityNote>
             /// Critical: This code calls into a base class which is protected by a SecurityCritical constructor.
             /// </SecurityNote>
-            [SecurityCritical]
+            
             private BitmapHandle() : this(true)
             {
             }
@@ -296,14 +296,14 @@ namespace MS.Win32
             /// <SecurityNote>
             /// Critical: This code calls into a base class which is protected by a SecurityCritical constructor.
             /// </SecurityNote>
-            [SecurityCritical]
+            
             private BitmapHandle(bool ownsHandle) : base(ownsHandle, NativeMethods.CommonHandles.GDI)
             {
             }
             /// <SecurityNote>
             ///     Critical: This calls into DeleteObject
             /// </SecurityNote>
-            [SecurityCritical]
+            
             [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
             protected override bool ReleaseHandle()
             {
@@ -313,7 +313,7 @@ namespace MS.Win32
             /// <SecurityNote>
             ///     Critical: Accesses internal critical data.
             /// </SecurityNote>
-            [SecurityCritical]
+            
             internal HandleRef MakeHandleRef(object obj)
             {
                 return new HandleRef(obj, handle);
@@ -322,7 +322,7 @@ namespace MS.Win32
             /// <SecurityNote>
             ///     Critical: Creates a new BitmapHandle using Critical constructor.
             /// </SecurityNote>
-            [SecurityCritical]
+            
             internal static BitmapHandle CreateFromHandle(IntPtr hbitmap, bool ownsHandle=true)
             {
                 return new BitmapHandle(ownsHandle)
@@ -337,7 +337,7 @@ namespace MS.Win32
             /// <SecurityNote>
             /// Critical: This code calls into a base class which is protected by a SecurityCritical constructor.
             /// </SecurityNote>
-            [SecurityCritical]
+            
             private IconHandle() : base(true, NativeMethods.CommonHandles.Icon)
             {
             }
@@ -345,7 +345,7 @@ namespace MS.Win32
             /// <SecurityNote>
             ///     Critical: This calls into DestroyIcon
             /// </SecurityNote>
-            [SecurityCritical]
+            
             [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
             protected override bool ReleaseHandle()
             {
@@ -368,7 +368,7 @@ namespace MS.Win32
             /// <SecurityNote>
             ///     Critical: This accesses critical data for the safe handle.
             /// </SecurityNote>
-            [SecurityCritical]
+            
             internal IntPtr CriticalGetHandle()
             {
                 return handle;
@@ -380,7 +380,7 @@ namespace MS.Win32
             /// <SecurityNote>
             /// Critical: This code calls into a base class which is protected by a SecurityCritical constructor.
             /// </SecurityNote>
-            [SecurityCritical]
+            
             private CursorHandle() : base(true, NativeMethods.CommonHandles.Cursor)
             {
             }
@@ -388,7 +388,7 @@ namespace MS.Win32
             /// <SecurityNote>
             ///     Critical: This calls into DestroyCursor
             /// </SecurityNote>
-            [SecurityCritical]
+            
             [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
             protected override bool ReleaseHandle()
             {
@@ -648,7 +648,7 @@ namespace MS.Win32
             /// <SecurityNote>
             /// Critical : Exposes critical SafeHandle
             /// </SecurityNote>
-            [SecurityCritical]
+            
             public SafeLocalMemHandle lpSecurityDescriptor = new SafeLocalMemHandle();
 
             public bool bInheritHandle = false;
@@ -656,7 +656,7 @@ namespace MS.Win32
             /// <SecurityNote>
             /// Critical : Disposes critical lpSecurityDescriptor field
             /// </SecurityNote>
-            [SecurityCritical]
+            
             public void Release()
             {
                 if (lpSecurityDescriptor != null)
@@ -682,7 +682,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///  Critical: Inherits from critical tyoe SafeHandleZeroOrMinusOneIsInvalid
         /// </SecurityNote>
-        [SecurityCritical]
+        
 		[SuppressUnmanagedCodeSecurity]
 		[HostProtection(SecurityAction.LinkDemand, MayLeakOnAbort=true)]
 		internal sealed class SafeLocalMemHandle : SafeHandleZeroOrMinusOneIsInvalid
@@ -690,7 +690,7 @@ namespace MS.Win32
             /// <SecurityNote>
             ///  Critical: Calls critical SafeHandle ctor
             /// </SecurityNote>
-            [SecurityCritical]
+            
 		    public SafeLocalMemHandle() : base(true)
 		    {
 		    }
@@ -698,7 +698,7 @@ namespace MS.Win32
             /// <SecurityNote>
             ///  Critical: Calls critical SafeHandle.SetHandle
             /// </SecurityNote>
-            [SecurityCritical]
+            
 		    public SafeLocalMemHandle(IntPtr existingHandle, bool ownsHandle) : base(ownsHandle)
 		    {
 		        base.SetHandle(existingHandle);
@@ -707,7 +707,7 @@ namespace MS.Win32
             /// <SecurityNote>
             ///  Critical: Calls critical LocalFree
             /// </SecurityNote>
-            [SecurityCritical]
+            
 		    protected override bool ReleaseHandle()
 		    {
 		        return (LocalFree(base.handle) == IntPtr.Zero);
@@ -716,7 +716,7 @@ namespace MS.Win32
             /// <SecurityNote>
             ///  Critical: Elevates to unmanaged code permissions
             /// </SecurityNote>
-            [SecurityCritical]
+            
             [SuppressUnmanagedCodeSecurity]
 		    [ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
             [DllImport("kernel32.dll")]
@@ -1454,7 +1454,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///  Critical: Elevates to unmanaged code permissions
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [DllImport("gdi32.dll")]
         public static extern Int32 EndDoc(HDC hdc);
 
@@ -1479,7 +1479,7 @@ namespace MS.Win32
             /// <SecurityNote>
             ///  Critical: Exposes native pointer
             /// </SecurityNote>
-            [SecurityCritical]
+            
             public void* buffer;
         }
 
@@ -1496,7 +1496,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///  Critical: Elevates to unmanaged code permissions
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [DllImport("gdi32.dll")]
         public static unsafe extern Int32 ExtEscape(HDC hdc, Int32 nEscape, Int32 cbInput, PrinterEscape* lpvInData, Int32 cbOutput, [Out] void* lpvOutData);
 
@@ -1528,7 +1528,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///  Critical: Elevates to unmanaged code permissions
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [DllImport("gdi32.dll")]
         public unsafe static extern Int32 StartDoc(HDC hdc, ref DocInfo docInfo);
 
@@ -1542,7 +1542,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///  Critical: Elevates to unmanaged code permissions
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [DllImport("winspool.drv", BestFitMapping = false, ThrowOnUnmappableChar = true)]
         public unsafe static extern Int32 OpenPrinterA(String printerName, IntPtr* phPrinter, void* pDefaults);
 
@@ -1554,7 +1554,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///  Critical: Elevates to unmanaged code permissions
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [DllImport("winspool.drv")]//CASRemoval:
         public static extern Int32 ClosePrinter(IntPtr hPrinter);
 
@@ -1566,7 +1566,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///  Critical: Elevates to unmanaged code permissions
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [DllImport("gdi32.dll")]//CASRemoval:
         public static extern Int32 EndPage(HDC hdc);
 
@@ -1578,7 +1578,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///  Critical: Elevates to unmanaged code permissions
         /// </SecurityNote>
-        [SecurityCritical]
+        
         [DllImport("gdi32.dll")]//CASRemoval:
         public static extern Int32 StartPage(HDC hdc);
 

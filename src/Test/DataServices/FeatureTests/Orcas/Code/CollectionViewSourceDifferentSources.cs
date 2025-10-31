@@ -370,10 +370,10 @@ namespace Microsoft.Test.DataServices
             }
         }
 
-        [SecurityCritical]
+        
         private class IEnumerableGroupConverter : IValueConverter
         {
-            [SecurityCritical]
+            
             public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
             {
                 if (value is string)
@@ -391,7 +391,7 @@ namespace Microsoft.Test.DataServices
                 return null;
             }
 
-            [SecurityCritical]
+            
             public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
             {
                 return null;

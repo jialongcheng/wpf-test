@@ -10,7 +10,7 @@ using System.Windows.Data;
 
 namespace Microsoft.Test.DataServices
 {
-    [SecurityCritical]
+    
     public class MinCharsRule : ValidationRule
 	{
 		private int _min;
@@ -44,7 +44,7 @@ namespace Microsoft.Test.DataServices
 			}
 		}
 
-        [SecurityCritical]
+        
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
 		{
 			string stringValue = value as string;

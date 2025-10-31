@@ -4095,17 +4095,17 @@ namespace DRT
         #endregion
     }
 
-    [SecurityCritical]
+    
     public class EnumConverter : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object o, Type type, object parameter, CultureInfo culture)
         {
             bool x = (bool)o;
             return Enum.ToObject(type, x ? 1 : 0);
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object o, Type type, object parameter, CultureInfo culture)
         {
             int ret = (int)System.Convert.ChangeType(o, typeof(int));

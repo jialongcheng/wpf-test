@@ -71,16 +71,16 @@ namespace Microsoft.Test.DataServices
 
     #region Helper Classes
 
-    [SecurityCritical]
+    
     public class MultiConverter : IMultiValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             return (string)values[0];
         }
 
-        [SecurityCritical]
+        
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             return null;

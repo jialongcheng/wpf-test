@@ -22,10 +22,10 @@ namespace DrtAnnotations
     using System.Windows.Resources;
 
 
-    [SecurityCritical]
+    
     public class InkEditingModeConverter : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object o, Type type, object parameter, CultureInfo culture)
         {
             InkCanvasEditingMode expectedMode = (InkCanvasEditingMode)parameter;
@@ -42,17 +42,17 @@ namespace DrtAnnotations
             }
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object o, Type type, object parameter, CultureInfo culture)
         {
             return null;
         }
     }
 
-    [SecurityCritical]
+    
     public class WidthToVisibilityConverter : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             double width = (double)value;
@@ -61,7 +61,7 @@ namespace DrtAnnotations
             return Visibility.Collapsed;
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return null;

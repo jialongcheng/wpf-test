@@ -257,16 +257,16 @@ namespace Microsoft.Test.DataServices
         #endregion
     }
 
-    [SecurityCritical]
+    
     public class MyBlueConverter : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             return Colors.SteelBlue;
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             throw new Exception("The method or operation is not implemented.");

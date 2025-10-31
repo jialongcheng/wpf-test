@@ -92,7 +92,7 @@ namespace Microsoft.Test.DataServices
 
 	}
 
-    [SecurityCritical]
+    
 	public class GreekKing : Dwarf
 	{
 		public GreekKing()

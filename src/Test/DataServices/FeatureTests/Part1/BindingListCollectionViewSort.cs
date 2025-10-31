@@ -119,7 +119,7 @@ namespace Microsoft.Test.DataServices
         string _author,_title;
     }
 
-    [SecurityCritical]
+    
     public class MyList : FullBindingList<CustomBook>
     {
         public MyList()

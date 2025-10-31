@@ -1341,16 +1341,16 @@ namespace HangTest
         }
     }
 
-    [SecurityCritical]
+    
     public class EnumToIntConverter : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return (int)value;
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             int i = (int)value;
@@ -1358,33 +1358,33 @@ namespace HangTest
         }
     }
 
-    [SecurityCritical]
+    
     public class HeightToVisibilityConverter : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return ((double)value < 16.0) ? Visibility.Collapsed : Visibility.Visible;
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }
     }
 
-    [SecurityCritical]
+    
     public class MarginConverter : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             double margin = (double)value;
             return new Thickness(0, margin, 0, 0);
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();

@@ -22,14 +22,14 @@ namespace Microsoft.Test.DataServices
     // Boolean to Visible converter.
     // True = Hidden
     // False = Visible
-    [SecurityCritical]
+    
     public class BooleanToVisibleConverter : IValueConverter
 	{
 		public BooleanToVisibleConverter()
 		{
 		}
 
-        [SecurityCritical]
+        
         public object Convert(object o, Type type, object parameter, CultureInfo culture)
 		{
 			if ((bool)o)
@@ -43,7 +43,7 @@ namespace Microsoft.Test.DataServices
 		}
 
 
-        [SecurityCritical]
+        
         public object ConvertBack(object o, Type type, object parameter, CultureInfo culture)
 		{
 			return null;

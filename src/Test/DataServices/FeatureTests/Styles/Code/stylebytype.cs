@@ -257,10 +257,10 @@ namespace Microsoft.Test.DataServices
     }
 
 
-    [SecurityCritical]
+    
     public class EmployeeStyleSelector : StyleSelector
     {
-        [SecurityCritical]
+        
         public override Style SelectStyle(object item, DependencyObject container)
         {
             FrameworkElement fe = container as FrameworkElement;

@@ -28,16 +28,16 @@ namespace DrtDataSrv
 
     // A converter that does nothing
     [ValueConversion(typeof(string), typeof(string))]
-    [SecurityCritical]
+    
     public class IdentityConverter : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object o, Type targetType, object parameter, CultureInfo culture)
         {
             return o;
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object o, Type targetType, object parameter, CultureInfo culture)
         {
             return o;

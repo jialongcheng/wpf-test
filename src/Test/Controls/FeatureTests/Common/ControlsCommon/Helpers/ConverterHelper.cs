@@ -21,12 +21,12 @@ namespace Microsoft.Test.Controls.Helpers
 {
     [ValueConversion(typeof(Visibility), typeof(bool))]
 
-    [SecurityCritical]
+    
     public class VisibilityToBoolConverter : IValueConverter
     {
         #region IValueConverter Members
 
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             GlobalLog.LogStatus(string.Format("VisibilityToBoolConverter called. value: {0}, targetType: {1}", value, targetType));
@@ -39,7 +39,7 @@ namespace Microsoft.Test.Controls.Helpers
             return false;
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotSupportedException();

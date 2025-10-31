@@ -8,10 +8,10 @@ using System.Windows.Media;
 
 namespace WpfControlToolkit
 {
-    [SecurityCritical]
+    
     public class ColorConverter : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             UIElement c = value as UIElement;
@@ -23,7 +23,7 @@ namespace WpfControlToolkit
             return new SolidColorBrush(color);
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             throw new Exception("The method or operation is not implemented.");

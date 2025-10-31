@@ -120,7 +120,7 @@ namespace Test.Uis.Wrappers
         ///     PublicOK: This is a test case
         /// </SecurityNote>
         /// <returns></returns>
-        [SecurityCritical]
+        
         public static DataObject CreateXamlDataObject()
         {
             DataObject result;

@@ -9,13 +9,13 @@ namespace Microsoft.Test.Controls
     /// <summary>
     /// AgeToForegroundConverter
     /// </summary>
-    [SecurityCritical]
+    
     public class AgeToForegroundConverter : IValueConverter
     {
         #region IValueConverter Members
 
 
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (targetType != typeof(Brush)) return null;
@@ -24,7 +24,7 @@ namespace Microsoft.Test.Controls
         }
 
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();

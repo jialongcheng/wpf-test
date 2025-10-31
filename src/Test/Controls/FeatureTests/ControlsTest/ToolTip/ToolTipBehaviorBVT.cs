@@ -122,12 +122,12 @@ namespace Avalon.Test.ComponentModel.UnitTests
             contextMenu.IsOpen = true;
         }
 
-        [SecurityCritical]
+        
         public class ToolTipConverter : IValueConverter
         {
             bool _wasOpen = false;
 
-            [SecurityCritical]
+            
             public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
             {
                 bool isOpen = (bool)value;
@@ -139,7 +139,7 @@ namespace Avalon.Test.ComponentModel.UnitTests
                 return value;
             }
 
-            [SecurityCritical]
+            
             public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
             {
                 throw new NotSupportedException();

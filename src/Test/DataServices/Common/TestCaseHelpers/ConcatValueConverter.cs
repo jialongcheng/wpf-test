@@ -12,12 +12,12 @@ using System.Windows.Media;
 
 namespace Microsoft.Test.DataServices
 {
-    [SecurityCritical]
+    
     public class ConcatStringValueConverter : IMultiValueConverter
 	{
         #region IMultiValueConverter Members
 
-        [SecurityCritical]
+        
         public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (targetType != typeof(string))
@@ -52,7 +52,7 @@ namespace Microsoft.Test.DataServices
             return final + ending;
         }
 
-        [SecurityCritical]
+        
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)
         {
             return null;
@@ -62,10 +62,10 @@ namespace Microsoft.Test.DataServices
     }
 
 
-    [SecurityCritical]
+    
     public class IntToBrush : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object o, Type type, object parameter, System.Globalization.CultureInfo culture)
         {
             int i = Int32.Parse(o.ToString());
@@ -96,7 +96,7 @@ namespace Microsoft.Test.DataServices
             }
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object o, Type type, object parameter, System.Globalization.CultureInfo culture)
         {
             return 0;

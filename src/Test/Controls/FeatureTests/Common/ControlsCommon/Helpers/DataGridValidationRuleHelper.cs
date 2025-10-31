@@ -23,10 +23,10 @@ namespace Microsoft.Test.Controls.Helpers
     /// actual validation is hard coded to a specific condition that the
     /// tests will use to either trigger a failure or not.
     /// </summary>
-    [SecurityCritical]
+    
     public class ItemValidationRule1 : ValidationRule
     {
-        [SecurityCritical]
+        
         public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
         {
             ValidationResult result = ValidationResult.ValidResult;

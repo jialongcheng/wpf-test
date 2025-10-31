@@ -374,11 +374,11 @@ namespace Test.Uis.TextEditing
         }
 
         /// <summary>Integer-to-Length transformer helper.</summary>
-        [SecurityCritical]
+        
         public class IntegerToLengthTransformer : IValueConverter
         {
             /// <summary>Transforms the specified object.</summary>
-            [SecurityCritical]
+            
             public object Convert(object o, Type type, object parameter, CultureInfo culture)
             {
                 if (o == null)
@@ -397,7 +397,7 @@ namespace Test.Uis.TextEditing
             }
 
             /// <summary>Performs the inverse transform from the specified object.</summary>
-            [SecurityCritical]
+            
             public object ConvertBack(object o, Type type, object parameter, CultureInfo culture)
             {
                 throw new NotImplementedException("ConvertBack not implemented.");

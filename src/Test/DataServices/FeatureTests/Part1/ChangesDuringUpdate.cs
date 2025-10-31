@@ -75,16 +75,16 @@ namespace Microsoft.Test.DataServices
 
     #region Helper Class
 
-    [SecurityCritical]
+    
     public class CustomConverter : IValueConverter
     {
-        [SecurityCritical]
+        
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return ConvertBack(value, targetType, parameter, culture);
         }
 
-        [SecurityCritical]
+        
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             String stringValue = value as String;
