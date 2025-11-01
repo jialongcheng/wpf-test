@@ -167,7 +167,7 @@ namespace MS.Win32
                 [In, Out]
                 IntPtr pCmdText);
 
-	        
+	        [SecurityCritical]
             [return: MarshalAs(UnmanagedType.I4)]
             [PreserveSig]
             int Exec(
@@ -368,7 +368,7 @@ namespace MS.Win32
             /// <SecurityNote>
             ///     Critical: This accesses critical data for the safe handle.
             /// </SecurityNote>
-            
+            [SecurityCritical]
             internal IntPtr CriticalGetHandle()
             {
                 return handle;

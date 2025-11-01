@@ -4670,7 +4670,7 @@ namespace MS.Win32 {
             /// <SecurityNote>
             ///     Critical: Sets the pointer to an arbitrary long
             /// </SecurityNote>
-            
+            [SecurityCritical]
             public void SetLong(long lVal) {
                 data1.Value = (IntPtr)(lVal & 0xFFFFFFFF);
                 data2.Value = (IntPtr)((lVal >> 32) & 0xFFFFFFFF);
@@ -4680,7 +4680,7 @@ namespace MS.Win32 {
             ///     Critical: Calls Marshal.AllocCoTaskMem, .WriteInt16 and .WriteInt32 which have LinkDemands.
             ///               Writes to unmanaged memory and returns a pointer to it.
             /// </SecurityNote>
-            
+            [SecurityCritical]
             public IntPtr ToCoTaskMemPtr() {
                 IntPtr mem = Marshal.AllocCoTaskMem(16);
                 Marshal.WriteInt16(mem, vt);

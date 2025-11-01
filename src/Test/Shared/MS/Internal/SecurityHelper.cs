@@ -127,7 +127,7 @@ internal static class SecurityHelper
         ///<SecurityNote>
         ///  Critical: Returns a permission object, which can be misused.
         ///</SecurityNote>
-        
+        [SecurityCritical]
         internal static CodeAccessPermission CreateUserInitiatedRoutedEventPermission()
         {
             if(_userInitiatedRoutedEventPermission == null)
@@ -801,7 +801,7 @@ internal static class SecurityHelper
         ///</SecurityNote>
         internal static PermissionSet EnvelopePermissionSet
         {
-            
+            [SecurityCritical]
             get
             {
                 if (_envelopePermissionSet == null)

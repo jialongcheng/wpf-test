@@ -85,7 +85,7 @@ namespace MS.Win32
         ///     Critical: The code below has a link demand for unmanaged code permission.This code can be used to
         ///               write data to arbitrary memory.
         /// </SecurityNote>
-        
+        [SecurityCritical]
         public static void StructureToPtr(object structure, IntPtr ptr, bool fDeleteOld)
         {
             Marshal.StructureToPtr(structure, ptr, fDeleteOld);
@@ -946,7 +946,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///     Critical:This code causes an elevation of privilige to unmanaged code
         /// </SecurityNote>
-        
+        [SecurityCritical]
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Imm32, CharSet = CharSet.Auto)]
         public static extern bool ImmSetOpenStatus(HandleRef hIMC, bool open);

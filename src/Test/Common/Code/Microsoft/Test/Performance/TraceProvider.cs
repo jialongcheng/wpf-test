@@ -26,7 +26,7 @@ namespace Microsoft.Test.Performance
     ///<SecurityNote>
     /// Critical as this code performs an elevation. 
     ///</SecurityNote>
-    
+    [SecurityCritical]
     [SuppressUnmanagedCodeSecurity]
     internal sealed class EtwTrace
     {

@@ -272,7 +272,7 @@ namespace MS.Win32
         ///     consider yanking it out all the way
         /// </SecurityNote>
 
-        
+        [SecurityCritical]
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.User32, CharSet = CharSet.Auto)]
         internal static extern IntPtr GetMessageExtraInfo();
@@ -636,7 +636,7 @@ namespace MS.Win32
         /// <SecurityNote>
         ///  SecurityCritical: This code returns a critical resource obtained under an elevation.
         /// </SecurityNote>
-        
+        [SecurityCritical]
         [SuppressUnmanagedCodeSecurity]
         [DllImport(ExternDll.Kernel32, SetLastError = true)]
         internal static extern SafeViewOfFileHandle MapViewOfFileEx(SafeFileMappingHandle hFileMappingObject, int dwDesiredAccess, int dwFileOffsetHigh, int dwFileOffsetLow, IntPtr dwNumberOfBytesToMap, IntPtr lpBaseAddress);

@@ -36,7 +36,7 @@ namespace Microsoft.Test.Win32
 
         ///<summary>
         ///</summary>
-        
+        [SecurityCritical]
         public HwndWrapper(
             int classStyle,
             int style,
@@ -214,7 +214,7 @@ namespace Microsoft.Test.Win32
 
         ///<summary>
         ///</summary>
-        
+        [SecurityCritical]
         public void AddHook(HwndWrapperHook hook)
         {
             //VerifyAccess();

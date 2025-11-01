@@ -1117,7 +1117,7 @@ namespace MS.Win32
             /// Minimum supported client: Windows 10, version 1607 (RS1)
             /// </remarks>
             [SuppressUnmanagedCodeSecurity]
-            
+            [SecurityCritical]
             [DllImport(ExternDll.User32, CallingConvention = CallingConvention.Winapi)]
             internal static extern DpiAwarenessContextHandle GetWindowDpiAwarenessContext([In] IntPtr hwnd);
 
@@ -1141,7 +1141,7 @@ namespace MS.Win32
             /// This method is used internally by DpiAwarenessContextHandle.
             /// </remarks>
             [SuppressUnmanagedCodeSecurity]
-            
+            [SecurityCritical]
             [DllImport(ExternDll.User32, CallingConvention = CallingConvention.Winapi, SetLastError = true)]
             [return: MarshalAs(UnmanagedType.Bool)]
             internal static extern bool AreDpiAwarenessContextsEqual([In] IntPtr dpiContextA, [In] IntPtr dpiContextB);
