@@ -377,7 +377,9 @@ namespace DRT
                     HwndSource hwndSource = PresentationSource.FromVisual(localRoot) as HwndSource;
                     if (hwndSource != null)
                     {
+#if !NETFRAMEWORK
                         rootPeer = s_miAPGetRootPeer.Invoke(null, new object[] { localRoot, hwndSource.Handle }) as AutomationPeer;
+#endif
                         if (rootPeer != null)
                         {
                             rootPeer.GetChildren();
